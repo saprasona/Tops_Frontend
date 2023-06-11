@@ -1,0 +1,30 @@
+CSS => cascading stylesheet
+-> used to make a responsive website designing.
+-> also create animation.
+-> make a proper partitions.
+-> set scale of element.
+
+-> there are 3ways/types to add css on webpage.
+(1) inline => using style attribute.
+(2) internal => using <style> tag in <head>.
+(3) external => create an externa file using filename.
+    css and link with <link> tag html file.
+
+    syntax:-
+
+    (1) inline
+         style = "property : value;"
+
+    (2) internal / external:-
+         selector {
+            property : value;
+                  }
+
+Types of selector:-
+(1) element selector
+(2) class selector
+(3) id selector
+(4) group selector
+(5) universal / global selector
+(6) attribute selector
+(7) decendent selector                      
