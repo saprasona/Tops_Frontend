@@ -1,0 +1,42 @@
+Shortcut key:-
+New file=> ctrl + n
+Save=> ctrl + s
+Copy=> ctrl + c
+paste=> ctrl + v
+cut=> ctrl + x
+undo=> ctrl + z
+redu=> ctrl + y
+select file=> ctrl + a
+find=> ctrl + f
+
+HTML => HyperText Markup Language
+used to create structure on webpage.
+
+HTTP => HyperText Transfer Protocol
+
+When HTML developed?
+=>1993
+who's developed?
+=> Tim berners' lee
+
+HTML=> basic tag
+HTML5=> Embed multimeadia, audio,video,graphics added
+
+What is Tag?
+=> a word written with angle brecket it known as a Tag.
+for ex, <html>
+=> There are 2 types of Tag
+
+1. Openinng-closing Tag 
+for ex, <html>....</html>
+
+2. Non-closing Tag / Non structure / void Tag
+for ex, <meta>, <img>, <br>, <hr>, <input>, <link> etc.
+
+What is Element?
+=> a word written between angle brecket is known as an Element.
+for ex, in <html> tag html is an Element
+
+What is attribute?
+=> an additional functinality.
+for ex, <body bg color="pink"> in this bg color is an attribute.

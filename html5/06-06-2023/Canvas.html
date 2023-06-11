@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- also used to draw a 2d graphics and code written with script -->
+    <canvas id="mycanvas" height="500px" width="500px"></canvas>
+    <script>
+        var rect = document.getElementById("mycanvas");
+        var drawrect = rect.getContext("2d");
+        drawrect.fillStyle = "magenta"
+        drawrect.fillRect(10, 10, 200, 200)
+    </script>
+</body>
+</html>

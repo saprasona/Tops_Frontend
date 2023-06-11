@@ -1,0 +1,5 @@
+imagemap means apply link on some image shapes.
+
+used tag : <map> and <area>
+
+shape : rect, poly, circle
