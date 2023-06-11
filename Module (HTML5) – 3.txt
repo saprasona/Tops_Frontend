@@ -1,0 +1,170 @@
+(1). What are the new tags added in HTML5? 
+Ans.=> HTML5 introduced several new tags to enhance the structure and functionality of web pages. 
+      -Here are some of the notable new tags added in HTML5:-
+
+      1. <article> tag: The <article> tag is one of the new sectioning element in HTML5. The HTML <article> tag is used to represent an article. 
+                       -More specifically, the content within the <article> tag is independent of the other content of the site (even though it can be related).
+
+      2. <aside> tag:- The <aside> tag is used to describe the main object of the web page in a shorter way like a highlighter. 
+                      -It basically identifies the content that is related to the primary content of the web page but do not constitute the main intent of the primary page. 
+                      -The <aside> tag contains mainly author information, links, related content, and so on.
+
+      3. <audio> tag:- The <audio> tag is used to insert an audio into an HTML webpage.
+
+      4. <canvas> tag:- The <canvas> tag in HTML is used to draw graphics on a web page using JavaScript. 
+                       -It can be used to draw paths, boxes, texts, gradients, and add images. By default, it does not contain borders and text.
+
+      5. <command> tag:- The <command> tag define a command button, invoke as per user action. 
+                        -The <command> tag button is used in a special type of operation. The <command> tag is supported only by Internet Explorer.
+
+      6. <datalist> tag:- The <datalist> tag is used to provide autocomplete feature in the HTML files. 
+                         -It can be used with an input tag so that users can easily fill the data in the forms using select the data.
+
+      7. <details> tag:- The <details> tag is used for the content/information which is initially hidden but could be displayed if the user wishes to see it. 
+                        -This tag is used to create an interactive widget that the user can open or close. The content of the details tag is visible when opening the set attributes. 
+                        -The <summary> tag is used with the <detail>s tag for specifying visible heading.
+
+       8. <embed> tag:- The <embed> tag in HTML is used for embedding external applications which are generally multimedia content like audio or video into an HTML document. 
+                       -It is used as a container for embedding plug-ins such as flash animations. 
+                       -This tag is a new tag in HTML 5, and it requires only starting tag.
+
+      9. <figure> tag:- The <figure> tag in HTML is used to add self-contained content like illustrations, diagrams, photos, or codes listing in a document. 
+                       -It is related to the main flow, but it can be used in any position of a document and the figure goes with the flow of the document and if remove it then it should not affect the flow of the document. 
+                       -This tag is new in HTML5.
+
+     10. <footer> tag:- The <footer> tag in HTML is used to define a footer of HTML document. This section contains the footer information (author information, copyright information, carriers, etc). 
+                       -The footer tag is used within the body tag. The <footer> tag is new in the HTML5. The footer elements require a start tag as well as an end tag.
+
+     11. <header> tag:- The <header> tag contains information related to the title and heading of the related content. 
+                       -The <header> element is intended to usually contain the section’s heading (an h1-h6 element or an <hgroup> element), but this is not required.The <header> element can also be used to wrap a section’s table of
+                        contents, a search form, or any relevant logos. 
+                       -The <header> tag is a new tag in HTML5 and it requires a starting tag as well as an end tag. 
+                       -There can be several <header> elements in one document. 
+                       -A <header> tag cannot be placed within a <footer>, <address> or another <header> element.
+
+     12. <hgroup> tag:- The <hgroup> tag in HTML stands for heading group and is used to group the heading elements. 
+                       -The <hgroup> tag in HTML is used to wrap one or more heading elements from <h1> to <h6>, such as the headings and sub-headings. 
+                       -The <hgroup> tag requires the starting tag as well as ending tag.
+
+     13. <keygen> tag:- The <keygen> tag in HTML is used to specify a key-pair generator field in a form. 
+                       -The purpose of the<keygen> element is to provide a secure way to authenticate users. 
+                       -When a form is submitted then two keys are generated, private key and public key. The private key is stored locally, and the public key is sent to the server. 
+                       -The public key is used to generate a client certificate to authenticate a user for the future.
+
+      14. <mark> tag:- The <mark> tag in HTML is used to define the marked text. 
+                      -It is used to highlight the part of the text in a paragraph. The <mark> tag is new in HTML5.
+
+     15. <meter> tag:- It is used to define the scale for measurement in a well-defined range and also supports a fractional value. 
+                      -It is also known as a gauge. It is used in Disk use, relevance query result, etc.
+
+       16. <nav> tag:- The <nav> tag is used for declaring the navigational section in HTML documents. 
+                      -Websites typically have sections dedicated to navigational links, which enables users to navigate the site. 
+                      -These links can be placed inside a nav tag. 
+                      -In other words, the nav element represents a section of the page whose purpose is to provide navigational links, either in the current document or to another document. 
+                      -The links in the nav element may point to other web pages or to different sections of the same webpage. It is a semantic element. 
+                      -Common examples of the nav elements are menus, tables, contents, and indexes.
+
+    17. <output> tag:- The <output> tag in HTML is used to represent the result of a calculation performed by the client-side script such as JavaScript. 
+                      -The <output> tag is a new tag in HTML5, and it requires a starting and ends tag.
+
+  18. <progress> tag:- It is used to represent the progress of a task. It is also defined how much work is done and how much is left to download a thing. 
+                      -It is not used to represent the disk space or relevant query.
+
+      19. <ruby> tag:- The <ruby> tag in HTML is used to specify the ruby annotation which is a small text, attached with the main text to specify the meaning of the main text. 
+                      -This kind of annotation is used in Japanese publications.
+
+   20. <section> tag:- The <section> tag defines the section of documents such as chapters, headers, footers, or any other sections. 
+                      -The section tag divides the content into sections and subsections. 
+                      -The section tag is used when requirements of two headers or footers or any other section of documents are needed. 
+                      -The <section> tag grouped the generic block of related contents. 
+                      -The main advantage of the section tag is, it is a semantic element, which describes its meaning to both browser and developer.
+
+      21. <time> tag:- The <time> tag is used to display the human-readable date/time. 
+                      -It can also be used to encode dates and times in a machine-readable form. 
+                      -The main advantage for users is that they can offer to add birthday reminders or scheduled events in their calendar’s and search engines can produce smarter search results.
+
+       22. <wbr> tag:- The <wbr> tag in HTML stands for word break opportunity and is used to define the position within the text which is treated as a line break by the browser. 
+                      -It is mostly used when the used word is too long and there are chances that the browser may break lines at the wrong place for fitting the text.
+
+     23. <video> tag:- The <video> tag is used to embed video content in a document, such as a movie clip or other video streams.
+
+
+(2). How to embed audio and video in a webpage?
+Ans.=> To embed audio and video in a webpage, you can use the `<audio>` and `<video>` tags introduced in HTML5. Here's how you can use them:
+
+    =>Embedding Audio:-
+          1. Prepare your audio file in a compatible format such as MP3, WAV, or OGG.
+          2. Place the audio file in the appropriate location on your web server.
+          3. Use the `<audio>` tag to embed the audio in your webpage. 
+             -> Here's an example:
+
+          ```html
+             <audio controls>
+                    <source src="path/to/audio-file.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+             </audio>
+          ```
+             -In the example above, the `src` attribute specifies the path to your audio file, and the `type` attribute specifies the MIME type of the audio file. 
+             -The content within the `<audio>` element serves as fallback content for browsers that do not support the `<audio>` tag.
+
+     =>Embedding Video:
+           1. Prepare your video file in a compatible format such as MP4, WebM, or OGG.
+           2. Place the video file in the appropriate location on your web server.
+           3. Use the `<video>` tag to embed the video in your webpage. 
+              -> Here's an example:
+
+           ```html
+              <video controls>
+                     <source src="path/to/video-file.mp4" type="video/mp4">
+                     Your browser does not support the video element.
+              </video>
+           ```
+            -Similar to the audio example, the `src` attribute specifies the path to your video file, and the `type` attribute specifies the MIME type of the video file. 
+            -The content within the `<video>` element serves as fallback content for browsers that do not support the `<video>` tag.
+
+            -The `controls` attribute in both examples adds playback controls (such as play, pause, and volume) to the audio and video elements. 
+            -You can also customize the appearance and behavior of the audio and video elements using CSS and JavaScript if needed.
+
+(3). Semantic element in HTML5? 
+Ans.=> A semantic element clearly describes its meaning to both the browser and the developer.
+      -Examples of non-semantic elements: <div> and <span> - Tells nothing about its content.
+      -Examples of semantic elements: <form>, <table>, and <article> - Clearly defines its content.
+      -Many web sites contain HTML code like: <div id="nav"> <div class="header"> <div id="footer"> to indicate navigation, header, and footer.
+
+      -In HTML there are some semantic elements that can be used to define different parts of a web page:-  
+
+                <article>
+                <aside>
+                <details>
+                <figcaption>
+                <figure>
+                <footer>
+                <header>
+                <main>
+                <mark>
+                <nav>
+                <section>
+                <summary>
+                <time>
+
+(4).  Canvas and SVG tags ?
+Ans.=> Canvas:- The HTML element is used to draw graphics on the fly, via scripting (usually JavaScript). The element is only a container for graphics. 
+               -You must use a script to actually draw the graphics. Canvas has several methods for drawing paths, boxes, circles, text, and adding images.
+
+    => SVG:- The Scalable Vector Graphics (SVG) is an XML-based image format that is used to define two-dimensional vector-based graphics for the web. 
+            -Unlike raster image (Ex .jpg, .gif, .png, etc.), a vector image can be scaled up or down to any extent without losing the image quality.
+            -An SVG image is drawn out using a series of statements that follow the XML schema — that means SVG images can be created and edited with any text editor, such as Notepad. 
+            -There are several other advantages of using SVG over other image formats like JPEG, GIF, PNG, etc.
+
+           -->Difference between SVG and HTML5 Canvas:-
+              
+                                     SVG	                                                                                             Canvas
+                    -Vector based (composed of shapes)	                                                                          -Raster based (composed of pixel)
+                    -SVG has better scalability. So it can be printed with high quality at any resolution.	                  -Canvas has poor scalability. Hence it is not suitable for printing on higher resolution.
+                    -SVG gives better performance with smaller number of objects or larger surface.	                          -Canvas gives better performance with smaller surface or larger number of objects.
+                    -SVG can be modified through script and CSS.	                                                          -Canvas can be modified through script only.
+                    -Multiple graphical elements, which become the part of the page’s DOM tree.	                                  -Single element similar to <img> in behavior. Canvas diagram can be saved to PNG or JPG format.
+
+
+
+
