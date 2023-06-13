@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h::before{
+            content: 1F60A;
+        }
+        h1::after{
+            content: 1F60A;
+        }
+        .mydiv{
+            height: auto;
+            width: 250px;
+            border: 2px solid purple;
+            padding: 15px;
+        }
+        .mydiv::first-line{
+            color: greenyellow;
+        }
+        .mydiv::first-letter{
+            font-size: 30px;
+        }
+        .mydiv::selection{
+            background-color: blue;
+            color: white;
+        }
+        li::marker{
+            color: coral;
+        }
+        input::placeholder{
+            color: blue;
+            font-size: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- psedo element used with class, id or element start with :: sign -->
+    <h1>Hello world</h1>
+    <div class="mydiv">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates ab quod perferendis numquam veritatis eaque, accusantium aliquid quo inventore placeat fugit omnis ullam natus vero quas! Officiis libero harum quasi.
+    </div>
+    <ul>
+        <li>List 1</li>
+        <li>List 2</li>
+    </ul>
+    <input type="text" placeholder="Enter Value">
+</body>
+</html>
