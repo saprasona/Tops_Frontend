@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mydiv{
+            height: 400px;
+            width: 500px;
+            border: 10px dashed blue;
+            padding: 20px;
+            background-image: url(images/wallpaper1.jpg);
+            background-position: center;
+            background-size:cover;
+
+            /* cover border area */
+            /* background-origin:border-box; */
+
+            /* cover only content area */
+            /* background-origin:content-box; */
+
+            /* default value */
+            background-origin:padding-box ;
+        }
+    </style>
+</head>
+<body>
+    <div class="mydiv"></div>
+</body>
+</html>
