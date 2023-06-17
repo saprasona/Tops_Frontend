@@ -1,0 +1,15 @@
+Position property used to set element on the webpage.
+
+(1) position static (default) 
+(2) position fixed
+(3) position sticky
+(4) position relative
+(5) position absolute
+
+There are some property are only work with position property.
+
+(1) Top
+(2) Left
+(3) Bottom
+(4) Right
+(5) Z-index
