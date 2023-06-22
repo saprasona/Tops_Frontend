@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 50%;
+            border: 2px solid blue;
+            display: flex;
+            flex-flow: row-reverse wrap;
+            /* flex-wrap: wrap-reverse;  =>overflow value break and send next line */
+            /* flex-direction: row-reverse; */
+        }
+        .div1,.div2,.div3{
+            height: 150px;
+            width: 50%;
+            color: white;
+            font-size: 30px;
+        }
+        .div1{
+            background-color: purple;
+        }
+        .div2{
+            background-color: brown;
+        }
+        .div3{
+            background-color:navy;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="div1">Div 1</div>
+        <div class="div2">Div 2</div>
+        <div class="div3">Div 3</div>
+    </div>
+</body>
+</html>
