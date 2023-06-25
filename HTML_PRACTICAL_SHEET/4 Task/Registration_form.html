@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body style=" margin: 50px; background-color: rgb(138, 50, 176); text-align: center;">
+
+    <fieldset style="width:100%">
+        <legend text-align = "center" style="font-size: 50px; font: bolder; font-family: 'Times New Roman', Times, serif;">Registration Details</legend>
+
+    <form style="margin: 20px; text-align:center; font-size: 30px; padding-top: 20px;">
+
+        <label for="university">University :</label>
+        <input type="text" id="university" name="university" style="height: 30px;
+        width: 500px; text-align: left;" required><br><br>
+
+        <label for="institute">Institute :</label>
+        <input type="text" id="institute" name="institute" style="height: 30px;
+        width: 500px; text-align: left;" required><br><br>
+
+        <label for="branch">Branch :</label>
+        <select name="branch" id="branch" style="font-size: 25px;">
+            <option value="0">---select---</option>
+            <option value="1">Surat</option>
+            <option value="2">Ahmedabad</option>
+            <option value="3">Vadodara</option>
+            <option value="4">Rajkot</option>
+            <option value="5">Vallabhvidhyanagr</option>
+        </select><br><br>
+
+        <label for="degree">Degree :</label>
+        <select name="degree" id="degree" style="font-size: 25px;">
+            <option value="0">---select---</option>
+            <option value="1">Pursuring</option>
+            <option value="2">Completed</option>
+        </select>
+        <input type="radio" name="degree" id="">
+        <label for="">Pursuring</label>
+        <input type="radio" name="degree" id="">
+        <label for="">Completed</label>
+        <br><br>
+
+        <label for="cpi">Average CPI :</label>
+        <input type="text" id="cpi" name="cpi" style="height: 30px;
+        width: 350px;" required>
+
+        <label for="upto">Upto</label>
+        <input type="text" id="upto" name="upto" style="height: 30px;
+        width: 350px;" required> TH Semester<br><br>
+
+        <label for="experience">Experience :</label>
+        <input type="text" id="experience" name="experience" style="height: 30px;
+        width: 350px;" required> Years<br><br>
+
+        <label for="website">Your Website or Blog :</label>
+        <input type="text" id="website" placeholder="http://www.google.com" style="font-size: 25px;" name="website" style="height: 30px;
+        width: 500px;" ><br><br>
+
+        <input type="submit" value="Register" style="color: white; background-color: brown;  height: 50px;
+        width: 150px; font-size: 20px; border: 2px solid black;">
+        
+    </form>
+</body>
+</html>
