@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+        }
+        .sub1,
+        .sub3,
+        .sub5,
+        .sub7,
+        .sub9{
+            height: 100px;
+            width: 100%;
+            background-color: blueviolet;
+        }
+        .sub2,
+        .sub4,
+        .sub6,
+        .sub8,
+        .sub10{
+            height: 100px;
+            width: 100%;
+            background-color: aqua;
+        }
+        .sub2{
+            width: 100%;
+            grid-column: 2 / span 2;
+            /* grid-column-start: 2;
+            grid-column-end: span 2; */
+        }
+        .sub5{
+            height: 100%;
+            grid-row: 2 / span 2;  /* short key */
+            /* grid-row-start: 2;
+            grid-row-end: span 2; */
+            /* align-self: center; => this work in only child class  */
+        }
+        /* 5th col in 1st row */
+        .sub4{
+            height: 100%;
+            grid-column: 5 / span 1;
+            grid-row: 1 / span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="sub1">div 1</div>
+        <div class="sub2">div 2</div>
+        <div class="sub3">div 3</div>
+        <div class="sub4">div 4</div>
+        <div class="sub5">div 5</div>
+        <div class="sub6">div 6</div>
+        <div class="sub7">div 7</div>
+        <div class="sub8">div 8</div>
+        <div class="sub9">div 9</div>
+        <div class="sub10">div 10</div>
+    </div>
+</body>
+</html>
