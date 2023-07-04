@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1::before {
+            content: "\1F606";
+        }
+
+        h1::after {
+            content: "\1F606";
+        }
+
+        .mydiv {
+            height: auto;
+            width: 250px;
+            border: 2px solid black;
+            padding: 15px;
+        }
+
+        .mydiv::first-line {
+            color: red;
+        }
+
+        .mydiv::first-letter {
+            font-size: 30px;
+        }
+
+        .mydiv::selection {
+            background-color: black;
+            color: white;
+        }
+
+        li::marker {
+            color: crimson;
+        }
+
+        input::placeholder {
+            color: black;
+            font-size: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- pseudo element used with class, id or element start with :: sign-->
+    <h1>Hello world</h1>
+    <div class="mydiv">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur doloribus necessitatibus magni adipisci
+        maxime eum incidunt soluta accusamus eius suscipit nam maiores odit laudantium atque mollitia ipsam, sunt minus
+        totam.
+    </div>
+    <ul>
+        <li>List 1</li>
+        <li>List 2</li>
+    </ul>
+    <input type="text" placeholder="Enter Value">
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1::after {
+            content: "";
+            height: 2px;
+            width: 100px;
+            background: linear-gradient(to left, blue, red, green);
+            display: inline-block;
+            margin: 7px 5px;
+        }
+
+        h1::before {
+            content: "";
+            height: 2px;
+            width: 100px;
+            background: linear-gradient(to right, blue, red, green);
+            display: inline-block;
+            margin: 7px 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello World</h1>
+</body>
+
+</html>

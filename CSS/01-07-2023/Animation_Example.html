@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 100px;
+        }
+
+        .div1,
+        .div2,
+        .div3 {
+            height: 50px;
+            width: 50px;
+            background-color: grey;
+            border-radius: 50%;
+        }
+
+        .div1 {
+            animation: ZoomDots 2s ease-in-out infinite alternate;
+        }
+
+        .div2 {
+            animation: ZoomDots 2s ease-in-out 3s infinite alternate backwards;
+        }
+
+        .div3 {
+            animation: ZoomDots 2s ease-in-out 5.5s infinite alternate backwards;
+        }
+
+        @keyframes ZoomDots {
+            0% {
+                transform: scale(0.5);
+            }
+
+            100% {
+                transform: scale(1.4);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+    </div>
+</body>
+
+</html>

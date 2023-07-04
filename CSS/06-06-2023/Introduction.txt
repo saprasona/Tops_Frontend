@@ -7,7 +7,7 @@ CSS => cascading stylesheet
 -> there are 3ways/types to add css on webpage.
 (1) inline => using style attribute.
 (2) internal => using <style> tag in <head>.
-(3) external => create an externa file using filename.
+(3) external => create an external file using filename.
     css and link with <link> tag html file.
 
     syntax:-

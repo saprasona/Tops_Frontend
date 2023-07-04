@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1 {
+            height: 100px;
+            width: 100px;
+            background-color: rgb(10, 82, 126);
+            margin: 30px auto;
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            animation-name: my_first_animation;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            /* animation-delay: 5s; */
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+            /* animation-fill-mode: both; */
+        }
+
+        /* to create an animation */
+        @keyframes my_first_animation {
+            from {
+                height: 100px;
+                width: 100px;
+            }
+
+            to {
+                height: 200px;
+                width: 200px;
+                border-radius: 30%;
+                transform: rotate(360deg) scale(1.2) translate(30px, 50px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1"></div>
+</body>
+
+</html>

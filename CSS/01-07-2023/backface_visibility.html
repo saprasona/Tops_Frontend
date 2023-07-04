@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1 {
+            height: 200px;
+            width: 200px;
+            background-color: rgba(103, 169, 37, 0.745);
+            transition: 1s all ease;
+
+            /* work when element flipping */
+            /* backface-visibility: visible; => default */
+            backface-visibility: hidden;
+        }
+
+        .div1:hover {
+            transform: rotateX(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        <h4>Div 1</h4>
+    </div>
+</body>
+
+</html>

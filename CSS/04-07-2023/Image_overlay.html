@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            height: 300px;
+            width: 300px;
+        }
+
+        /* overlay top and bottom */
+        .imageOverlay {
+            height: 300px;
+            width: 300px;
+            /* border: 2px solid blue; */
+            position: relative;
+            margin: 10px;
+        }
+
+        .imageOverlay .ImageContent {
+            position: absolute;
+            /* top: 0; */
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.739);
+            color: white;
+            overflow: hidden;
+            transition: 1s all ease-in;
+            text-align: center;
+        }
+
+        .imageOverlay:hover .ImageContent {
+            height: 50%;
+        }
+
+        /* overlay from left and right */
+        .imageOverlay1 {
+            height: 300px;
+            width: 300px;
+            position: relative;
+            margin: 10px;
+        }
+
+        .imageOverlay1 .ImageContent1 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            /* right: 0; */
+            height: 100%;
+            width: 0;
+            background-color: rgba(0, 0, 0, 0.739);
+            color: white;
+            overflow: hidden;
+            transition: 1s all ease-in;
+            text-align: center;
+        }
+
+        .imageOverlay1:hover .ImageContent1 {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- overlay from top and bottom -->
+    <div class="imageOverlay">
+        <img src="img2.jpeg" alt="">
+        <div class="ImageContent">
+            <h1>Hover Me</h1>
+            <p>Image 1</p>
+        </div>
+    </div>
+    <!-- overlay from left and right -->
+    <div class="imageOverlay1">
+        <img src="img2.jpeg" alt="">
+        <div class="ImageContent1">
+            <h1>Hover Me</h1>
+            <p>Image 1</p>
+        </div>
+    </div>
+</body>
+
+</html>
