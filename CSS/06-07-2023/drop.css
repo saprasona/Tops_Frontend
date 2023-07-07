@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.list {
+    background-color: purple;
+}
+
+.list ul {
+    display: flex;
+    gap: 20px;
+}
+
+.list ul li {
+    padding: 10px;
+}
+
+.list ul li a {
+    color: white;
+}
+
+.list .DropMenu {
+    position: relative;
+}
+
+.list .DropMenu .ShowMenu {
+    display: none;
+    position: absolute;
+    top: 39px;
+    background-color: palevioletred;
+    left: 0;
+    width: 100px;
+    height: auto;
+}
+
+.list .DropMenu .ShowMenu li {
+    padding: 5px;
+}
+
+.list .DropMenu:hover .ShowMenu {
+    display: block;
+}
+
+.list .DropMenu span {
+    font-size: 12px;
+    color: white;
+    transition: 0.5s ease all;
+}
+
+.list .DropMenu:hover span {
+    transform: rotateX(180deg);
+}
+
+.list .DropMenu .cube {
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background-color: palevioletred;
+    transform: rotate(45deg);
+    top: -7px;
+    left: 40px;
+}

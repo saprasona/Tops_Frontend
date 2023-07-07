@@ -7,12 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .mydiv {
+        body {
             height: 400px;
             width: 500px;
-            /* background-color: aliceblue; */
+            color: rgb(156, 83, 83);
+            margin: auto;
+            font-size: larger;
+            background-color: aliceblue;
 
-            /* background : image, repeat, position, attachment */
+            /* background : image, repeat, position, attachment; */
             /* background: url(image1.jpg) no-repeat center fixed; */
 
             background-image: url(image1.jpg);
@@ -28,25 +31,41 @@
 
             /* scroll = default, fixed */
             background-attachment: fixed;
+
+            /* background-origin:content-box; not supported */
+
+            /* background-clip: padding-box; not supported */
+
+            background-blend-mode: luminosity;
+            /* to apply effect on background image/color */
+
+
         }
     </style>
 </head>
 
 <body>
-    <div class="mydiv"></div>
-    <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque id, aspernatur corporis consequatur sapiente sint
-        sunt ipsum porro ullam repellat. Dignissimos debitis necessitatibus pariatur dolorem vero quis possimus dolore
-        ab.
-    </div>
-    <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia pariatur excepturi officia, odit temporibus
-        consequatur expedita corporis ipsam a eligendi. Et nemo non aliquam reiciendis aliquid velit maiores fugit
-        quisquam!
-    </div>
-    <div>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis placeat laudantium asperiores sunt aut
-        quos, unde neque porro obcaecati natus aspernatur et voluptas magni, eveniet, quisquam esse laborum quaerat qui.
+    <div class="mydiv">
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque id, aspernatur corporis consequatur sapiente
+            sint
+            sunt ipsum porro ullam repellat. Dignissimos debitis necessitatibus pariatur dolorem vero quis possimus
+            dolore
+            ab.
+        </div>
+        <br><br>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia pariatur excepturi officia, odit
+            temporibus
+            consequatur expedita corporis ipsam a eligendi. Et nemo non aliquam reiciendis aliquid velit maiores fugit
+            quisquam!
+        </div>
+        <br><br>
+        <div>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis placeat laudantium asperiores sunt aut
+            quos, unde neque porro obcaecati natus aspernatur et voluptas magni, eveniet, quisquam esse laborum quaerat
+            qui.
+        </div>
     </div>
 </body>
 
