@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            background-color: darkgreen;
+        }
+
+        /* create media query */
+        @media (max-width:576px) {
+            p {
+                background-color: cadetblue;
+            }
+        }
+
+        @media (min-width:576px) {
+            p {
+                background-color: chocolate;
+            }
+        }
+
+        @media (min-width:768px) {
+            p {
+                background-color: darkblue;
+                color: white;
+            }
+        }
+
+        @media (min-width:992px) {
+            p {
+                background-color: coral;
+            }
+        }
+
+        @media (min-width:1200px) {
+            p {
+                background-color: darkgreen;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- media query  
+    
+        mobile screen device     = max-width:576px 
+        max mobile device        = min-width:576px 
+        tablet screen device     = min-width:786px
+        mini leptop screen       = min-width:992px 
+        large leptop screen      = min-width:1140 = 1200px
+        extra large screen       = min-widh:1400px
+    -->
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quas asperiores voluptate sit a. Voluptas
+        ipsa, sed maiores in officiis et eum impedit soluta expedita. Corporis quam veniam libero unde!
+    </p>
+</body>
+
+</html>

@@ -1,56 +1,46 @@
+<!-- (2)Set image on particular position. -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Image position</title>
     <style>
-        img {
+        img{
             height: 300px;
             width: 300px;
         }
-
-        /* parent class */
-        .main {
+        .main{
             position: relative;
         }
-
-        /* child class */
-        .img1 {
+        .img1{
             position: absolute;
             top: 0;
             left: 0;
         }
-
-        .img2 {
+        .img2{
             position: absolute;
-            top: 70px;
+            top:70px;
             left: 70px;
         }
-
-        .img3 {
+        .img3{
             position: absolute;
             top: 180px;
             left: 180px;
         }
     </style>
 </head>
-
 <body>
-    <!-- position relative like a parent -->
-    <!-- position relative like a child -->
     <div class="main">
         <div class="img1">
-            <img src="images/wallpaper.jpg" alt="">
+            <img src="images/img1.jpg" alt="">
         </div>
         <div class="img2">
-            <img src="images/wallpaper1.jpg" alt="">
+            <img src="images/img2.jpg" alt="">
         </div>
         <div class="img3">
-            <img src="images/wallpaper2.png" alt="">
+            <img src="images/img3.jpg" alt="">
         </div>
     </div>
 </body>
-
 </html>

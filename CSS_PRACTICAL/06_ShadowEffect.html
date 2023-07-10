@@ -1,0 +1,45 @@
+<!-- (6)Create a shadow effect as follow : -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Effect</title>
+    <style>
+        .outer-border {
+            width: 300px;
+            height: 300px;
+            border: 2px solid black;
+            padding: 0px 0px 50px 10px;
+            color: white;
+            text-shadow: 4px 5px 6px black;
+            font-size: 18px;
+        }
+
+        .inner-border {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            color: black;
+            text-shadow: none;
+            box-shadow: 8px 8px 7px 1px black;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer-border">
+        <h1>Shadow Effect</h1>
+        <div class="inner-border">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime hic similique atque nostrum corrupti
+                doloribus
+                inventore, accusantium doloremque libero veniam veritatis autem vero labore beatae quas temporibus
+                perspiciatis
+                officia perferendis.</p>
+        </div>
+    </div>
+</body>
+
+</html>
