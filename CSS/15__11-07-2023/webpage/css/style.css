@@ -1,0 +1,166 @@
+/* ================== common css ====================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* margin */
+.container {
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.container-mar {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+/* padding */
+.padding-large {
+    padding: 60px 0px;
+}
+
+.padding-small {
+    padding: 20px 0px;
+}
+
+/* ======================= top header ========================= */
+.TopHeader {
+    background-color: #0d369f;
+}
+
+.TopHeader .topheader-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.TopHeader .topheader-flex a {
+    color: white;
+    transition: 0.5s ease all;
+}
+
+.TopHeader .topheader-flex a:hover {
+    color: #ff6e65
+}
+
+.TopHeader .topheader-flex span {
+    color: white;
+}
+
+.TopHeader .topheader-flex .contactus ul {
+    display: flex;
+    gap: 40px;
+}
+
+.TopHeader .topheader-flex .socialAc ul {
+    display: flex;
+    gap: 40px;
+}
+
+/* =============== header ==================== */
+header {
+    background-color: antiquewhite;
+}
+
+header .header-flex {
+    display: flex;
+    align-items: center;
+}
+
+header .header-flex .logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .header-flex .logo a {
+    color: #0d369f;
+    transition: 0.5s ease all;
+}
+
+header .header-flex .logo a:hover {
+    color: #ff6e65;
+}
+
+header .header-flex .nav {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+header .header-flex .nav ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .header-flex .nav ul li {
+    padding: 10px;
+}
+
+header .header-flex .nav ul li a {
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+header .header-flex .nav ul li a.active {
+    color: #ff6e65;
+}
+
+header .header-flex .nav ul li a:hover {
+    color: #ff6e65;
+}
+
+header .header-flex .nav input[type="text"] {
+    height: 40px;
+    width: 200px;
+    border-radius: 40px;
+    padding: 0px 10px;
+    border: 1px solid gray;
+}
+
+header .header-flex .nav input[type="text"]:focus-within {
+    outline: none;
+}
+
+header .header-flex .nav .searchForm {
+    position: relative;
+}
+
+header .header-flex .nav button {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    color: #0d369f;
+    cursor: pointer;
+}
+
+header .header-flex .nav button:hover {
+    color: #ff6e65;
+}
+
+header .header-flex .theme-icon {
+    flex: 0.2;
+}
+
+header .header-flex .theme-icon span {
+    font-size: 19px;
+    padding: 5px;
+}
