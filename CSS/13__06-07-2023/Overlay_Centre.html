@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .ImageOvelay {
+        .ImageOverlay {
             height: 400px;
             width: 400px;
             border: 2px solid blue;
@@ -19,7 +19,7 @@
             width: 400px;
         }
 
-        .ImageOvelay .ImageText {
+        .ImageOverlay .ImageText {
             position: absolute;
             top: 0;
             bottom: 0;
@@ -38,7 +38,7 @@
             border-radius: 50%;
         }
 
-        .ImageOvelay:hover .ImageText {
+        .ImageOverlay:hover .ImageText {
             transform: scale(1) rotate(360deg);
             border-radius: 0;
         }
@@ -50,7 +50,7 @@
             transition-delay: 2s;
         }
 
-        .ImageOvelay:hover .innerText {
+        .ImageOverlay:hover .innerText {
             transform: rotateX(0deg);
         }
     </style>
@@ -58,7 +58,7 @@
 
 <body>
     <!-- text delay overlay from center -->
-    <div class="ImageOvelay">
+    <div class="ImageOverlay">
         <img src="images/img1.jpeg" alt="">
         <div class="ImageText">
             <div class="innerText">

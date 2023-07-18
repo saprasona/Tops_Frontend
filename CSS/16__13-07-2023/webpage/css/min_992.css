@@ -1,0 +1,45 @@
+@media (min-width:992px) {
+    .container {
+        margin-left: 65px;
+        margin-right: 65px;
+    }
+
+    .TopHeader {
+        display: block;
+    }
+
+    /* ======================== header ============== */
+    header .header-flex .nav {
+        display: flex;
+    }
+
+    header .header-flex .theme-icon button {
+        display: none;
+    }
+
+    /* ============== homepage ======== */
+    .homepage .homepage-content {
+        width: 40%;
+        padding: 100px 0px;
+    }
+
+    .homepage .homepage-content h1 {
+        font-size: 48px;
+    }
+
+    /* ================ home text ==============*/
+    .homeText {
+        position: relative;
+    }
+
+    .homeText .homegrid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        position: absolute;
+        top: -55px;
+        left: 65px;
+        right: 65px;
+        z-index: 1;
+    }
+}

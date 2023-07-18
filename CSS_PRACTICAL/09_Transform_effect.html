@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform Effect</title>
+    <style>
+        .main{
+            margin: 100px 300px 0px 300px;
+            height: 50%;
+            width: 50%;
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: auto auto auto auto auto;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: repeat(4,1fr);
+            gap: 30px;
+            justify-items: center;
+            align-items: center; 
+        }
+        .img1{
+            border: 2px solid black;
+            box-shadow: inset -1px -1px 4px 1px darkgreen;
+            transition: 1s all ease;
+        }
+        .img1:hover{
+            transform: translate(-100px, -53px);
+        }
+        .img2{
+            border: 2px solid black;
+            box-shadow: inset -1px -1px 4px 1px darkgreen;
+            transition: 1s all ease;
+        }
+        .img2:hover{
+            transform: translateY(50px);
+        }
+        .img3{
+            border: 2px solid black;
+            box-shadow: inset -1px -1px 4px 1px darkgreen;
+            transition: 1s all ease;
+        }
+        .img3:hover{
+            transform: scaleX(1.2) scaleY(1.5) scaleZ(0.5);
+        }
+        .img4{
+            border: 2px solid black;
+            box-shadow: inset -1px -1px 4px 1px darkgreen;
+            transition: 1s all ease;
+        }
+        .img4:hover{
+            transform: rotate(360deg);
+        }
+        .img5{
+            border: 2px solid black;
+            box-shadow: inset -1px -1px 4px 1px darkgreen;
+            transition: 1s all ease;
+        }
+        .img5:hover{
+            transform: skew(30deg, -25deg);
+        }
+        .img6{
+            border: 2px solid black;
+            box-shadow: inset -1px -1px 4px 1px darkgreen;
+            transition: 1s all ease;
+        }
+        .img6:hover{
+            transform: translateY(-50px);
+        }
+        .img7{
+            border: 2px solid black;
+            box-shadow: inset -1px -1px 4px 1px darkgreen;
+            transition: 1s all ease;
+        }
+        .img7:hover{
+            transform: scale(0.5);
+        }
+        .img8{
+            border: 2px solid black;
+            box-shadow: inset -1px -1px 4px 1px darkgreen;
+            transition: 1s all ease;
+        }
+        .img8:hover{
+            transform: scale3d(1.5, 1.5, 1.5);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="img1">
+            <img src="images/image1.jpeg" alt="">
+        </div>
+        <div class="img2">
+            <img src="images/image2.jpeg" alt="">
+        </div>
+        <div class="img3">
+            <img src="images/image3.jpeg" alt="">
+        </div>
+        <div class="img4">
+            <img src="images/image4.jpeg" alt="">
+        </div>
+        <div class="img5">
+            <img src="images/image5.jpeg" alt="">
+        </div>
+        <div class="img6">
+            <img src="images/image6.jpeg" alt="">
+        </div>
+        <div class="img7">
+            <img src="images/image7.jpeg" alt="">
+        </div>
+        <div class="img8">
+            <img src="images/image8.jpeg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
