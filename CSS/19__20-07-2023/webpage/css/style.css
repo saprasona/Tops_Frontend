@@ -130,7 +130,7 @@ header .header-flex .nav {
 header .header-flex .nav ul {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 header .header-flex .nav ul li {
@@ -631,12 +631,13 @@ header .header-flex .theme-icon button {
 }
 
 .instructors .instruc_grid .ins-infor {
-    background-color: #053967;
+    border: 1px solid #cee1f2;
     padding: 15px;
     border-radius: 10px;
 }
 
 .instructors .instruc_grid .instr-det {
+    padding-top: 15px;
     text-align: center;
 }
 
@@ -647,13 +648,232 @@ header .header-flex .theme-icon button {
     overflow: hidden;
 }
 
+.instructors .instruc_grid .instr-image img {
+    height: auto;
+    max-width: 100%;
+}
+
 .instructors .instruc_grid .instr-image .contact-per {
     position: absolute;
-    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.438);
     width: 100%;
     height: 0;
+    transition: 0.5s all cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.instructors .instruc_grid .instr-image:hover .contact-per {
+    height: 20%;
+}
+
+.instructors .instruc_grid .instr-image .socialicon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.instructors .instruc_grid .instr-image .icon {
+    height: 35px;
+    width: 35px;
+    background-color: white;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+.instructors .instruc_grid .instr-image .icon a {
+    color: #0d369f;
+}
+
+/* contact */
+.contactus .contactFlex {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.contactus .contactus-p {
+    padding-top: 50px;
+    padding-bottom: 250px;
+}
+
+.contactus .contactFlex .contact-per {
+    flex: 1;
+    text-align: center;
+}
+
+.contactus .contactFlex .contact-per img {
+    height: auto;
+    max-width: 100%;
+}
+
+.contactus .contactFlex .contact-detail {
+    flex: 1;
+}
+
+.contactus .contactFlex .contact-detail h1 {
+    font-size: 37px;
+}
+
+.contactus .contactFlex .contact-detail p {
+    padding: 20px 0px;
+    color: gray;
+}
+
+.contactus .contactFlex .contact-detail .conct {
+    width: fit-content;
+    padding: 15px;
+    color: white;
+    background-color: #ff6e65;
+    border: 2px solid transparent;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: 0.3s ease all;
+}
+
+.contactus .contactFlex .contact-detail .conct:hover {
+    background-color: #0d369f;
+}
+
+/* subscribe */
+.subscribe {
+    position: relative;
+}
+
+.subscribe .sub-div {
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 60px;
+    position: absolute;
+    bottom: -45px;
+    left: 150px;
+    right: 150px;
+}
+
+.subscribe .sub-flex {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.subscribe .sub-flex h1 {
+    font-size: 40px;
+}
+
+.subscribe .sub-flex .emailform {
+    align-self: center;
+}
+
+.subscribe .sub-flex .emailform input[type="text"] {
+    height: 40px;
+    width: 100%;
+    padding: 3px 8px;
+    margin: 10px 0px;
+    border: 1px solid gray;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.subscribe .sub-flex .emailform input[type="text"]:focus-visible {
+    outline: none;
+}
+
+.subscribe .sub-flex .emailform button {
+    height: 40px;
+    width: 150px;
+    background-color: #0d369f;
+    border: 2px solid transparent;
+    color: white;
+    border-radius: 5px;
+}
+
+/* footer */
+footer {
+    background-color: #060e1f;
+}
+
+footer .footer-p {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+footer .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr 2fr;
+    gap: 20px;
+}
+
+footer .footer-grid h3 {
+    text-transform: uppercase;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gray;
+}
+
+footer .footer-grid ul {
+    padding-top: 10px;
+}
+
+footer .footer-grid ul li {
+    color: #bbb7b7;
+    line-height: 35px;
+}
+
+footer .footer-grid ul li a {
+    color: #bbb7b7;
+    text-transform: capitalize;
+    padding-left: 10px;
+}
+
+footer .footer-grid ul li a:hover {
+    color: white;
+}
+
+footer .footer-grid p {
+    color: #bbb7b7;
+    padding: 10px 0px;
+}
+
+footer .footer-grid .socialMedia {
+    display: flex;
+    gap: 15px;
+    padding: 20px 0px;
+}
+
+footer .footer-grid .socialMedia .icon {
+    height: 35px;
+    width: 35px;
+    background-color: rgba(255, 255, 255, 0.138);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+footer .footer-grid .socialMedia .icon a {
+    color: white;
+}
+
+footer .rightborder {
+    border-right: 1px solid #bbb7b7;
+    padding-right: 20px;
+}
+
+.bottomval {
+    background-color: #010611;
+}
+
+.bottomval p {
+    text-align: center;
+    padding: 20px;
+    color: white;
 }

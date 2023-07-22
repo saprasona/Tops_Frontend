@@ -1,0 +1,87 @@
+@media (min-width:992px) {
+    .container {
+        margin-left: 65px;
+        margin-right: 65px;
+    }
+
+    .TopHeader {
+        display: block;
+    }
+
+    .divider2 {
+        right: 33px;
+    }
+
+    /* ======================== header ============== */
+    header .header-flex .nav {
+        display: flex;
+    }
+
+    header .header-flex .theme-icon button {
+        display: none;
+    }
+
+    /* ============== homepage ======== */
+    .homepage .homepage-content {
+        width: 40%;
+        padding: 100px 0px;
+    }
+
+    .homepage .homepage-content h1 {
+        font-size: 48px;
+    }
+
+    /* ================ home text ==============*/
+    .homeText {
+        position: relative;
+    }
+
+    .homeText .homegrid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        position: absolute;
+        top: -55px;
+        left: 65px;
+        right: 65px;
+        z-index: 1;
+    }
+
+    /* ======= study section ========= */
+    .studies .studies-p {
+        padding: 180px 0px 0px 0px;
+    }
+
+    .studies .title h1 {
+        font-size: 35px;
+    }
+
+    .studies .studybox {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .studies .grid3 {
+        width: unset;
+        grid-row: unset;
+        grid-column: unset;
+        margin: unset;
+    }
+
+    /* ========= course data =========== */
+    .courseInfo .courseBox {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    /* ---- course details ---- */
+    .coursedetails .courseDetails-flex {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .instructors .instruc_grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

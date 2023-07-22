@@ -1,0 +1,29 @@
+@media (min-width:1200px) {
+    .container {
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+
+    /* ============== homepage ======== */
+    .homepage .homepage-content {
+        width: 38%;
+    }
+
+    .homepage .homepage-content h1 {
+        font-size: 60px;
+    }
+
+    /* ================ home text ==============*/
+    .homeText .homegrid {
+        left: 80px;
+        right: 80px;
+    }
+
+    .instructors .instruc_grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .contactus .contactFlex .contact-detail h1 {
+        font-size: 37px;
+    }
+}
