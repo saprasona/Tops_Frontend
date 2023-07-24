@@ -1,0 +1,88 @@
+/* ================== common css ====================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* margin */
+.container-mar {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+/* padding */
+.padding-small {
+    padding: 20px 0px;
+}
+.pb {
+    padding-bottom: 20px;
+}
+/* =======Layout========= */
+
+.LayoutInfo{
+ display: grid;
+ grid-template-columns: repeat(3,1fr);
+ gap: 30px;
+}
+.LayoutInfo .LayoutBoxData{
+    border: 1px solid gainsboro;
+    transition: 0.5s ease-in-out all;
+}
+.LayoutInfo .LayoutBoxData:hover{
+    box-shadow: 0px 0px 15px grey;
+    transform: translateY(-2px);
+}
+.LayoutInfo .LayoutBoxData .LayoutImage{
+    width: 100%;
+    position: relative;
+}
+.LayoutInfo .LayoutBoxData img{
+    height: auto;
+    width: 100%;
+}
+.LayoutInfo .LayoutBoxData .LayoutImage .button{
+    display: block;
+    gap: 10px;
+    position: absolute;
+}
+.LayoutInfo .LayoutBoxData .LayoutImage .info1{
+    height: 30px;
+    width: 70px;
+    font-size: 20px;
+    background-color: orchid;
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+    border-color: transparent ;
+}
+.LayoutInfo .LayoutBoxData .LayoutImage .info2{
+    height: 30px;
+    width: 70px;
+    font-size: 20px;
+    background-color: orchid;
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+    border-color: transparent;
+}
+.LayoutInfo .LayoutBoxData .bottomval span{
+    color: orchid;
+}
+.LayoutInfo .LayoutBoxData p{
+    color: gray;
+    line-height: 30px;
+    font-size: 25px;
+    justify-content:center;
+    text-align:justify;
+}
+.LayoutInfo .LayoutBoxData .LayoutData{
+    margin-bottom: 10px;
+}
+.LayoutInfo .LayoutBoxData .LayoutData span{
+    padding-left: 320px;
+    font-size: 12px;
+}
+.LayoutInfo .LayoutBoxData .LayoutImage .bottomval{
+    padding: 25px;
+}
