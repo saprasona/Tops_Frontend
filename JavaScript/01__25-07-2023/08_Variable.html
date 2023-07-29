@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- which has changed value.
+        which is a name of memory location
+
+        there are the three keyword used to create variable :
+        var , let and const 
+
+        valid name : myvar, MyVar, MYVAR, my_var, myvar1, myvar_1;
+        invalid : 1_myvar, 1myvar, my var
+    -->
+    <script>
+        // using var keyword we can redeclare and reassign value.
+        // var is global keyword.
+        var a = 10;
+        document.write(a  +"<br>")
+
+        var a = 45;
+        document.write(a + "<br>")
+
+        // let and const introduced from 2015. this are block keyword.
+        // using let keyword you can reassign the value but not redeclare.
+        let b = 23;
+        document.write(b + "<br>")
+
+        b =455;
+        document.write(b + "<br>")
+
+        // const means constant which has a fixed value.
+        // using const keyword we can not redeclare and reassign value
+        const pi = 3.14;
+        document.write(pi)
+
+        const pi1 = 45;
+        document.write(pi1)
+    </script>
+</body>
+</html>

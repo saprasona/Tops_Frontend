@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+    body{
+        background: radial-gradient(pink,white,pink,white);
+    }
+
+    .div1 {
+        margin: 300px 350px 350px 700px;
+        border: 2px solid black;
+        border-radius: 5px;
+        text-align: center;
+        align-items: center;
+        width: 20%;
+    }
+
+    h1::after {
+        content: "";
+        height: 2px;
+        width: 50px;
+        background-color: blue;
+        display: inline-block;
+        margin: 7px 5px;
+    }
+
+    h1::before {
+        content: "";
+        height: 2px;
+        width: 50px;
+        background-color: blue;
+        display: inline-block;
+        margin: 7px 5px;
+    }
+
+    input {
+        text-align: left;
+        border-radius: 5px;
+        width: 300px;
+        height: 30px;
+        margin: 10px;
+    }
+
+    button {
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+        height: 35px;
+        width: 100px;
+        color: white;
+        background-color: blue;
+        font-size: 15px;
+        margin: 10px 0px 30px 210px;
+    }
+</style>
+
+<body>
+    <div class="div1">
+        <h1>Login</h1>
+        <input type="text" placeholder="Enter Email">
+        <input type="text" placeholder="Enter Password">
+        <button>Login <i class="fa-sharp fa-solid fa-forward"></i></button>
+    </div>
+</body>
+
+</html>

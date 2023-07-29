@@ -60,6 +60,7 @@ a {
 header {
     background-color: wheat;
     position: sticky;
+    z-index: 1111;
     top: 0;
     bottom: 0;
     right: 0;
@@ -212,6 +213,12 @@ header .header-flex .theme-icon button {
 }
 
 /* ======== homegallery ======= */
+.homegallery .ImageData{
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    justify-content: center;
+}
 
 .homegallery .ImageData .images img {
     height: 200px;
@@ -242,4 +249,19 @@ header .header-flex .theme-icon button {
 }
 .ImageData h3:hover a{
     color: #f9351b;
+}
+/* =====course info==== */
+
+.courseInfo{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    background-color: #f7f7f9;
+}
+.courseInfo .courseBoxData{
+    
+    align-items: center;
+}
+.courseInfo .courseBoxData .courseImage img{
+    width: 500px;
+    height: 300px;
 }

@@ -1,0 +1,186 @@
+* {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: orchid;
+    text-decoration: none;
+}
+
+.container {
+    padding: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.padding {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.bg {
+    background-color: white;
+}
+
+/* ====header==== */
+
+header {
+    text-align: left;
+    text-transform: uppercase;
+    display: block;
+}
+
+header .divide {
+    color: grey;
+    size: 2px;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+/* =========AddressInfo======== */
+
+.AddressData {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    line-height: 25px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    padding: 30px;
+    align-items: center;
+}
+
+.AddressData .AddressInfo a {
+    font-size: 22px;
+    color: black;
+}
+
+.AddressData .AddressInfo Address {
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.AddressData .Contact {
+    padding-top: 35px;
+}
+
+.AddressData .Contact span {
+    font-size: 22px;
+    color: crimson;
+    line-height: 25px;
+}
+
+.AddressData .Contact span a {
+    color: crimson;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.AddressData .Contact .mailInfo span {
+    color: lightseagreen;
+    font-size: 22px;
+}
+
+.AddressData .Contact .mailInfo span a {
+    color: lightseagreen;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.AddressData .Location {
+    padding-top: 35px;
+}
+
+.AddressData .Location span {
+    font-size: 40px;
+    color: crimson;
+}
+
+/* ====== Form Informaton===== */
+.Form{
+    display: flex;
+    gap: 50px;
+   
+}
+.FormData {
+    padding-top: 20px;
+    border: 2px solid transparent;
+}
+
+.FormData .FormData1 .FormInfo {
+    width: 100px;
+    border-radius: 5px;
+    width: 50%;
+    padding: 10px;
+}
+
+.FormData .FormInfo input {
+   background-color: white;
+    font-size: 20px;
+    text-align: left;
+    padding: 10px;
+    border-radius: 5px;
+    color: grey;
+    width: 380px;
+}
+
+.FormData .FormData1 {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.FormData .FormData3 {
+    margin-left: 30px;
+}
+.FormData .FormData3 textarea{
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 96.2%;
+    height: 120px;
+}
+
+.FormData .button-send {
+    padding: 30px;
+}
+
+.FormData .button-send button {
+    background-color: crimson;
+    cursor: pointer;
+    font-size: 22px;
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    color: #e9e1e1;
+    border: transparent;
+}
+.FormData .button-send:hover button{
+    background-color: tomato;
+}
+/* ======Google map====== */
+
+.google-map{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: white;
+}
+.google-map iframe{
+    width: 750px;
+    height: 500px;
+    background-color: white;
+}
+/* ====social====== */
+
+.Social{
+ padding-bottom: 20px;
+}
+.Social .ImageData .ImageInfo{
+    display: flex;
+    gap:10px;
+    margin-left: 52.3%;
+}
+.Social img{
+    height: 40px;
+    width: 40px;
+}
