@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        Enter Any Value : <input type="text" name="" id="userVal">
+        <button onclick="return UserInput()">Click</button>
+
+        <h3>Entered Value is : <span id="msg"></span></h3>
+    </form>
+
+    <script>
+        function UserInput() {
+            let userinp = document.getElementById("userVal").value;
+            document.getElementById("msg").innerText = userinp;
+            return false;
+        }
+    </script>
+</body>
+
+</html>

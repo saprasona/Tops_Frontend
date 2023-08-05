@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(36, 204, 36);
+        align-items: center;
+    }
+
+    .mydiv {
+        margin-top: 80px;
+    }
+
+    .mydiv .form {
+        margin: auto;
+        text-align: center;
+        align-items: center;
+        height: 840px;
+        width: 700px;
+        background-color: white;
+        border: 2px solid transparent;
+    }
+
+    .mydiv .form h1 {
+        font-size: 35px;
+    }
+
+    .mydiv .form label {
+        font-size: 22px;
+        align-items: left;
+
+    }
+
+    .mydiv .form input {
+        font-size: 16px;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    select {
+        font-size: 16px;
+        padding: 10px;
+        margin-left: 50px;
+        margin: 10px;
+        border-radius: 10px;
+        width: 200px;
+    }
+
+    button {
+        border: none;
+        margin: 30px;
+        color: white;
+        background-color: blue;
+        border-radius: 10px;
+        font-size: 18px;
+        width: 400px;
+        height: 35px;
+    }
+</style>
+
+<body>
+    <div class="mydiv">
+        <div class="form">
+            <h1>Registration for job</h1>
+
+            <label for="">First Name</label>
+            <input type="text" name="first name" id="first name" placeholder="Enter First Name"><br>
+
+            <label for="">Middle Name</label>
+            <input type="text" name="middle name" id="middle name" placeholder="Enter Middle Name"><br>
+
+            <label for="">Last Name</label>
+            <input type="text" name="last name" id="last name" placeholder="Enter Last Name"><br>
+
+            <label for="">Address</label>
+            <input type="text" name="address" id="address" placeholder="Enter Address"><br>
+
+            <label for="">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required><br>
+
+            <label for="">Gender</label>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" required>
+            <label for="female">Female</label><br>
+
+            <label for="">Experiance</label>
+            <select id="experience" name="experience" required>
+                <option value="" disabled selected>----Select----</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select> <br>
+
+            <label for="">Mobile No</label>
+            <input type="mobile no" name="mobile no" id="mobile no" placeholder="Enter Mobile No"><br>
+
+            <label for="">Email id</label>
+            <input type="text" name="email" id="email" placeholder="Enter Email"><br>
+
+            <label for="">Create Password</label>
+            <input type="text" name="password" id="password" placeholder="Enter Password"><br>
+            <input type="checkbox" id="passwordToggle">
+            <label for="passwordToggle">Show Password</label><br>
+
+            <button>Register</button>
+        </div>
+    </div>
+</body>
+
+</html>

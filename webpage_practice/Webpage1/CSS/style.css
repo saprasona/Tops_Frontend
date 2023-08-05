@@ -135,7 +135,7 @@ header .header-flex .nav button {
 }
 
 header .header-flex .nav .theme-icon {
-    flex: 0.5;
+    flex: 0.2;
     display: flex;
     justify-content: end;
     gap: 10px;

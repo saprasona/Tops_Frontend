@@ -1,0 +1,8 @@
+functions are used to add or remove value from webpage. 
+
+(1) add() => used to add value on webpage.
+(2) remove() => used to remove value from webpage 
+(3) toggle() => add and remove both 
+(4) contains() => checke the value 
+
+there is [classList] property used to add or remove class from webpage.

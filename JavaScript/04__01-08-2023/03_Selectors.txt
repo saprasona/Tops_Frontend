@@ -1,0 +1,16 @@
+in js the selectors are : 
+(1) getElementById()
+(2) querySelector()
+
+(3) getElementByClassName()
+(4) getElementByName() 
+(5) querySelectorAll()
+(6) getElementByTagName()
+
+there are 2 properties are used to print value on document : 
+(1) innerText 
+(2) innerHTML
+
+
+if we use function then it written in whole page i.e. <head> or <body> 
+if we use direct code then it written always end of the body.
