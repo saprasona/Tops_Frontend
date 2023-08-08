@@ -61,6 +61,7 @@ header .divide {
 
 .AddressData .Contact {
     padding-top: 35px;
+    padding-left: 150px;
 }
 
 .AddressData .Contact span {
@@ -88,6 +89,7 @@ header .divide {
 
 .AddressData .Location {
     padding-top: 35px;
+    padding-left: 300px;
 }
 
 .AddressData .Location span {
@@ -114,6 +116,7 @@ header .divide {
 }
 
 .FormData .FormInfo input {
+    border: 1px solid grey;
    background-color: white;
     font-size: 20px;
     text-align: left;
@@ -166,7 +169,7 @@ header .divide {
     background-color: white;
 }
 .google-map iframe{
-    width: 750px;
+    width: 830px;
     height: 500px;
     background-color: white;
 }

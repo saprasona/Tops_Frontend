@@ -55,6 +55,9 @@ a {
 .padding-small {
     padding: 20px 0px;
 }
+.pb {
+    padding-bottom: 30px;
+}
 
 /* ============ header ============= */
 header {
@@ -64,7 +67,7 @@ header {
     top: 0;
     bottom: 0;
     right: 0;
-    left: 0;   
+    left: 0;
 }
 
 header .header-flex {
@@ -164,6 +167,7 @@ header .header-flex .theme-icon button {
     width: 100%;
     filter: brightness(1.2);
 }
+
 .homepage::after {
     content: "";
     position: absolute;
@@ -208,12 +212,13 @@ header .header-flex .theme-icon button {
     cursor: pointer;
     transition: 0.5s ease all;
 }
-.homepage .homepage-content:hover button{
+
+.homepage .homepage-content:hover button {
     background-color: #f64f39;
 }
 
 /* ======== homegallery ======= */
-.homegallery .ImageData{
+.homegallery .ImageData {
     display: flex;
     gap: 20px;
     text-align: center;
@@ -237,8 +242,9 @@ header .header-flex .theme-icon button {
 .homegallery .ImageData .images:hover img {
     transform: scale(1.1);
 }
-.homegallery .ImageData h3 a{
-    color: black;  
+
+.homegallery .ImageData h3 a {
+    color: black;
     cursor: pointer;
     font-size: 18px;
     transition: 0.3s ease all;
@@ -247,21 +253,179 @@ header .header-flex .theme-icon button {
     display: block;
     text-align: left;
 }
-.ImageData h3:hover a{
+
+.ImageData h3:hover a {
     color: #f9351b;
 }
+
 /* =====course info==== */
 
-.courseInfo{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+.courseInfo {
+    position: relative;
     background-color: #f7f7f9;
 }
-.courseInfo .courseBoxData{
-    
-    align-items: center;
+
+.courseInfo .courseBox {
+    display: flex;
+    gap: 20px;
 }
-.courseInfo .courseBoxData .courseImage img{
-    width: 500px;
+
+.courseInfo .courseBoxData {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.courseInfo .courseBoxData .courseImage img {
+    width: 600px;
     height: 300px;
+    border-radius: 10px;
+    filter: brightness(0.5);
+}
+
+.courseval {
+    position: absolute;
+}
+
+.courseInfo .courseval h1 {
+    font-size: 30px;
+    color: #fff;
+    margin-left: 50px;
+}
+
+.courseInfo .courseval button {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-left: 50px;
+    padding: 15px;
+    width: 220px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid white;
+    color: #fff;
+}
+
+.courseInfo .courseval button span {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+/* ======== propertyInfo1 ========*/
+.PropertyInfo1 {
+    position: relative;
+}
+
+.PropertyData {
+    display: flex;
+    gap: 20px;
+}
+
+.PropertyInfo1 .Property {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.PropertyInfo1 .Property .PropertyImage img {
+    width: 600px;
+    height: 400px;
+    border-radius: 5px;
+    filter: brightness(0.5);
+}
+
+.plybtn {
+    position: absolute;
+    color: #f9351b;
+    font-size: 35px;
+    margin-left: 280px;
+}
+
+.PropertyData .PropertyVal h4 {
+    text-transform: uppercase;
+    color: grey;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.PropertyData .PropertyVal h1{
+    text-transform: capitalize;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+.PropertyData .PropertyVal p{
+    font-size: 18px;
+    line-height: 30px;
+    color: grey;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+.PropertyData .PropertyVal button{
+    font-size: 17px;
+    font-weight: 600;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background-color: #f9351b;
+}
+.PropertyData .PropertyVal button span{
+    margin-left: 10px;
+    font-size: 14px;
+}
+/* ======PropertyInfo2======== */
+.PropertyInfo2 {
+    position: relative;
+}
+
+.PropertyData2 {
+    display: flex;
+    gap: 50px;
+}
+
+.PropertyInfo2 .Property2 {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.PropertyInfo2 .Property2 .PropertyImage2 img {
+    width: 600px;
+    height: 400px;
+    border-radius: 5px;
+}
+
+.PropertyData2 .PropertyVal2 h4 {
+    text-transform: uppercase;
+    color: grey;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.PropertyData2 .PropertyVal2 h1{
+    text-transform: capitalize;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+.PropertyData2 .PropertyVal2 p{
+    font-size: 18px;
+    line-height: 30px;
+    color: grey;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+.PropertyData2 .PropertyVal2 button{
+    font-size: 17px;
+    font-weight: 600;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background-color: #f9351b;
+}
+.PropertyData2 .PropertyVal2 button span{
+    margin-left: 10px;
+    font-size: 14px;
 }
