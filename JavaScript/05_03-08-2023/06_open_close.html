@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="openfun()">Open</button>
+    <button onclick="closefun()">Close</button>
+
+    <script>
+        // open use to open any website forcefully 
+        var openlink = "https://github.com/"
+        var closelink
+        function openfun() {
+            closelink = window.open(openlink, "_blank")
+        }
+        function closefun() {
+            closelink.window.close()
+        }
+    </script>
+</body>
+
+</html>

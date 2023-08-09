@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mydiv {
+            height: 150px;
+            width: 150px;
+            background-color: teal;
+            color: white;
+            font-size: 40px;
+            display: grid;
+            place-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mydiv">
+        <div id="counting"></div>
+    </div>
+
+    <script>
+        let count = setInterval(updatecount, 240)
+        let start = 100;
+        function updatecount() {
+            let div = document.getElementById("counting");
+            div.innerHTML = ++start;
+            if (start == 300) {
+                clearInterval(count)
+            }
+        }
+    </script>
+</body>
+
+</html>

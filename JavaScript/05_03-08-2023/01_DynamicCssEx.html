@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .changeDiv {
+            height: auto;
+            width: 250px;
+            border: 2px solid blue;
+            background-color: lightblue;
+            color: red;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="return changeCSS()">Add Css</button>
+    <button onclick="return removeCSS()">Remove CSS</button>
+    <div class="div1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque fugiat aliquid illo quod? Iste iure eius totam
+        fugiat, eligendi inventore? Atque unde quas, soluta corrupti minus aperiam! Quam, in facere.
+    </div>
+
+    <script>
+        function changeCSS() {
+            let div = document.querySelector(".div1")
+            div.classList.add("changeDiv")
+            // div.classList.toggle("changeDiv")
+        }
+        function removeCSS() {
+            let div = document.querySelector(".div1")
+            div.classList.remove("changeDiv")
+        }
+    </script>
+</body>
+
+</html>

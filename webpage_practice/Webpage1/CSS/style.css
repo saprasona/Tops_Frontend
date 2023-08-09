@@ -55,6 +55,7 @@ a {
 .padding-small {
     padding: 20px 0px;
 }
+
 .pb {
     padding-bottom: 30px;
 }
@@ -276,11 +277,23 @@ header .header-flex .theme-icon button {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.courseInfo .courseBoxData .courseImage img {
+.courseInfo .courseBox .courseBoxData .courseImage img {
     width: 600px;
     height: 300px;
-    border-radius: 10px;
     filter: brightness(0.5);
+    transition: 0.3s ease-in-out all;
+}
+
+.courseInfo .courseBox .courseBoxData .courseImage:hover img {
+    transform: scale(1.1);
+}
+
+.courseInfo .courseBox .courseBoxData .courseImage {
+    width: 600px;
+    height: 300px;
+    border: 2px solid transparent;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .courseval {
@@ -305,7 +318,9 @@ header .header-flex .theme-icon button {
     border: 1px solid white;
     color: #fff;
 }
-
+.courseInfo .courseval:hover button{
+    background-color: #f9351b;
+}
 .courseInfo .courseval button span {
     margin-left: 10px;
     font-size: 14px;
@@ -347,19 +362,22 @@ header .header-flex .theme-icon button {
     font-weight: 500;
     margin-bottom: 10px;
 }
-.PropertyData .PropertyVal h1{
+
+.PropertyData .PropertyVal h1 {
     text-transform: capitalize;
     font-size: 38px;
     margin-bottom: 10px;
 }
-.PropertyData .PropertyVal p{
+
+.PropertyData .PropertyVal p {
     font-size: 18px;
     line-height: 30px;
     color: grey;
     margin-bottom: 30px;
     font-weight: 400;
 }
-.PropertyData .PropertyVal button{
+
+.PropertyData .PropertyVal button {
     font-size: 17px;
     font-weight: 600;
     padding: 10px;
@@ -370,10 +388,12 @@ header .header-flex .theme-icon button {
     color: #fff;
     background-color: #f9351b;
 }
-.PropertyData .PropertyVal button span{
+
+.PropertyData .PropertyVal button span {
     margin-left: 10px;
     font-size: 14px;
 }
+
 /* ======PropertyInfo2======== */
 .PropertyInfo2 {
     position: relative;
@@ -402,19 +422,22 @@ header .header-flex .theme-icon button {
     font-weight: 500;
     margin-bottom: 10px;
 }
-.PropertyData2 .PropertyVal2 h1{
+
+.PropertyData2 .PropertyVal2 h1 {
     text-transform: capitalize;
     font-size: 38px;
     margin-bottom: 10px;
 }
-.PropertyData2 .PropertyVal2 p{
+
+.PropertyData2 .PropertyVal2 p {
     font-size: 18px;
     line-height: 30px;
     color: grey;
     margin-bottom: 30px;
     font-weight: 400;
 }
-.PropertyData2 .PropertyVal2 button{
+
+.PropertyData2 .PropertyVal2 button {
     font-size: 17px;
     font-weight: 600;
     padding: 10px;
@@ -425,7 +448,12 @@ header .header-flex .theme-icon button {
     color: #fff;
     background-color: #f9351b;
 }
-.PropertyData2 .PropertyVal2 button span{
+
+.PropertyData2 .PropertyVal2 button span {
     margin-left: 10px;
     font-size: 14px;
+}
+/* ======= property details ======== */
+.PropertyDetails{
+    
 }

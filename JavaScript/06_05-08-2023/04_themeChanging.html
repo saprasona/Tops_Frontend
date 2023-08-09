@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        span {
+            font-size: 40px;
+        }
+
+        .darkTheme {
+            background-color: #101010;
+            color: white;
+        }
+
+        .darkTheme a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="icon">
+        <span class="fa-regular fa-moon"></span>
+        <!-- <i class="fa-regular fa-sun"></i> -->
+    </div>
+    <h1>Hello world <a href="">Good Morning</a></h1>
+
+    <script>
+        let icon = document.querySelector(".fa-moon");
+        icon.addEventListener("click", function () {
+            document.body.classList.toggle("darkTheme")
+
+            if (document.body.classList.contains("darkTheme") == true) {
+                icon.classList.remove("fa-moon")
+                icon.classList.add("fa-sun")
+            } else {
+                icon.classList.remove("fa-sun")
+                icon.classList.add("fa-moon")
+            }
+        })
+    </script>
+</body>
+
+</html>
