@@ -1,0 +1,19 @@
+name validation =>
+    (1) number not allowed   (2) mininum length  (3) max length is optional 
+
+number validation => 
+    (1) alphabet not allowed (2) special character not allowed (3) mininum length (4) max length complusory 
+
+email validation => 
+    (1) @ and dot complusory 
+
+password validation => 
+    (1) compare password (2) show password (3) strong password validation (as per required) 
+
+radio button => select complusory 
+checkbox validation => select checkbox 
+dropdown = select menu 
+
+regular expression => some special characters to match pattern (it is like command symbol) 
+
+events => click, blur(when element lost focus), keyboard event 

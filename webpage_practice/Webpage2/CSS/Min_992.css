@@ -1,0 +1,21 @@
+@media (min-width:992px) {
+    .container {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+/* =====header==== */
+header .header-flex .logo span{
+   padding-right: 10px;
+}
+header .header-flex .nav{
+    display: none;
+}
+header .header-flex .theme-icon button{
+    display: block;
+    top: 13px;
+    right: -27px;
+}
+header .header-flex .theme-icon{
+    right: 46px;
+}
+}

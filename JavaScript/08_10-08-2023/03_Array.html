@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- array is a name of memory location or it is collection of similer type of data. -->
+
+    <script>
+        var myarr = ["book", "pen", "pencil", "erasor", "textbook"]
+        console.log(myarr);
+        document.write(myarr)
+
+        // single array print 
+        console.log(myarr[0]);
+        console.log("==========================");
+        // use loop to print an array 
+        let arr;
+        for (arr of myarr) {
+            console.log(arr);
+        }
+        // pop method = remove value from array
+        myarr.pop()
+        console.log(myarr);
+
+        // push method = add value in array 
+        myarr.push("sharpner")
+        console.log(myarr);
+    </script>
+</body>
+
+</html>

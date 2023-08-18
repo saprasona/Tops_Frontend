@@ -366,10 +366,6 @@ header .header-flex .theme-icon button {
     text-transform: capitalize;
 }
 
-.courseInfo .title h1 span {
-    color: #ff6e65;
-}
-
 .courseInfo .courseBox {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

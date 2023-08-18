@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="regpage">
+        <h2>New User</h2>
+        <form action="#">
+            <!-- firstname -->
+            <div class="row">
+                <div class="col">First name</div>
+                <div class="col">
+                    <input type="text" id="fname" onblur="return blnkCheck(this, 'msg1')"
+                        onkeyup="return nameValid(this, 'msg1')">
+                </div>
+                <div class="col">
+                    <span id="msg1" class="msg"></span>
+                </div>
+            </div>
+            <!-- lastname -->
+            <div class="row">
+                <div class="col">Last name</div>
+                <div class="col">
+                    <!-- this is reference varible. check current value -->
+                    <input type="text" id="lname" onblur="return blnkCheck(this, 'msg2')"
+                        onkeyup="return nameValid(this, 'msg2')">
+                </div>
+                <div class="col">
+                    <span id="msg2" class="msg"></span>
+                </div>
+            </div>
+            <!-- gender -->
+            <div class="row">
+                <div class="col">Gender</div>
+                <div class="col">
+                    <input type="radio" name="gen" id="male" onblur="return checkradio(this, 'msg3')">
+                    <label for="">Male</label>
+                    <input type="radio" name="gen" id="female" onblur="return checkradio(this, 'msg3')">
+                    <label for="">Female</label>
+                </div>
+                <div class="col">
+                    <span id="msg3" class="msg"></span>
+                </div>
+            </div>
+            <!-- address -->
+            <div class="row">
+                <div class="col">Address</div>
+                <div class="col">
+                    <textarea name="" id="addr" cols="33" rows="3" onblur="return blnkCheck(this, 'msg4')"
+                        onkeyup="return checkAddress(this, 'msg4')" maxlength="200"
+                        placeholder="Enter 30 atleast character"></textarea>
+                </div>
+                <div class="col">
+                    <span id="msg4" class="msg"></span>
+                </div>
+            </div>
+            <!-- city -->
+            <div class="row">
+                <div class="col">City</div>
+                <div class="col">
+                    <select name="" id="city" onblur="return dropcheck(this, 'msg5')">
+                        <option value="-1">---select---</option>
+                        <option value="">Surat</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <span id="msg5" class="msg"></span>
+                </div>
+            </div>
+            <!-- submit button -->
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    <button type="submit" onclick="return checkFormValid()">Submit</button>
+                </div>
+                <div class="col"></div>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

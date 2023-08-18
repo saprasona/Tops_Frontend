@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <table>
+            <tr>
+                <td>Enter Name : </td>
+                <td>
+                    <input type="text" placeholder="Enter name" id="username" onblur="return nameCheck()"
+                        onkeyup="return nameValid()" maxlength="25">
+                </td>
+                <td>
+                    <span id="msg"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <button onclick="return nameCheck()">Click</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        // click & blur event 
+        function nameCheck() {
+            let uname = document.getElementById("username").value;
+            if (uname == "" || uname == null) {
+                // alert("Enter name")
+                document.getElementById("msg").innerText = "Enter Name"
+                return false;
+            }
+        }
+        // keyboard Event 
+        // => // scope 
+        // [] => area to check expression 
+        // ^ => check starting value 
+        // *$ | +$ => check value till end
+        // test() or match() => match pattern 
+        function nameValid() {
+            let uname = document.getElementById("username").value;
+            let regEx = /^[a-zA-Z]*$/;
+            if (!(regEx.test(uname)) || uname.length < 2) {
+                document.getElementById("msg").innerText = "Enter proper name"
+                return false;
+            } else {
+                document.getElementById("msg").innerText = ""
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
