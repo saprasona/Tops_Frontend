@@ -21,7 +21,7 @@ function calculate() {
     g = parseFloat(marks7.value);
     total = parseFloat(marks1) + parseFloat(marks2) + parseFloat(marks3) + parseFloat(marks4) + parseFloat(marks5) + parseFloat(marks6) + parseFloat(marks7);
 
-    if (a > 50 || b > 50 || c > 50 || d > 50 || e > 50 || f > 50 || g > 50) {
+    if (marks1 > 50 || marks2 > 50 || marks3 > 50 || marks4 > 50 || marks5 > 50 || marks6 > 50 || marks7 > 50) {
         alert("please enter correct value");
     }
     else {
