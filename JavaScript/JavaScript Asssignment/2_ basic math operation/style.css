@@ -1,0 +1,57 @@
+body {
+    border: 2px solid black;
+    margin: 100px 350px 250px 250px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 50px;
+    padding-bottom: 20px;
+}
+
+h4 {
+    font-size: 25px;
+}
+
+.calculator {
+    padding: 20px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+input {
+    margin: 20px 10px 2px 120px;
+    padding: 5px;
+    width: 350px;
+    font-size: 18px;
+}
+
+.buttons {
+    display: flex;
+    gap: 150px;
+}
+
+button {
+    width: 70px;
+    font-weight: 600;
+    background-color: rgb(214, 210, 210);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.Result {
+    margin-top: 15px;
+}
+
+#output {
+    color: blue;
+    font-weight: bold;
+    font-size: 20px;
+}
