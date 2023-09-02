@@ -1,0 +1,16 @@
+traversing means move through.
+
+show like parent child relation
+
+topics : 
+(1) ancestor : (parent)
+    parent(), parents(), parentUntil()
+
+(2) decendent : (child)
+    find(), children()
+
+(3) siblings : (similler)
+    siblings(), next(), nextAll(), nextUntil(), prev(), prevAll(), prevUntil()
+
+(4) filter : (searching)
+    filter(), first(), last(), eq(), not()

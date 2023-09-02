@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 10px;
+        }
+
+        button {
+            background-color: purple;
+            color: white;
+            height: 40px;
+            width: 150px;
+            padding: 5px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .div1 {
+            border: 2px solid purple;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">Wrap</button>
+    <button id="btn2">unWrap</button>
+    <button id="btn3">WrapAll</button>
+    <hr>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("p").wrap("<div class='div1'></div>")
+            })
+            $("#btn2").click(function () {
+                $("p").unwrap()
+            })
+            $("#btn3").click(function () {
+                $("p").wrapAll("<div class='div1'></div>")
+            })
+        })
+    </script>
+</body>
+
+</html>

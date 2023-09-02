@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            background-color: purple;
+            color: white;
+            height: 40px;
+            width: 150px;
+            padding: 5px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        li {
+            color: purple;
+            font-size: 20px;
+        }
+        b{
+            color: purple;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- add function = append, prepand, before and after -->
+    <button id="btn1">append</button>
+    <button id="btn2">prepend</button>
+    <button id="btn3">before</button>
+    <button id="btn4">after</button>
+    <hr>
+
+    <ul>
+        <li>List 1</li>
+    </ul>
+
+    <b>Hello</b>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("ul").append("<li>List 2</li>")
+            })
+            $("#btn2").click(function () {
+                $("ul").prepend("<li>List 2</li>")
+            })
+            $("#btn3").click(function () {
+                $("b").before("!!!")
+            })
+            $("#btn4").click(function () {
+                $("b").after("!!!")
+            })
+        })
+    </script>
+</body>
+
+</html>

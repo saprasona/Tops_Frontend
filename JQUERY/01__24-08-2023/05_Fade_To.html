@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade To</title>
+    <style>
+        img {
+            height: 400px;
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="https://www.hdwallpapersfreedownload.com/uploads/large/nature/wallpaper-of-nature-hd.jpg" alt=""
+        class="image">
+
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".image").mouseover(function () {
+                $(".image").fadeTo(2000, 0.5)
+            })
+            $(".image").mouseout(function () {
+                $(".image").fadeTo(2000, 1)
+            })
+        })
+    </script>
+</body>
+
+</html>

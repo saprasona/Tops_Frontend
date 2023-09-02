@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            background-color: purple;
+            color: white;
+            height: 40px;
+            width: 150px;
+            padding: 5px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        p {
+            font-size: 35px;
+            color: orchid;
+        }
+
+        input {
+            color: purple;
+            width: 150px;
+            height: 25px;
+            border-color: orchid;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- there are 3 functions in get or set attribute 
+        html() text() & val()
+    -->
+    <button id="btn1">html</button>
+    <button id="btn2">text</button>
+    <button id="btn3">val</button>
+    <hr>
+    <p><b>Hello User</b></p>
+    <input type="text" name="" id="" value="Hello">
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                alert($("p").html())
+            })
+            $("#btn2").click(function () {
+                alert($("p").text())
+            })
+            $("#btn3").click(function () {
+                alert($("input").val())
+            })
+        })
+    </script>
+</body>
+
+</html>

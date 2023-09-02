@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1 {
+            height: auto;
+            width: 300px;
+            border: 2px solid purple;
+            padding: 20px;
+            color: purple;
+            font-size: 18px;
+        }
+        button {
+            background-color: purple;
+            color: white;
+            height: 40px;
+            width: 150px;
+            padding: 5px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- remove functions = remove(), empty() -->
+    <button id="btn1">Empty</button>
+    <button id="btn2">Remove</button>
+    <hr>
+    <div class="div1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolor facere sapiente quod magnam perspiciatis
+        sequi? Quod, ullam similique. Voluptatum quidem est ipsum consequatur quos placeat repellat? Rem, impedit
+        adipisci.
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $(".div1").empty()
+            })
+            $("#btn2").click(function () {
+                $(".div1").remove()
+            })
+        })
+    </script>
+</body>
+
+</html>

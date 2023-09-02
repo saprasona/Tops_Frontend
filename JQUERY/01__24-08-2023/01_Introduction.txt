@@ -1,0 +1,15 @@
+jQuery is a javascript library.
+=> provide sliders library.
+=> inbuilt functions.
+=> feature rich library.
+
+used cdn  or download offline package .
+
+syntax : 
+$(document).ready(function(){
+    $("selector").event(function(){
+        $("selector").jQuery_function();
+    })
+})
+$ => means it is jquery code 
+=> selector => class, id, element, group, universal, decendent selector 

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Function</title>
+</head>
+<style>
+    * {
+        margin: 10px;
+    }
+
+    .bt {
+        background-color: purple;
+        color: white;
+        height: 40px;
+        width: 150px;
+        padding: 5px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+    }
+    h1{
+        font-size: 35px;
+        color: orchid;
+    }
+    h2{
+        font-size: 25px;
+        color: orchid;
+    }
+</style>
+
+<body>
+    <button class="bt" id="btn1">Hide function</button>
+    <button class="bt" id="btn2">Show function</button>
+    <button class="bt" id="btn3">Toggle function</button>
+    <hr>
+    <h1>Hello User</h1>
+    <h2>Hello User</h2>
+
+    <!-- jquery cdn -->
+    <script src="jquery.js"></script>
+    <!-- display function are main working on height and width -->
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("h1").hide(2000);
+            })
+            $("#btn2").click(function () {
+                $("h1").show(3000)
+            })
+            $("#btn3").click(function () {
+                $("h2").toggle(2000)
+            })
+        })
+    </script>
+</body>
+
+</html>
