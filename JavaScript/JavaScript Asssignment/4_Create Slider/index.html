@@ -17,59 +17,35 @@
     <div class="slider-container">
         <div class="slider">
             <div class="slide">
-                <div class="s1"></div>
+                <div class="s" style="background-color: purple;"></div>
             </div>
             <div class="slide">
-                <div class="s2"></div>
+                <div class="s" style="background-color: blue;"></div>
             </div>
             <div class="slide">
-                <div class="s3"></div>
+                <div class="s" style=" background-color:brown;"></div>
             </div>
             <div class="slide">
-                <div class="s4"></div>
+                <div class="s" style=" background-color:darkorange;"></div>
             </div>
             <div class="slide">
-                <div class="s5"></div>
+                <div class="s" style=" background-color:deeppink;"></div>
             </div>
             <div class="slide">
-                <div class="s6"></div>
+                <div class="s" style=" background-color:cadetblue;"></div>
             </div>
         </div>
         <div class="btn">
             <div class="btn1">
-                <span class="fa-sharp fa-solid fa-arrow-left" onclick="call(-1)"></span>
+                <span id="prevBtn" class="fa-sharp fa-solid fa-arrow-left"></span>
             </div>
             <div class="btn2">
-                <span class="fa-sharp fa-solid fa-arrow-right" onclick="call(1)"></span>
+                <span id="nextBtn" class="fa-sharp fa-solid fa-arrow-right"></span>
             </div>
         </div>
     </div>
 
 </body>
-<script>
-    let flag = 0;
-    function call(x) {
-        flag += x;
-        slideshow(flag);
-    }
-    slideshow(flag);
-
-    function slideshow(num) {
-        let slides = document.getElementsByClassName("slide");
-        if (num == slides.length) {
-            flag = 0;
-            num = 0;
-        }
-        if (num < 0) {
-            flag = slides.length - 1;
-            num = slides.length - 1;
-        }
-        for (var y of slides) {
-            y.style.display = "none";
-        }
-        slides[num].style.display = "block";
-    }
-
-</script>
+<script src="script.js"></script>
 
 </html>
