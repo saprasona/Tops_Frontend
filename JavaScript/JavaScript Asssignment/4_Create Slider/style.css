@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 body{
     background-color: rgb(53, 53, 53);
 }
@@ -11,33 +14,33 @@ body{
 }
 .slider-container {
     position: relative;
-    width: 80%;
+    width: 100%;
     margin-left: 30px;
     margin-right: 30px;
 }
 
 .slider {
     display: flex;
-    gap: 10px;
+    gap: 50px;
+    justify-content: center;
 }
 
 .s{
     width: 300px;
     height: 300px;
 }
-.slide:hover{
-    transform: scale(1.1);
-}
 .slider-container .btn{
     color: white;
     text-align: center;
     justify-content: center;
     display: grid;
-    grid-template-columns: 0.2fr 0.1fr;
-    margin-left: 250px;
+    grid-template-columns: 0.1fr 0.1fr;
     
 }
 .slider-container .btn span{
     margin-top: 80px;
     font-size: 40px;
+}
+.slide.active{
+    scale: 1.2;
 }

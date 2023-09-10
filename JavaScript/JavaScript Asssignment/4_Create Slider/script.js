@@ -5,8 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentSlide = 0;
 
     function updateSlider() {
-        const offset = -currentSlide * 300;
+        const offset = -currentSlide * 500;
         slider.style.transform = `translateX(${offset}px)`;
+        slider.style.transitionDuration = "2s";
+        slider.style.transitionTimingFunction = "linear";
+        slider.style.transitionProperty = "all";
     }
 
     function nextSlide() {
