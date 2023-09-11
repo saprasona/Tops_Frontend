@@ -1,20 +1,33 @@
-// Function to update the clock display
-function updateClock() {
-    const now = new Date();
+setInterval(() => {
+    const time = document.querySelector("#time");
+    let date = new Date();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+    let day_night = "AM";
+    if (hours > 12) {
+        day_night = "PM";
+        hours = hours - 12;
+    }
+    if (hours < 10) {
+        hours = "0" + hours;
+    }
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
+    time.textContent = hours + ":" + minutes + ":" + seconds + "" + day_night;
 
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
+    function updateDate() {
+        let currentDate = new Date();
+        let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
+        let formattedDate = currentDate.toLocaleDateString('en-US', options);
 
-    // Format time components as two digits
-    const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        document.getElementById('date').textContent = formattedDate;
+    }
+    updateDate();
+    setInterval(updateDate, 1000);
+});
 
-    // Update the clock content using jQuery
-    $('#clock').html(formattedTime);
-}
-
-// Update the clock every second
-setInterval(updateClock, 1000);
-
-// Initial call to set the clock immediately
-updateClock();
