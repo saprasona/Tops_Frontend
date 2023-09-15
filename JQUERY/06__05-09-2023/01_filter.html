@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .para {
+            border: 2px solid black;
+            padding: 10px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <button>Click Here</button>
+    <hr>
+    <p id="p1">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis odio, provident molestias vel sunt sit
+        voluptas error quia porro, similique officia autem, quibusdam id deleniti dolores soluta alias eum incidunt?
+    </p>
+    <p id="p2">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque odit sunt aperiam eligendi a, illum eveniet.
+        Perspiciatis neque, deleniti facilis exercitationem ipsum eveniet! Consequuntur qui quas ratione adipisci
+        laudantium mollitia.
+    </p>
+    <p id="p3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tempore. Vitae enim ad, quidem natus pariatur
+        consequuntur nam blanditiis officiis inventore, minima praesentium quisquam sequi. Accusantium dolores ratione
+        accusamus eligendi.
+    </p>
+    <p id="p4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem eligendi soluta aut optio, ipsa laborum quo.
+        Debitis assumenda est cumque maiores repudiandae. Dignissimos minima illo consequatur! Cumque, id. Dolorem,
+        possimus.
+    </p>
+
+    <!-- jquery cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                // $("p").filter("#p1").addClass("para");
+                // $("p").first().addClass("para")
+                // $("p").last().addClass("para")
+                // $("p").eq(2).addClass("para")
+                $("p").not("#p3").addClass("para")
+            })
+        })
+    </script>
+</body>
+
+</html>

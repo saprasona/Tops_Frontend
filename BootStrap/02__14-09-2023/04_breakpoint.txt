@@ -1,0 +1,7 @@
+    css media query            bootstrap class 
+(1) max-width:576px                - (xs)
+(2) min-width:576px                sm 
+(3) min-width:768px                md 
+(4) min-width:992px                lg 
+(5) min-width:1200px               xl 
+(6) min-width:1400px               xxl  
