@@ -1,0 +1,24 @@
+element                                             classname 
+(1) input type = text, password, email, number      form-control 
+    date, month, week, etc
+    textarea
+
+(2) for label                                       form-label 
+
+(3) for dropdowm menu                               form-select 
+
+(4) for radio button / checkbox                     form-check-input 
+(5) for radio button / checkbox label               form-check-label 
+(6) for set radio button / checkbox vertically use  form-check 
+class in parent element 
+(6) for set radio button / checkbox horizontally    form-check-inline
+use class in parent element 
+
+(7) input type =  range                             form-range 
+(8) input type = color                              form-control        
+                                                    form-control-color
+(9) for join text/email/dropdown etc use            input-group 
+    class in parent element 
+(10) to join label, button etc                      input-group-text
+
+(11) in floating label if we remove placeholder then label are not floating. it is fixed on top.

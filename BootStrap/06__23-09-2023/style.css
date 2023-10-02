@@ -1,0 +1,441 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0 !important;
+}
+
+header {
+    background-color: #DB162F;
+}
+
+header .navbar-nav {
+    justify-content: end;
+    width: 100%;
+    gap: 20px;
+}
+
+header .navbar-nav a {
+    color: white !important;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+header .navbar-nav a.active {
+    color: orange !important;
+}
+
+header h1 span {
+    color: orange;
+}
+
+header .dropdown-menu a {
+    color: black !important;
+}
+
+header .navbar-toggler {
+    background-color: white;
+    border-radius: 0;
+}
+
+.homepageSlider .slider .sliderimg1 {
+    background: url(images/slider1.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.homepageSlider .slider .sliderimg2 {
+    background: url(images/slider2.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.homepageSlider .slider .sliderimg3 {
+    background: url(images/slider3.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.homepageSlider .slider .sliderimg4 {
+    flex: 1;
+    background: url(images/slider4.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.homepageSlider .sliderText {
+    padding: 100px 0px;
+}
+
+.homepageSlider .sliderText h1 {
+    font-size: 60px;
+    font-weight: 100 !important;
+}
+
+.homepageSlider .sliderText span {
+    font-weight: bold;
+}
+
+.homepageSlider .btnread {
+    height: 50px;
+    width: fit-content;
+    padding: 0px 15px;
+    border: 2px solid #074ca6;
+    display: grid;
+    place-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.homepageSlider .btnread a {
+    color: #074ca6;
+    font-weight: bold;
+}
+
+.homepageSlider .btnread .btnover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #074ca6;
+    border: 2px solid #074ca6;
+    transform-origin: 100% 100%;
+    transform: scale(0);
+    transition: 0.5s ease all;
+    z-index: -1;
+}
+
+.homepageSlider .btnread:hover .btnover {
+    transform: scale(1);
+}
+
+.homepageSlider .btnread:hover a {
+    color: white;
+}
+
+.homepageSlider .bx-wrapper {
+    border: none !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+
+.homepageSlider .bx-wrapper .bx-pager {
+    text-align: right;
+    bottom: 25px;
+    right: 30px;
+}
+
+.homepageSlider .bx-wrapper .bx-pager.bx-default-pager a {
+    background: white;
+}
+
+.homepageSlider .bx-wrapper .bx-pager.bx-default-pager a:hover {
+    background: white;
+}
+
+.homepageSlider .bx-wrapper .bx-pager.bx-default-pager a.active {
+    background: orange;
+}
+
+.aboutTour .icon {
+    height: 80px;
+    width: 80px;
+    background-color: #db163049;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+.aboutTour .icon span {
+    color: #DB162F;
+    font-size: 33px;
+}
+
+.aboutTour .aboutText a:hover {
+    color: #db1630b4 !important;
+}
+
+.aboutTour .aboutT:hover .icon {
+    background-color: #074ca664;
+}
+
+.aboutTour .aboutT:hover span {
+    color: #074ca6;
+}
+
+.videoSec .videop {
+    padding: 250px 0px;
+}
+
+.videoSec .videoImg {
+    background: url(images/2.jpg) no-repeat center;
+    background-size: cover;
+    border-radius: 10px;
+    display: grid;
+    place-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.videoSec .videoImg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.437);
+    z-index: -1;
+}
+
+.videoSec .videoplay {
+    height: 65px;
+    width: 65px;
+    background-color: white;
+    display: grid;
+    place-content: center;
+    color: #074ca6;
+    font-size: 22px;
+    border-radius: 50%;
+    animation: videoply 2s linear infinite;
+}
+
+.Feedback {
+    background: url(images/1.jpg) no-repeat center fixed;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.Feedback::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #043d8778;
+    z-index: -1;
+}
+
+.Feedback .feedBackp {
+    padding: 100px 0px;
+}
+
+.Feedback p {
+    color: orange;
+    font-weight: bold;
+}
+
+.Feedback p::before {
+    content: "";
+    height: 2px;
+    width: 80px;
+    background-color: #DB162F;
+    display: inline-block;
+    margin: 5px 10px;
+}
+
+.Feedback input[type="text"]:focus {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.Feedback input[type="text"] {
+    border: none !important;
+}
+
+.Feedback .btnSub {
+    height: 40px;
+    width: 142px !important;
+    background-color: #DB162F;
+    color: white;
+    border: 1px solid #DB162F;
+    justify-content: center;
+}
+
+/* create video button animation */
+@keyframes videoply {
+    /* 10% {
+        box-shadow: 0px 0px 0px 10px rgba(7, 76, 166, 0.928);
+    }
+
+    50% {
+        box-shadow: 0px 0px 0px 15px rgba(7, 76, 166, 0.692);
+    }
+
+    100% {
+        box-shadow: 0px 0px 0px 25px rgba(7, 76, 166, 0.231);
+    } */
+
+    0% {
+        box-shadow: 0px 0px 0px 10px rgba(7, 76, 166, 0.928), 0px 0px 0px 15px rgba(7, 76, 166, 0.692), 0px 0px 0px 25px rgba(7, 76, 166, 0.231)
+    }
+
+    100% {
+        box-shadow: 0px 0px 0px 20px rgba(7, 76, 166, 0.928), 0px 0px 0px 30px rgba(7, 76, 166, 0.692), 0px 0px 0px 50px rgba(7, 76, 166, 0.231)
+    }
+}
+
+.title p::before {
+    content: "";
+    height: 2px;
+    width: 80px;
+    background-color: #DB162F;
+    display: inline-block;
+    margin: 5px 10px;
+}
+
+.bookingForm input[type="text"]:focus,
+[type="date"]:focus,
+select:focus {
+    box-shadow: none !important;
+}
+
+.bookingForm input[type="text"],
+[type="date"],
+select {
+    border: none !important;
+    background-color: rgb(255, 238, 238) !important;
+}
+
+.bookingForm .btnsubmit {
+    width: 100%;
+    background-color: #074ca6;
+    color: white !important;
+}
+
+.bookingForm .btnsubmit:hover {
+    background-color: #043d87;
+    color: white !important;
+}
+
+.clientReview {
+    border: 1px solid gainsboro;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.clientReview img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.clientReview:hover {
+    background-color: #043d87;
+    color: white !important;
+}
+
+.clientReview p {
+    padding-bottom: 20px !important;
+}
+
+.clientReview:hover p {
+    color: white !important;
+}
+
+/* ================================ media query ===================== */
+@media (max-width:576px) {
+    .homepageSlider .sliderText {
+        padding: 40px 0px;
+    }
+
+    .homepageSlider .sliderText h1 {
+        font-size: 35px;
+    }
+
+    .homepageSlider .slider .sliderimg1,
+    .sliderimg2,
+    .sliderimg3,
+    .sliderimg4 {
+        height: 400px;
+    }
+
+    .videoSec .videop {
+        padding: 100px 0px;
+    }
+}
+
+@media (min-width:576px) {
+    .homepageSlider .sliderText {
+        padding: 40px 0px;
+    }
+
+    .homepageSlider .sliderText h1 {
+        font-size: 35px;
+    }
+
+    .homepageSlider .slider .sliderimg1,
+    .sliderimg2,
+    .sliderimg3,
+    .sliderimg4 {
+        height: 400px;
+    }
+
+    .videoSec .videop {
+        padding: 100px 0px;
+    }
+}
+
+@media (min-width:768px) {
+    .homepageSlider .sliderText {
+        padding: 80px 0px;
+    }
+
+    .homepageSlider .sliderText h1 {
+        font-size: 35px;
+    }
+
+    .homepageSlider .slider .sliderimg1,
+    .sliderimg2,
+    .sliderimg3,
+    .sliderimg4 {
+        height: 400px;
+    }
+
+    .videoSec .videop {
+        padding: 180px 0px;
+    }
+}
+
+@media (min-width:992px) {
+    .homepageSlider .sliderText {
+        padding: 100px 0px;
+    }
+
+    .homepageSlider .sliderText h1 {
+        font-size: 60px;
+    }
+
+    .homepageSlider .slider .sliderimg1,
+    .sliderimg2,
+    .sliderimg3,
+    .sliderimg4 {
+        height: 550px;
+    }
+
+    .videoSec .videop {
+        padding: 250px 0px;
+    }
+}

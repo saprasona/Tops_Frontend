@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+header {
+    background-color: #DB162F;
+}
+
+header .navbar-nav {
+    justify-content: end;
+    width: 100%;
+    gap: 20px;
+}
+
+header .navbar-nav a {
+    color: white !important;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+header .navbar-nav a.active {
+    color: orange !important;
+}
+
+header h1 span {
+    color: orange;
+}
+
+header .dropdown-menu a {
+    color: black !important;
+}
+
+header .navbar-toggler {
+    background-color: white;
+    border-radius: 0;
+}
+
+.homepageSlider .slider {
+    display: flex;
+}
+
+.homepageSlider .slider .sliderText {
+    flex: 1;
+}
+
+.homepageSlider .slider .sliderimg1 {
+    flex: 1;
+    background: url(images/slider1.jpg) no-repeat center;
+    background-size: cover;
+    /* height: 400px; */
+}
+
+.homepageSlider .slider .sliderimg2 {
+    flex: 1;
+    background: url(images/slider2.jpg) no-repeat center;
+    background-size: cover;
+    /* height: 400px; */
+}
+
+.homepageSlider .slider .sliderimg3 {
+    flex: 1;
+    background: url(images/slider3.jpg) no-repeat center;
+    background-size: cover;
+    /* height: 400px; */
+}
+
+.homepageSlider .slider .sliderimg4 {
+    flex: 1;
+    background: url(images/slider4.jpg) no-repeat center;
+    background-size: cover;
+    /* height: 400px; */
+}

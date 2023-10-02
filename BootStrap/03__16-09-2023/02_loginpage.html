@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: conic-gradient(crimson, coral, hotpink, crimson);
+        }
+
+        .loginpage {
+            width: 500px;
+            margin: 174px auto;
+            background-color: white;
+            box-shadow: 0px 0px 5px black;
+        }
+
+        input[type="email"],
+        [type="password"] {
+            border-bottom: 2px solid black !important;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            border-radius: 0;
+            background: transparent;
+        }
+
+        input[type="email"]:focus,
+        [type="password"]:focus {
+            box-shadow: none;
+            background-color: transparent;
+        }
+
+        label::after {
+            content: "";
+            background-color: transparent !important;
+        }
+
+        input[type="email"]::placeholder,
+        [type="password"]::placeholder {
+            background-color: transparent !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loginpage p-4">
+        <h3>Login Here</h3>
+        <form action="#">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-floating my-1">
+                        <input type="email" class="form-control" id="useremail" placeholder="">
+                        <label for="useremail">Email address</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-floating my-1">
+                        <input type="password" class="form-control" id="pass" placeholder="password">
+                        <label for="pass">Password</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 my-1 text-center">
+                    <button class="btn btn-primary">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

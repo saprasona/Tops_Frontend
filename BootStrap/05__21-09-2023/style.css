@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+header {
+    background-color: #DB162F;
+}
+
+header .navbar-nav {
+    justify-content: end;
+    width: 100%;
+    gap: 20px;
+}
+
+header .navbar-nav a {
+    color: white !important;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+header .navbar-nav a.active {
+    color: orange !important;
+}
+
+header h1 span {
+    color: orange;
+}
+
+header .dropdown-menu a {
+    color: black !important;
+}
+
+header .navbar-toggler {
+    background-color: white;
+    border-radius: 0;
+}
+
+.homepageSlider .slider .sliderimg1 {
+    background: url(images/slider1.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.homepageSlider .slider .sliderimg2 {
+    background: url(images/slider2.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.homepageSlider .slider .sliderimg3 {
+    background: url(images/slider3.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.homepageSlider .slider .sliderimg4 {
+    flex: 1;
+    background: url(images/slider4.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.homepageSlider .sliderText {
+    padding: 100px 0px;
+}
+
+.homepageSlider .sliderText h1 {
+    font-size: 60px;
+    font-weight: 100 !important;
+}
+
+.homepageSlider .sliderText span {
+    font-weight: bold;
+}
+
+.homepageSlider .btnread {
+    height: 50px;
+    width: fit-content;
+    padding: 0px 15px;
+    border: 2px solid #074ca6;
+    display: grid;
+    place-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.homepageSlider .btnread a {
+    color: #074ca6;
+    font-weight: bold;
+}
+
+.homepageSlider .btnread .btnover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #074ca6;
+    border: 2px solid #074ca6;
+    transform-origin: 100% 100%;
+    transform: scale(0);
+    transition: 0.5s ease all;
+    z-index: -1;
+}
+
+.homepageSlider .btnread:hover .btnover {
+    transform: scale(1);
+}
+
+.homepageSlider .btnread:hover a {
+    color: white;
+}
+
+.homepageSlider .bx-wrapper {
+    border: none !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+
+.homepageSlider .bx-wrapper .bx-pager {
+    text-align: right;
+    bottom: 25px;
+    right: 30px;
+}
+
+.homepageSlider .bx-wrapper .bx-pager.bx-default-pager a {
+    background: white;
+}
+
+.homepageSlider .bx-wrapper .bx-pager.bx-default-pager a:hover {
+    background: white;
+}
+
+.homepageSlider .bx-wrapper .bx-pager.bx-default-pager a.active {
+    background: orange;
+}
+
+.aboutTour .icon {
+    height: 80px;
+    width: 80px;
+    background-color: #db163049;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+.aboutTour .icon span {
+    color: #DB162F;
+    font-size: 33px;
+}
+
+.aboutTour .aboutText a:hover {
+    color: #db1630b4 !important;
+}
+
+.aboutTour .aboutT:hover .icon {
+    background-color: #074ca664;
+}
+
+.aboutTour .aboutT:hover span {
+    color: #074ca6;
+}
+
+
+/* ================================ media query ===================== */
+@media (max-width:576px) {
+    .homepageSlider .sliderText {
+        padding: 40px 0px;
+    }
+
+    .homepageSlider .sliderText h1 {
+        font-size: 35px;
+    }
+
+    .homepageSlider .slider .sliderimg1,
+    .sliderimg2,
+    .sliderimg3,
+    .sliderimg4 {
+        height: 400px;
+    }
+}
+
+@media (min-width:576px) {
+    .homepageSlider .sliderText {
+        padding: 40px 0px;
+    }
+
+    .homepageSlider .sliderText h1 {
+        font-size: 35px;
+    }
+
+    .homepageSlider .slider .sliderimg1,
+    .sliderimg2,
+    .sliderimg3,
+    .sliderimg4 {
+        height: 400px;
+    }
+}
+
+@media (min-width:768px) {
+    .homepageSlider .sliderText {
+        padding: 80px 0px;
+    }
+
+    .homepageSlider .sliderText h1 {
+        font-size: 35px;
+    }
+
+    .homepageSlider .slider .sliderimg1,
+    .sliderimg2,
+    .sliderimg3,
+    .sliderimg4 {
+        height: 400px;
+    }
+}
+
+@media (min-width:992px) {
+    .homepageSlider .sliderText {
+        padding: 100px 0px;
+    }
+
+    .homepageSlider .sliderText h1 {
+        font-size: 60px;
+    }
+
+    .homepageSlider .slider .sliderimg1,
+    .sliderimg2,
+    .sliderimg3,
+    .sliderimg4 {
+        height: 550px;
+    }
+}
