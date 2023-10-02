@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .result {
+            font-size: 20px;
+border: 2px solid skyblue;
+background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Date Interval Calculator</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="startDate">Start Date:</label>
+                    <input type="date" class="form-control" id="startDate">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="endDate">End Date:</label>
+                    <input type="date" class="form-control" id="endDate">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button id="calculateButton" class="btn btn-primary">Calculate Interval</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Result:</h3>
+                <p id="result" class="result"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- Include Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Calculate date interval when the button is clicked
+            $('#calculateButton').click(function () {
+                var startDate = new Date($('#startDate').val());
+                var endDate = new Date($('#endDate').val());
+
+                if (!isNaN(startDate.getTime()) && !isNaN(endDate.getTime())) {
+                    var timeDiff = Math.abs(endDate.getTime() - startDate.getTime());
+                    var yearsDiff = Math.floor(timeDiff / (365.25 * 24 * 60 * 60 * 1000));
+                    timeDiff -= yearsDiff * 365.25 * 24 * 60 * 60 * 1000;
+                    var monthsDiff = Math.floor(timeDiff / (30.44 * 24 * 60 * 60 * 1000));
+                    timeDiff -= monthsDiff * 30.44 * 24 * 60 * 60 * 1000;
+                    var weeksDiff = Math.floor(timeDiff / (7 * 24 * 60 * 60 * 1000));
+                    timeDiff -= weeksDiff * 7 * 24 * 60 * 60 * 1000;
+                    var daysDiff = Math.floor(timeDiff / (24 * 60 * 60 * 1000));
+
+                    $('#result').html('Date interval between: ' + yearsDiff + ' In Years, ' + monthsDiff + ' In Months, ' + weeksDiff + ' In Weeks, ' + daysDiff + ' In Days');
+                } else {
+                    $('#result').text('Invalid dates. Please select valid dates.');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
