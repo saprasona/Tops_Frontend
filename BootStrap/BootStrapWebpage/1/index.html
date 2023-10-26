@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstarp</title>
+    <!--------website template from :----------------
+    https://p.w3layouts.com/demos_new/template_demo/30-03-2020/dweller-liberty-demo_Free/2127094933/web/index.html?_gl=1*38unkd*_ga*MTcyMDE1MjE5MC4xNjg5MTg0NjIz*_ga_EGV5GTJEP5*MTY5NzE5NTc2Mi43LjEuMTY5NzE5NjAxOC4wLjAuMA..*_ga_9HSZ46TKMQ*MTY5NzE5NTc2My4yLjEuMTY5NzE5NjAyMC41NC4wLjA.*_ga_FFZF56TTWE*MTY5NzE5NTc2My43LjEuMTY5NzE5NjAxOS4wLjAuMA..&_ga=2.172164259.1069363967.1697195764-1720152190.1689184623     -->
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/max_576px.css">
+    <link rel="stylesheet" href="css/min_576px.css">
+    <link rel="stylesheet" href="css/min_768px.css">
+    <link rel="stylesheet" href="css/min_992px.css">
+    <!-- js -->
+    <link rel="stylesheet" href="script.js">
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- bootstrap css cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap icon cdn -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+    <section class="TopHeader">
+        <div class="container py-3">
+            <div class="row">
+                <div class="col-3 col-md-3 col-sm-3 col-auto">
+                    <div class="contact">
+                        <h5 class="fs-5 pb-2">Get in Touch</h5>
+                        <p class="text-muted fs-6">California, 75 West Rock</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-4 d-flex justify-content-center">
+                    <div>
+                        <h5 class="fs-5 pb-2">Email us at</h5>
+                        <p><a href="" class="text-muted fs-6">mail@estate.com</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-4 d-flex justify-content-center">
+                    <div>
+                        <h5 class="fs-5 pb-2">Call us today</h5>
+                        <p><a href="" class="text-muted fs-6">+(12)-00 222 00008</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-4 d-flex justify-content-end align-items-center">
+                    <div>
+                        <button class="btn">
+                            <span class="fa-solid fa-search"></span>
+                            Find Property
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="navigation">
+        <div class="container py-1">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand fs-2 text-white fw-bold" href="#">Dweller</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <section class="mainpage">
+        <div class="mainpage-bg-img">
+            <div class="container py-5">
+                <div class="row py-5">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                        <div class="aboutrooms p-4 py-5">
+                            <div class="mb-3 mapsign"><span class="fa-solid fa-map-signs"></span> United States, CA 902
+                            </div>
+                            <p class="display-6 fw-light mb-3">California, 75 West Rock,
+                                Maple Building</p>
+                            <div class="row my-4 aboutr g-3">
+                                <div class="col-6 col-sm-3">
+                                    <div class="">
+                                        <div class="mb-1"><span class="fa-solid fa-share-square"></span></div>
+                                        <p>1600 sq.ft</p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-3">
+                                    <div class="">
+                                        <div class="mb-1"><span class="fa-solid fa-house-chimney"></span></div>
+                                        <p>2 Bedrooms</p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-3">
+                                    <div class="">
+                                        <div class="mb-1"><span class="fa-solid fa-building"></span></div>
+                                        <p>7 Rooms</p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-3">
+                                    <div class="">
+                                        <div class="mb-1"><span class="fa-solid fa-shower"></span></div>
+                                        <p>3 Bathrooms</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btnblue">Check Property</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="searchProperty">
+        <div class="container py-5">
+            <div class="row py-3 d-flex align-items-center g-4">
+                <div class="col-lg-6 col-12 col-sm-12 ">
+                    <div>
+                        <img src="images/search.jpg" alt="" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 col-sm-12 ">
+                    <div class="">
+                        <p class="display-6 mb-3">Search Property From Any where</p>
+                        <p class="mb-3 text-muted">Mollitia placeat modi explicabo voluptatum corporis unde Dicta,
+                            provident! Rem <br> adipisci Mollitia placeat modi explicabo voluptatum corporis unde?
+                            Dicta, <br> provident! Rem adipisci consectetur adipisicing elit. Deleniti possimus culpa
+                            <br> nemo asperiores aperiam mollitia, maiores fugiat tempor Vero est.
+                        </p>
+                        <button class="btnpink btn">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="images">
+        <div class="container-fluid p-0">
+            <div class="row p-0 m-0">
+                <div class="col-12 p-0 col-sm-12 col-md-6 col-lg-3">
+                    <div class="backimg1"></div>
+                </div>
+                <div class="col-12 p-0 col-sm-12 col-md-6 col-lg-3">
+                    <div class="backimg-text">
+                        <div class="icon p-3">
+                            <span class="fa-solid fa-house-chimney fs-3"></span>
+                        </div>
+                        <h5><a href="" class="text-white">General <br> Contracting</a></h5>
+                    </div>
+                </div>
+                <div class="col-12 p-0 col-sm-12 col-md-6 col-lg-3">
+                    <div class="backimg2"></div>
+                </div>
+                <div class="col-12 p-0 col-sm-12 col-md-6 col-lg-3">
+                    <div class="backimg-text backimg2-text">
+                        <div class="icon mb-2">
+                            <span class="fa-solid fa-users fs-3"></span>
+                        </div>
+                        <h5 class="mb-3"><a href="">Best Team</a></h5>
+                        <p class="text-muted">Assumenda temporibus quidem ipsam. Voluptate fuga corporis iusto
+                            similique voluptates sint
+                            quibusdam.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row p-0 m-0 reverseval">
+                <div class="col-12 p-0 col-sm-12 col-md-12 col-lg-6">
+                    <div class="p-lg-5 p-3 p-sm-4">
+                        <p class="display-6 mb-3">Full project management</p>
+                        <p class="mb-3 text-muted">Assu menda tempo ribus quidem ipsam. Voluptate fuga corporis <br>
+                            iusto simi lique volup tates sint quib usdam assu menda temp <br> oribus quidem ipsam.
+                            Voluptate fuga corporis iusto similique.</p>
+                        <button class="btn btnpink">Read More</button>
+                    </div>
+                </div>
+                <div class="col-12 p-0 col-sm-12 col-md-12 col-lg-6">
+                    <div class="backimg3"></div>
+                </div>
+            </div>
+            <div class="row p-0 m-0 reverseval">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 p-0">
+                    <div class="backimg4"></div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                    <div class="row gridMain">
+                        <div class="col-6">
+                            <div class="gridbox">
+                                <h5 class="mb-3"><a href="">Efficient Building</a></h5>
+                                <p class="text-white">Cumque asperiores ab quasi laboriosam omnis tempo recons
+                                    ecteturelit.optio illum officiis itaque soluta impedit</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="gridbox">
+                                <h5 class="mb-3"><a href="">Financial Results</a></h5>
+                                <p class="text-white">Cumque asperiores ab quasi laboriosam omnis tempo recons ectetur
+                                    elit.optio illum
+                                    officiis itaque soluta impedit</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="gridbox">
+                                <h5 class="mb-3"><a href="">General Contracting</a></h5>
+                                <p class="text-white">Cumque asperiores ab quasi laboriosam omnis tempo recons ectetur
+                                    elit.optio illum
+                                    officiis itaque soluta impedit</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="gridbox">
+                                <h5 class="mb-3"><a href="">Interior Design</a></h5>
+                                <p class="text-white">Cumque asperiores ab quasi laboriosam omnis tempo recons ectetur
+                                    elit.optio illum
+                                    officiis itaque soluta impedit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="popularplace">
+        <div class="container py-5">
+            <div class="row py-3">
+                <div class="col-12 title text-center">
+                    <h3>MOST POPULAR PLACES</h3>
+                    <p class="text-secondary">Properties In Most Popular Places</p>
+                </div>
+            </div>
+            <div class="row py-3 g-4">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                    <div class="placebox">
+                        <div>
+                            <img src="images/grid1.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="box">
+                            <div class="text">
+                                <h4>Australia</h4>
+                                <p>Lorem ipsum dolor sit <br> amet elit.
+                                </p>
+                            </div>
+                            <div class="UpperLine"></div>
+                            <div class="SideLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                    <div class="placebox">
+                        <div>
+                            <img src="images/grid2.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="box">
+                            <div class="text">
+                                <h4>Haiti</h4>
+                                <p>Lorem ipsum dolor sit <br> amet elit.
+                                </p>
+                            </div>
+                            <div class="UpperLine"></div>
+                            <div class="SideLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                    <div class="placebox">
+                        <div>
+                            <img src="images/grid3.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="box">
+                            <div class="text">
+                                <h4>Guinea</h4>
+                                <p>Lorem ipsum dolor sit <br> amet elit.
+                                </p>
+                            </div>
+                            <div class="UpperLine"></div>
+                            <div class="SideLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                    <div class="placebox">
+                        <div>
+                            <img src="images/grid4.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="box">
+                            <div class="text">
+                                <h4>Qatar</h4>
+                                <p>Lorem ipsum dolor sit <br> amet elit.
+                                </p>
+                            </div>
+                            <div class="UpperLine"></div>
+                            <div class="SideLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                    <div class="placebox">
+                        <div>
+                            <img src="images/grid5.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="box">
+                            <div class="text">
+                                <h4>Romania</h4>
+                                <p>Lorem ipsum dolor sit <br> amet elit.
+                                </p>
+                            </div>
+                            <div class="UpperLine"></div>
+                            <div class="SideLine"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                    <div class="placebox">
+                        <div>
+                            <img src="images/grid6.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="box">
+                            <div class="text">
+                                <h4>Jamaica</h4>
+                                <p>Lorem ipsum dolor sit <br> amet elit.
+                                </p>
+                            </div>
+                            <div class="UpperLine"></div>
+                            <div class="SideLine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="customer">
+        <div class="container py-5">
+            <div class="row py-3 g-3">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                    <div class="review">
+                        <div class="text">
+                            Consectetur adipis icing Lorem ipsum <br> dolor sit amet,elit, sed do eiusmod <br> tempor
+                            incididunt adipis icing Lorem <br> ipsum.
+                        </div>
+                        <div class="bio d-flex gap-4 py-3">
+                            <div class="img">
+                                <img src="images/c1.jpg" alt="">
+                            </div>
+                            <div class="post">
+                                <p>Jack Willson</p>
+                                <p>Rented Apartment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                    <div class="review">
+                        <div class="text">
+                            Consectetur adipis icing Lorem ipsum <br> dolor sit amet,elit, sed do eiusmod <br> tempor
+                            incididunt adipis icing Lorem <br> ipsum.
+                        </div>
+                        <div class="bio d-flex gap-4 py-3">
+                            <div class="img">
+                                <img src="images/c2.jpg" alt="">
+                            </div>
+                            <div class="post">
+                                <p>Lily Maxson</p>
+                                <p>Bought House</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                    <div class="review cust3">
+                        <div class="text">
+                            Consectetur adipis icing Lorem ipsum <br> dolor sit amet,elit, sed do eiusmod <br> tempor
+                            incididunt adipis icing Lorem <br> ipsum.
+                        </div>
+                        <div class="bio d-flex gap-4 py-3">
+                            <div class="img">
+                                <img src="images/c3.jpg" alt="">
+                            </div>
+                            <div class="post">
+                                <p>Nike Samson</p>
+                                <p>Sold Apartment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container py-3">
+            <div class="row py-5 g-4">
+                <div class="col-lg-5 col-12 col-sm-12 col-md-12">
+                    <div>
+                        <h2 class="text-white pb-3">Dweller</h2>
+                        <p>Adipisicing elit. Lauda ntium, archi tecto iure Lorem incidunt <br> iosam qui quo moll itia
+                            veniam recus andae archi tecto earum <br> suscipit exce pturi dicta nemo quam.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-12 col-sm-12 col-md-6">
+                    <div>
+                        <h5 class="text-white pb-3">HELPFUL LINKS</h5>
+                        <ul class="p-0">
+                            <li><a href=""><span class="fa-solid fa-angle-right"></span> Home</a></li>
+                            <li><a href=""><span class="fa-solid fa-angle-right"></span> About</a></li>
+                            <li><a href=""><span class="fa-solid fa-angle-right"></span> Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12 col-sm-12 col-md-6">
+                    <div>
+                        <h5 class="text-white pb-3">CONTACT US</h5>
+                        <div class="pb-1 info">Email : <a href="">mail@company.com</a></div>
+                        <div class="pb-1 info">Phone : <a href="">+(12)-00 222 00008</a></div>
+                        <div class="pb-1 info">California, 75 West Rock, Maple Building.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <section class="ftrcpy">
+        <div class="container py-3">
+            <p class="text-center">&copy; 2020 Dweller All rights reserved | Design by <a href="">W3layouts</a></p>
+        </div>
+    </section>
+
+
+    <!-- popper js cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <!-- bootstrap js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

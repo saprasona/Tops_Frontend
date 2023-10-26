@@ -108,7 +108,7 @@ header .navbar .theme .tbtn {
 }
 
 .menubar .nav .cbtn {
-    height: 35px;
+    height: 50px;
     width: 35px;
     cursor: pointer;
     background: transparent;
@@ -122,8 +122,8 @@ header .navbar .theme .tbtn {
     position: fixed;
     top: 0;
     right: 0;
-    height: 680px;
-    width: 280px;
+    height: 100%;
+    width: 100%;
     background-color: skyblue;
     transition: 1s all ease-in-out;
 }

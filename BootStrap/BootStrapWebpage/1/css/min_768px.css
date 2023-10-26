@@ -1,0 +1,14 @@
+@media (min-width:768px) {
+    .images .backimg-text {
+        height: 400px;
+    }
+
+    .reverseval {
+        flex-direction: column-reverse;
+    }
+
+    .cust3 {
+        width: 335px;
+        margin: auto;
+    }
+}

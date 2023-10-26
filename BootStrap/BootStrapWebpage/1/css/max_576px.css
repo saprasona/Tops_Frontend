@@ -1,0 +1,18 @@
+@media (max-width:576px) {
+    
+    .contact {
+        display: none;
+    }
+
+    .navigation ul {
+        gap: 10px;
+    }
+
+    .images .backimg-text {
+        height: 200px;
+    }
+
+    .reverseval {
+        flex-direction: column-reverse;
+    }
+}

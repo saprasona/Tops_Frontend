@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0 !important;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* =========TopHeader======== */
+
+.TopHeader a {
+    transition: 0.5s ease all;
+}
+
+.TopHeader a:hover {
+    color: #ed6663 !important;
+}
+
+.TopHeader button {
+    border: 2px solid #ed6663;
+    color: #0f4c81;
+}
+
+.TopHeader button:hover {
+    border: 2px solid #0f4c81;
+    color: #fff;
+    background-color: #0f4c81;
+}
+
+/* =========navigation========= */
+
+.navigation {
+    background-color: #0f4c81;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navigation ul {
+    color: #ddd;
+    justify-content: center;
+    width: 100%;
+    gap: 90px;
+}
+
+/* =======mainpage======== */
+
+.mainpage {
+    background: url(../images/b1.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.mainpage .aboutrooms {
+    background-color: white;
+}
+
+.mainpage .aboutrooms .mapsign {
+    color: #ffa372;
+}
+
+.mainpage .aboutrooms .aboutr span {
+    color: #ed6663;
+    font-size: 28px;
+}
+
+.mainpage .btnblue {
+    background-color: #0f4c81;
+    color: white;
+    height: 55px;
+    width: 190px;
+    font-weight: 500;
+}
+
+.mainpage .btnblue:hover {
+    background-color: transparent;
+    color: #0f4c81;
+    border: 2px solid #0f4c81;
+}
+
+/* ========search property====== */
+
+.btnpink {
+    background-color: #ed6663 !important;
+    color: #fff !important;
+    height: 55px !important;
+    width: 190px;
+    font-size: 17px !important;
+    font-weight: 500 !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.btnpink:hover {
+    background-color: #0f4c81 !important;
+    color: #fff !important;
+    border: 2px solid #0f4c81 !important;
+}
+
+/* =======images======= */
+
+.images .backimg1 {
+    background: url(../images/back1.jpg) no-repeat center;
+    background-size: cover;
+    height: 400px;
+}
+
+.images .backimg-text {
+    background-color: #ed6663;
+    color: white;
+    height: 400px;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.images .backimg-text span {
+    font-size: 40px !important;
+}
+
+.images a {
+    transition: 0.5s ease all;
+}
+
+.images a:hover {
+    color: #0f4c81 !important;
+}
+
+.images .backimg2 {
+    background: url(../images/back2.jpg) no-repeat center;
+    background-size: cover;
+    height: 400px;
+}
+
+.images .backimg2-text {
+    background-color: white;
+}
+
+.images .backimg2-text .icon span {
+    color: #ffa372 !important;
+    font-size: 45px !important;
+}
+
+.images .backimg2-text a {
+    color: black;
+}
+
+.images .backimg2-text a:hover {
+    color: #0f4c81;
+}
+
+.images .backimg3 {
+    background: url(../images/back3.jpg) no-repeat center;
+    background-size: cover;
+    height: 300px;
+}
+
+.images .backimg4 {
+    background: url(../images/back4.jpg) no-repeat center;
+    background-size: cover;
+    height: 400px;
+}
+
+.images .gridMain {
+    padding-top: 50px;
+    background-color: #ffa372;
+    height: 400px;
+}
+
+.images .gridMain .gridbox {
+    padding: 10px;
+}
+
+.images .gridbox a {
+    color: white;
+}
+
+/* ========popularplace======== */
+
+.placebox {
+    position: relative;
+    overflow: hidden;
+}
+
+.placebox .text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    place-content: center;
+    text-align: center;
+    transition: 0.5s ease all;
+}
+
+.placebox:hover .text {
+    background-color: #0f4c8189;
+}
+
+.placebox .box {
+    height: auto;
+    width: 300px;
+}
+
+.SideLine {
+    position: absolute;
+    bottom: -200px;
+    left: 35px;
+    height: 250px;
+    width: 350px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    transition: 0.5s ease all;
+    opacity: 0.3;
+}
+
+.placebox:hover .SideLine {
+    bottom: 16px;
+    opacity: 1;
+}
+
+.placebox .UpperLine {
+    position: absolute;
+    bottom: -57px;
+    left: 113px;
+    height: 398px;
+    width: 190px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    transition: 0.5s ease all;
+    opacity: 0.3;
+    transform: rotate(90deg) skewY(90deg);
+}
+
+.placebox:hover .UpperLine {
+    transform: rotate(90deg) skewY(0deg);
+    opacity: 1;
+}
+
+.placebox p {
+    transform: rotateX(90deg);
+    /* transition: 0.5s ease all; */
+}
+
+.placebox:hover p {
+    transform: rotateX(0deg);
+}
+
+.placebox h4 {
+    transform: translateY(40px);
+}
+
+.placebox:hover h4 {
+    transform: translateY(0px)
+}
+
+/* ======customer======== */
+
+.customer {
+    background: url(../images/b2.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.customer .review {
+    background-color: white;
+    padding: 30px 30px 10px 30px;
+    place-items: center;
+    place-content: center;
+}
+
+.customer img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.customer .text {
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 30px;
+    color: #868686;
+}
+
+.customer p {
+    color: #868686;
+}
+
+/* ======footer====== */
+footer {
+    background-color: #212121;
+}
+
+footer h2 {
+    font-size: 35px;
+    font-weight: 600;
+}
+footer h5 {
+    font-size: 20px;
+}
+footer p {
+    color: #9b9fa2;
+}
+
+footer a {
+    color: #9b9fa2;
+    transition: 0.5s ease all;
+}
+
+footer a:hover {
+    color: #ed6663;
+}
+
+footer .info {
+    color: #9b9fa2;
+}
+.ftrcpy{
+    background-color: #1a1919;
+}
+.ftrcpy p{
+    color: #9b9fa2;
+}
+.ftrcpy a{
+    color: #fff;
+}

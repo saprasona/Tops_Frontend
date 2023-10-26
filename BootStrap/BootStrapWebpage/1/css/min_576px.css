@@ -1,0 +1,13 @@
+@media (min-width:576px) {
+    .navigation ul {
+        gap: 10px;
+    }
+
+    .images .backimg-text {
+        height: 200px;
+    }
+
+    .reverseval {
+        flex-direction: column-reverse;
+    }
+}

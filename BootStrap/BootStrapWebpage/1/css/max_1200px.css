@@ -1,0 +1,14 @@
+@media (max-width:1200px) {
+    .navigation ul {
+        gap: 70px;
+    }
+
+    .reverseval {
+        flex-direction: row;
+    }
+
+    .cust3 {
+        width: unset;
+        margin: unset;
+    }
+}
