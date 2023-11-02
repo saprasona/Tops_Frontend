@@ -1,20 +1,36 @@
-const people = [
-    {
-      name: "Alice",
-      hobbies: ["Reading", "Playing", "Photography"]
-    },
-    {
-      name: "Veer",
-      hobbies: ["Gaming", "Playing", "Cooking"]
-    },
-    {
-      name: "Jency",
-      hobbies: ["Drawing", "Writing", "Colouring"]
-    }
-  ];
-  
-  for (let i = 0; i < people.length; i++) {
-    const person = people[i];
-    console.log(`Name: ${person.name}, Hobbies: ${person.hobbies.slice(0, 3).join(", ")}`);
-  }
-  
+let userData = [
+  {
+    name: "Vipul",
+    age: 30,
+    hobby: ["Gaming", "Travel", "Playing"],
+  },
+  {
+    name: "Rahul",
+    age: 25,
+    hobby: ["Drawing", "playing", "Reading"],
+  },
+  {
+    name: "Sona",
+    age: 34,
+    hobby: ["Reading", "Drawing", "Cooking"],
+  },
+  {
+    name: "Alpesh",
+    age: 30,
+    hobby: ["Playing", "Reading", "Writing"],
+  },
+  {
+    name: "Jency",
+    age: 9,
+    hobby: ["Drawing", "Travel", "coloring"],
+  },
+  {
+    name: "Veer",
+    age: 8,
+    hobby: ["Gaming", "Eating", "playing"]
+  },
+];
+
+for (let i = 0; i <= 4; i++) {
+  console.log("My Name is", userData[i].name + " My Hobby is " + userData[i].hobby[1]);
+}
