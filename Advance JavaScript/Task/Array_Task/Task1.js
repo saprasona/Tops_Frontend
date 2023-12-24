@@ -20,9 +20,9 @@ for (let i = 0; i < myArray.length; i++) {
 
 let myArray1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-myArray1[5] = 100;
+myArray1[6] = 100;
 console.log(myArray1);
-
+  
 // ----------4. print a array till element value not grater then 100-----------
 
 let myArray2 = [1, 2, 3, 4, 5, 150, 7, 8, 9];
@@ -31,7 +31,7 @@ for (let i = 0; i < myArray2.length; i++) {
     if (myArray2[i] > 100) {
         break;
     }
-    console.log(myArray1[i]);
+    console.log(myArray2[i]);
 }
 
 // ---------5. add 1 in every element of an array----------
@@ -65,8 +65,8 @@ console.log(myArray);
 
 let myArray3 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 // Using map and reduce//
-const sumMapReduce = myArray3.map(element => element).reduce((acc, curr) => acc + curr, 0);
-console.log("Sum using map and reduce:-", sumMapReduce);
+const sum = myArray3.map(element => element).reduce((acc, curr) => acc + curr, 0);
+console.log("Sum using map and reduce:-", sum);
 
 // Using a for loop//
 let sumForLoop = 0;
@@ -91,13 +91,14 @@ let reversedArray = myArray.slice().reverse();
 console.log("Reversed array:", reversedArray);
 
 // ---------13. reverce an array with use of for-loop-----------
+let myArray5 = [10,20,30,40,50,60,70,80,90];
 
-for (let i = 0; i < Math.floor(myArray.length / 2); i++) {
+for (let i = 0; i < Math.floor(myArray5.length / 2); i++) {
     // Swap elements from the beginning to the end
-    let temp = myArray[i];
-    myArray[i] = myArray[myArray.length - 1 - i];
-    myArray[myArray.length - 1 - i] = temp;
+    let temp = myArray5[i];
+    myArray5[i] = myArray5[myArray5.length - 1 - i];
+    myArray5[myArray5.length - 1 - i] = temp;
 }
-console.log("Reversed array using for-loop:-", myArray);
+console.log("Reversed array using for-loop:-", myArray5);
 
 
