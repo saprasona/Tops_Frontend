@@ -33,33 +33,3 @@ root.render(
 );
 
 
-
-
-// import React from "react";
-// import ReactDOM from "react-dom";
-
-// let head = (
-//   <header>
-//     <h1>Header</h1>
-//   </header>
-// );
-
-// let nameArr = ["urvish", "nirmal", "dhaval", "sona"];
-
-// let printDiv = (
-//   <div>
-//     {head}
-//     <ul>
-//       {nameArr.map((name, index) => (
-//         <li key={index}>
-//           {index + 1}. {name}
-//         </li>
-//       ))}
-//     </ul>
-//   </div>
-// );
-
-
-// const root = ReactDOM.createRoot(document?.getElementById("root"));
-
-// root.render(printDiv);

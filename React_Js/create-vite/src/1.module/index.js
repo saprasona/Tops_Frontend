@@ -1,4 +1,4 @@
-import Test, { singleExport as customName } from "mainFun.js";
+import Test, { singleExport as customName } from "./mainFun.js";
 import { fun1, fun2 } from "./fun1.js";
 
 const singleExport = "hello world";
