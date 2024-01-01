@@ -1,5 +1,5 @@
 import React from "react";
 import "./footer.css";
 export default function Footer() {
-  return <div className="footer">@copyright React-Bootstrap.com</div>;
-}
+  return <div className="footer">@copyright Reactstrap.com</div>;
+};

@@ -6,21 +6,26 @@ import {
   CardText,
   CardTitle,
 } from "reactstrap";
+import body from "./body.css";
 
-function BasicExample() {
+const Body = () => {
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card Img variant="top" src="holder.js/100px180" />
+    <body className="border border-dark rounded-4 m-4 p-4 w-100 text-danger d-flex align-content-center justify-content-center flex-column ">
+    <Card style={{ width: '34rem' }}
+    className="justify-content-center">
+           <img alt="Sample" src="https://pic4.zhimg.com/v2-ad156ede0510d1652f6fe73e72cb38a5_1440w.jpg?source=172ae18b" />
+      <Card/>
       <CardBody>
-        <CardTitle>Card Title</CardTitle>
-        <CardText>
+        <CardTitle className="card-title" >CARD TITLE</CardTitle>
+        <CardText className="ct">
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </CardText>
-        <Button variant="primary">Go somewhere</Button>
+        <Button className="w-100" color="danger">Go somewhere</Button>
       </CardBody>
     </Card>
+    </body>
   );
-}
+};
 
-export default BasicExample;
+export default Body;

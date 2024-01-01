@@ -1,0 +1,14 @@
+.card-title{
+    font-weight: 500;
+}
+.ct{
+    text-align: left;
+}
+
+.container{
+    margin-top: 20px;
+    justify-content: left;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}

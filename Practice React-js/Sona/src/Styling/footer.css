@@ -4,5 +4,6 @@
   align-items: center;
   background-color: grey;
   color: white;
-  min-height: 100px;
+  min-height: 50px;
+  margin-top: 20px ;
 }
