@@ -1,12 +1,11 @@
-import "./App.css";
-import Hero from "./components/Hero";
-import Navigation from "./components/Navigation";
-const App = () => {
-  return;
-  <div>
-    <Navigation />
-    <Hero />
-  </div>;
-};
-
-export default App;
+import React from "react";
+import Hero from "./Hero";
+import Navigation from "./Navigation";
+export default function App() {
+  return (
+    <div>
+      <Navigation />
+      <Hero />
+    </div>
+  );
+}
