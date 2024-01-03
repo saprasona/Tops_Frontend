@@ -13,12 +13,14 @@ body {
   height: 900px;
 }
 
+/*-------- header css -------- */
 .header-container h1 {
   border: 1px solid blue;
   margin: 10px;
   padding: 20px;
 }
 
+/* ------Body css-------- */
 .body-container {
   border: 1px solid purple;
   margin: 10px;
@@ -47,12 +49,14 @@ body {
   box-sizing: border-box;
   height: 700px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 22px;
 }
 
+/* ------Footer css-------- */
 .footer-container {
   border: 1px solid blue;
   margin: 10px;
   padding: 20px;
   justify-content: center;
+  font-weight: 600;
 }

@@ -1,9 +1,0 @@
-.header-container {
-    border-bottom: 1px solid #ddd; /* Add a border at the bottom of the header */
-    padding: 10px; /* Add padding for better spacing */
-  }
-
-  .header-container h1 {
-    border-bottom: 1px solid #ddd; /* Add a border at the bottom of the h1 element */
-    margin-bottom: 10px; /* Optional: Add some space between the h1 and the border */
-  }
