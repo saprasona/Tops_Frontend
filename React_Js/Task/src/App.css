@@ -28,7 +28,7 @@ body {
 
 .content,
 .main-body {
-  border: 1px solid blue; /* Add a border between content sections */
+  border: 1px solid black; /* Add a border between content sections */
   margin: 10px; /* Add padding for better spacing */
 }
 
