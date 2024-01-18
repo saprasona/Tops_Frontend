@@ -1,0 +1,31 @@
+/* ------Body css-------- */
+.body-container {
+    border: 1px solid purple;
+    margin: 10px;
+  }
+  
+  .content,
+  .main-body {
+    border: 1px solid black; 
+    margin: 10px; 
+  }
+  
+  .main-body {
+    border: 1px solid black;
+    margin: 10px;
+  }
+  
+  .body-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .content,
+  .main-body {
+    flex: 1;
+    padding: 250px;
+    box-sizing: border-box;
+    height: 700px;
+    font-weight: 600;
+    font-size: 22px;
+  }

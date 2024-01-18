@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+  }
+  .container {
+    justify-content: center;
+    text-align: center;
+    border: 1px solid red;
+    margin: 20px;
+    height: 900px;
+  }
