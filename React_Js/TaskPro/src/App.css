@@ -19,3 +19,53 @@
 .state h4{
   padding-top: 80px ;
 }
+/* ------Input-------- */
+
+/* InputCom.css */
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.task-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.add-button {
+  margin-left: 10px; /* Adjust margin for button alignment */
+}
+
+.todo{
+  background-color: plum;
+}
+
+.task-list {
+  width: 200px;
+  margin-top: 20px;
+}
+
+.task-list ol {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.task-list li button {
+  padding: 0;
+}
+
+.task-number {
+  margin-right: 10px;
+  font-weight: bold;
+}

@@ -17,7 +17,13 @@ import LifeCycleCom from "./9.LifeCycleMethod/LifeCycleCom";
 import LoginPopUp from "./9.LifeCycleMethod/LoginPopUp";
 import UseEffect from "./10.Hook/useEffect/UseEffect";
 import UseEffectPro from "./10.Hook/useEffect/UseEffectPro";
+import InputCom from "./11.Input/InputCom";
 import "./App.css";
+import MultiInput from "./11.Input/multiInput";
+import MultiInput1 from "./11.Input/MultipleInput1";
+import MultiInput2 from "./11.Input/MultipleInput2";
+import CheckBox from "./11.Input/CheckBox";
+import Radio from "./11.Input/Radio";
 
 function App() {
   return (
@@ -52,11 +58,28 @@ function App() {
       {/* <LifeCycleCom /> */}
       {/* <LoginPopUp /> */}
 
-{/* <---------------------HOOK------------------------> */}
+      {/* <---------------------HOOK------------------------> */}
       {/* <UseEffect /> */}
-      <UseEffectPro />
+      {/* <UseEffectPro /> */}
+
+      {/* ----InputCom */}
+      {/* <InputCom/> */}
+
+      {/* MultiInput */}
+      {/* <MultiInput /> */}
+
+      {/* MultiInput1 */}
+      {/* <MultiInput1 /> */}
+
+      {/* MultiInput2 */}
+      <MultiInput2 />
       <ToastContainer />
-      
+
+      {/*CheckBox */}
+      {/* <CheckBox /> */}
+
+      {/* Radio */}
+      {/* <Radio /> */}
     </div>
   );
 }
