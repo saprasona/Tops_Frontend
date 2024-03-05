@@ -1,0 +1,3 @@
+- There are three categories of lifecycle methods: mounting, updating, and unmounting. 
+- A component “mounts” when it renders for the first time. This is when mounting lifecycle methods get called. 
+- The first time that a component instance renders, it does not update.
