@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Form, FormGroup, Input, Label, Table } from "reactstrap";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
-export default function MultiInput1() {
+export default function MultipleInput1() {
   const [user, setUser] = useState({
     name: "",
     email: "",

@@ -103,10 +103,10 @@ const person = [
 ]
 */
 
-let user = {
-  name: "urvish",
-  email: "uv@gmail.com",
-  password: "1234",
-  gender: "male",
-  hobby: ["reading", "watch movie", "traveling"],
-};
+// let user = {
+//   name: "urvish",
+//   email: "uv@gmail.com",
+//   password: "1234",
+//   gender: "male",
+//   hobby: ["reading", "watch movie", "traveling"],
+// };

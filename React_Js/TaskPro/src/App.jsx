@@ -10,6 +10,14 @@ import InputCom1 from "./Input/InputCom1";
 import MultpleInput from "./Input/MultipleInput";
 import MultipleInput from "./Input/MultipleInput";
 import MultipleInput1 from "./Input/MultipleInput1";
+import LocalStorage from "./LocalStorage/LocalStorage";
+import SelectCom from "./Input/SelectCom";
+import RangeColor from "./Input/RangeColor";
+import StrToObj from "./Input/StrToObj";
+import LocalStorage1 from "./LocalStorage/LocalStorage1";
+import LocalStorage2 from "./LocalStorage/LocalStorage2";
+import RangeColor1 from "./Input/RangeColor1";
+import ProtectedProject from "./ProtectedProject/Router";
 
 function App() {
   return (
@@ -29,15 +37,39 @@ function App() {
       {/* ---------InputFruit-------- */}
       {/* <InputFruit /> */}
 
-      {/* InputCom1 */}
+      {/* -------InputCom1----- */}
       {/* <InputCom1 /> */}
 
-      {/* MultipleInput */}
+      {/* ---------MultipleInput------- */}
       {/* <MultipleInput /> */}
       <ToastContainer />
 
-{/* MultipleInput1 */}
-<MultipleInput1 />
+{/* ----------MultipleInput1---------- */}
+{/* <MultipleInput1 /> */}
+
+{/* -------LocalStorage---------- */}
+{/* <LocalStorage /> */}
+
+{/* --------SelectCom-------- */}
+{/* <SelectCom /> */}
+
+{/* ---------StrToObj---------- */}
+{/* <StrToObj /> */}
+
+{/* --------RangeColor--------- */}
+{/* <RangeColor /> */}
+
+{/* --------RangeColor1--------- */}
+{/* <RangeColor1/> */}
+
+{/* ------LocalStorage1------- */}
+{/* <LocalStorage1 /> */}
+
+{/* ------LocalStorage2------- */}
+{/* <LocalStorage2 /> */}
+
+{/* ---------ProtectedProject-------- */}
+<ProtectedProject />
     </div>
   );
 }

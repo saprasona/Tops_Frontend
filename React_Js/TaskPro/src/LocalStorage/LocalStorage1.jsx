@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Col, Form, FormGroup, Input, Label, Table } from "reactstrap";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function MultipleInput1() {
+export default function LocalStorage1() {
+  // Initialize userArr by checking localStorage
+  const [userArr, setUserArr] = useState(() => {
+    const storedData = JSON.parse(localStorage.getItem("userArr"));
+    return storedData || [];
+  });
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -13,14 +18,45 @@ export default function MultipleInput1() {
     address: "",
     hobby: [],
     gender: "",
+    range: 50,
+    color: "",
   });
 
-  const [userArr, setUserArr] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
+
+  // Color options array
+  const colorOptions = [
+    { name: "Red", value: "#FF0000" },
+    { name: "Purple", value: "#800080" },
+    { name: "Yellow", value: "#FFFF00" },
+    { name: "Blue", value: "#0000FF" },
+    { name: "Pink", value: "#FFC0CB" },
+    { name: "Orange", value: "#FFA500" },
+    { name: "Violet", value: "#8A2BE2" },
+    { name: "Gray", value: "#808080" },
+  ];
+
+  // City options array
+  const cityOptions = [
+    "Surat",
+    "Ahmedabad",
+    "Rajkot",
+    "Vadodara",
+    "Bhavnagar",
+    "Gandhinagar",
+    "Vapi",
+    "Navsari",
+    "Patan",
+    "Valsad",
+  ];
+
+  // Save data to localStorage whenever userArr changes
+  useEffect(() => {
+    localStorage.setItem("userArr", JSON.stringify(userArr));
+  }, [userArr]);
 
   const addUser = (e) => {
     e.preventDefault();
-
     // Check if any of the required fields are empty
     if (
       !user.name ||
@@ -70,14 +106,10 @@ export default function MultipleInput1() {
       address: "",
       hobby: [],
       gender: "",
+      range: 50,
+      color: "",
     });
   };
-
-  // const deleteUser = (index) => {
-  //   const updatedUsers = [...userArr];
-  //   updatedUsers.splice(index, 1);
-  //   setUserArr(updatedUsers);
-  // };
 
   const deleteUser = (index) => {
     const updatedUsers = userArr.filter((item, i) => i !== index);
@@ -93,7 +125,23 @@ export default function MultipleInput1() {
     setUser({ ...user, hobby: updatedHobbies });
   };
 
-  
+  const handleRangeChange = (e) => {
+    setUser({ ...user, range: e.target.value });
+  };
+
+  const handleColorChange = (e) => {
+    setUser({ ...user, color: e.target.value });
+  };
+
+  const getColorName = (colorValue) => {
+    const colorOption = colorOptions.find((option) => option.value === colorValue);
+    if (colorOption) {
+      return colorOption.name;
+    } else {
+      return "";
+    }
+  };
+
   return (
     <div className="d-flex align-items-center flex-column border border-dark p-3 m-5">
       <h1>Registration Form</h1>
@@ -147,17 +195,24 @@ export default function MultipleInput1() {
           </Col>
         </FormGroup>
         <FormGroup row>
-          <Label for="city" sm={2}>
+          <Label for="citySelect" sm={2}>
             City
           </Label>
           <Col sm={10}>
             <Input
-              id="city"
-              placeholder="Enter Your City"
-              type="text"
+              type="select"
+              name="city"
+              id="citySelect"
               value={user.city}
               onChange={(e) => setUser({ ...user, city: e.target.value })}
-            />
+            >
+              <option value="">Select a city</option>
+              {cityOptions.map((city, index) => (
+                <option key={index} value={city}>
+                  {city}
+                </option>
+              ))}
+            </Input>
           </Col>
         </FormGroup>
         <FormGroup row>
@@ -185,7 +240,7 @@ export default function MultipleInput1() {
                   type="checkbox"
                   value="Reading"
                   checked={user.hobby.includes("Reading")}
-                  onChange={(e) => checkHandler("Reading",e)}
+                  onChange={(e) => checkHandler("Reading", e)}
                 />
                 Reading
               </Label>
@@ -193,20 +248,22 @@ export default function MultipleInput1() {
             <FormGroup check inline>
               <Label check>
                 <Input
-                 type="checkbox"
-                 value="Sports"
-                 checked={user.hobby.includes("Sports")}
-                 onChange={(e) => checkHandler("Sports",e)}
+                  type="checkbox"
+                  value="Sports"
+                  checked={user.hobby.includes("Sports")}
+                  onChange={(e) => checkHandler("Sports", e)}
                 />
                 Sports
               </Label>
             </FormGroup>
             <FormGroup check inline>
               <Label check>
-                <Input  type="checkbox"
-                 value="Music"
-                 checked={user.hobby.includes("Music")}
-                 onChange={(e) => checkHandler("Music",e)} />
+                <Input
+                  type="checkbox"
+                  value="Music"
+                  checked={user.hobby.includes("Music")}
+                  onChange={(e) => checkHandler("Music", e)}
+                />
                 Music
               </Label>
             </FormGroup>
@@ -243,6 +300,46 @@ export default function MultipleInput1() {
             </FormGroup>
           </Col>
         </FormGroup>
+        {/* Range input */}
+        <FormGroup row>
+          <Label for="rangeInput" sm={2}>
+            Range
+          </Label>
+          <Col sm={10}>
+            <Input
+              type="range"
+              id="rangeInput"
+              name="rangeInput"
+              min="0"
+              max="100"
+              value={user.range}
+              onChange={handleRangeChange}
+            />
+            <p>Value: {user.range}</p>
+          </Col>
+        </FormGroup>
+        {/* Color picker */}
+        <FormGroup row>
+          <Label for="colorInput" sm={2}>
+            Color
+          </Label>
+          <Col sm={10}>
+            <Input
+              type="select"
+              id="colorInput"
+              name="colorInput"
+              value={user.color}
+              onChange={handleColorChange}
+            >
+              <option value="">Select a color</option>
+              {colorOptions.map((colorOption) => (
+                <option key={colorOption.value} value={colorOption.value}>
+                  {colorOption.name}
+                </option>
+              ))}
+            </Input>
+          </Col>
+        </FormGroup>
         <Button color={editIndex !== null ? "info" : "danger"} type="submit">
           {editIndex !== null ? "Update" : "Submit"}
         </Button>
@@ -267,6 +364,8 @@ export default function MultipleInput1() {
             <th>ADDRESS</th>
             <th>HOBBY</th>
             <th>GENDER</th>
+            <th>RANGE</th>
+            <th>COLOR</th>
             <th>ACTIONS</th>
           </tr>
         </thead>
@@ -282,6 +381,26 @@ export default function MultipleInput1() {
                 <td>{e.address}</td>
                 <td>{e.hobby.join(", ")}</td>
                 <td>{e.gender}</td>
+                <td>{e.range}</td>
+                <td>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      marginLeft: "80px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: "20px",
+                        height: "20px",
+                        backgroundColor: e.color,
+                        marginRight: "5px",
+                      }}
+                    ></div>
+                    {getColorName(e.color)}
+                  </div>
+                </td>
                 <td>
                   <FaEdit
                     style={{ cursor: "pointer", color: "blue" }}

@@ -1,4 +1,5 @@
 import { ToastContainer } from "react-toastify";
+import "./App.css";
 import ClassCom from "./2.Componenets/class/ClassCom";
 import FunctionalCom from "./2.Componenets/functional/FunctionalCom";
 import StyleHome from "./3.Styling/StyleHome";
@@ -18,13 +19,19 @@ import LoginPopUp from "./9.LifeCycleMethod/LoginPopUp";
 import UseEffect from "./10.Hook/useEffect/UseEffect";
 import UseEffectPro from "./10.Hook/useEffect/UseEffectPro";
 import InputCom from "./11.Input/InputCom";
-import "./App.css";
 import MultiInput from "./11.Input/multiInput";
-import MultiInput1 from "./11.Input/MultipleInput1";
-import MultiInput2 from "./11.Input/MultipleInput2";
+import MultipleInput1 from "./11.Input/MultipleInput1";
+import MultipleInput2 from "./11.Input/MultipleInput2";
 import CheckBox from "./11.Input/CheckBox";
 import Radio from "./11.Input/Radio";
-
+import LocalStorageCom from "./12.LocalStorage/LocalStorageCom";
+import MultiUser from "./11.Input/MultiUser";
+import SelectCom from "./11.Input/SelectCom";
+import SelectCom1 from "./11.Input/SelectCom1";
+import Router from "./13.router/Router";
+import ProtectedRouter from "./14.ProtectedRoute/Router";
+import SearchParam from "./12.LocalStorage/SearchParam";
+import ProtectedProject from "./15.ProtectedProject/Router";
 function App() {
   return (
     <div className="appDiv">
@@ -62,24 +69,48 @@ function App() {
       {/* <UseEffect /> */}
       {/* <UseEffectPro /> */}
 
-      {/* ----InputCom */}
+      {/* ----InputCom------- */}
       {/* <InputCom/> */}
 
-      {/* MultiInput */}
+      {/* ------------MultiInput------------ */}
       {/* <MultiInput /> */}
 
-      {/* MultiInput1 */}
-      {/* <MultiInput1 /> */}
+      {/* -------MultipleInput1-------- */}
+      {/* <MultipleInput1 /> */}
 
-      {/* MultiInput2 */}
-      <MultiInput2 />
+      {/* ---------MultipleInput2----------- */}
+      {/* <MultipleInput2 /> */}
       <ToastContainer />
 
-      {/*CheckBox */}
+      {/* ----------MultiUser----------- */}
+      {/* <MultiUser /> */}
+
+      {/*----------CheckBox---------- */}
       {/* <CheckBox /> */}
 
-      {/* Radio */}
+      {/* ------Radio--------- */}
       {/* <Radio /> */}
+
+      {/* --------LocalStorage-------- */}
+      {/* <LocalStorageCom /> */}
+
+      {/* --------SelectCom----------- */}
+      {/* <SelectCom /> */}
+      {/* --------SelectCom1--------- */}
+      {/* <SelectCom1 /> */}
+
+      {/* --------ROUTER--------- */}
+      <Router />
+
+{/* --------SearchParam-------- */}
+      {/* <SearchParam /> */}
+
+      {/*---------ProtectedRouter-------- */}
+      {/* <ProtectedRouter /> */}
+
+
+      {/* --------ProtectedProject------- */}
+      {/* <ProtectedProject /> */}
     </div>
   );
 }
