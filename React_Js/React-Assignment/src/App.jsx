@@ -7,9 +7,7 @@ import Counter from "./Module3/Counter";
 import LifeCycleCom from "./Module4/LifeCycleMethod/LifeCycleCom";
 import LoginPopUp from "./Module4/LifeCycleMethod/LoginPopUp";
 import App1 from "./Module6/components/App1";
-
-
-
+import Header from "./Module5  Styling & Advance React/components/header/header";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,7 +15,7 @@ function App() {
   return (
     <div>
       {/* --------Module1-------- */}
-      {/* <LoginRegistrationPage /> */}
+      <LoginRegistrationPage />
 
       {/* ----Module2------ */}
       {/* <SubtotalCalculator /> */}
@@ -30,9 +28,11 @@ function App() {
       {/* <LifeCycleCom /> */}
       {/* <LoginPopUp /> */}
 
+      {/* ------Module5-------- */}
+      {/* <Header /> */}
 
-     {/* ------Module6-------- */}
-     <App1 />
+      {/* ------Module6-------- */}
+      {/* <App1 /> */}
     </div>
   );
 }
