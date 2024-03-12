@@ -1,0 +1,47 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+li{
+    list-style: none;
+}
+.heroImage{
+    width: 100%;
+    height: 600px
+}
+.herocontain{
+    position: relative;
+}
+.contain-info{
+    position: absolute;
+    top: 64px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 600px;
+}
+.contain-info h1{
+    font-size: 50px;
+
+}
+.info-div{
+    background-color: rgba(0, 0, 0, 0.674);
+}
+.section{
+    position: relative;
+}
+.section .img-section{
+    width: 100%;
+    height: 750px;
+}
+.info-section{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(68, 65, 65, 0.406);
+}
+.footer{
+    background-color: black;
+}

@@ -100,7 +100,7 @@ function App() {
       {/* <SelectCom1 /> */}
 
       {/* --------ROUTER--------- */}
-      <Router />
+      {/* <Router /> */}
 
 {/* --------SearchParam-------- */}
       {/* <SearchParam /> */}
@@ -110,7 +110,7 @@ function App() {
 
 
       {/* --------ProtectedProject------- */}
-      {/* <ProtectedProject /> */}
+      <ProtectedProject />
     </div>
   );
 }

@@ -6,8 +6,8 @@ import ListView from "./Module3/ListView";
 import Counter from "./Module3/Counter";
 import LifeCycleCom from "./Module4/LifeCycleMethod/LifeCycleCom";
 import LoginPopUp from "./Module4/LifeCycleMethod/LoginPopUp";
-import App1 from "./Module6/components/App1";
-import Header from "./Module5  Styling & Advance React/components/header/header";
+import App1 from "./Module6 React Router/components/App1";
+import WebHome from "./WebDesign/WebHome";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       {/* --------Module1-------- */}
-      <LoginRegistrationPage />
+      {/* <LoginRegistrationPage /> */}
 
       {/* ----Module2------ */}
       {/* <SubtotalCalculator /> */}
@@ -33,6 +33,9 @@ function App() {
 
       {/* ------Module6-------- */}
       {/* <App1 /> */}
+
+      <WebHome/>
+
     </div>
   );
 }
