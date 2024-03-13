@@ -1,6 +1,7 @@
 .selectDropWrapper .openSelect {
   display: block;
   padding: 10px 0px;
+  position: relative;
 }
 .selectDropWrapper .openSelect .arrow{
     position: absolute;

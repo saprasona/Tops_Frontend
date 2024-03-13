@@ -8,6 +8,7 @@ export default function InputCom1() {
   const [pendingTask, setPendingTask] = useState([]);
   const [doneTask, setDoneTask] = useState([]);
   const [index, setIndex] = useState(null);
+  const [selectedTasks, setSelectedTasks] = useState([]);
 
   // to get data from input
   const getData = (e) => {
@@ -72,6 +73,18 @@ export default function InputCom1() {
     }
   };
 
+  const handleCheckboxChange = (e, task) => {
+    const checked = e.target.checked;
+    if (checked) {
+      setSelectedTasks([...selectedTasks, task]);
+    } else {
+      setSelectedTasks(selectedTasks.filter(selectedTask => selectedTask !== task));
+    }
+    if (selectedTasks.length === 1) {
+      console.log("Selected Tasks:", selectedTasks[0], task);
+    }
+  };
+
   return (
     <div className="d-flex flex-column align-content-center m-5">
       {/* <h1>index : {index}</h1> */}
@@ -118,11 +131,18 @@ export default function InputCom1() {
           <div className="p-3 pt-0">
             {pendingTask.map((e, i) => {
               return (
+                
                 <div className="d-flex justify-content-between m-2" key={i}>
+                  <input
+                      type="checkbox"
+                      onChange={(e) => handleCheckboxChange(e, e.target.value)}
+                      value={e}
+                    />
                   <li>
                     {i + 1}. {e}
                   </li>
                   <div className="d-flex gap-2">
+                    
                     <Check
                       color="green"
                       role="button"
@@ -133,6 +153,7 @@ export default function InputCom1() {
                       role="button"
                       onClick={() => deleteHandler(pendingTask, i)}
                     />
+                    
                   </div>
                 </div>
               );

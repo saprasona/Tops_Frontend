@@ -44,32 +44,32 @@ function App() {
       {/* <MultipleInput /> */}
       <ToastContainer />
 
-{/* ----------MultipleInput1---------- */}
-{/* <MultipleInput1 /> */}
+      {/* ----------MultipleInput1---------- */}
+      {/* <MultipleInput1 /> */}
 
-{/* -------LocalStorage---------- */}
-{/* <LocalStorage /> */}
+      {/* -------LocalStorage---------- */}
+      {/* <LocalStorage /> */}
 
-{/* --------SelectCom-------- */}
-{/* <SelectCom /> */}
+      {/* --------SelectCom-------- */}
+      <SelectCom />
 
-{/* ---------StrToObj---------- */}
-{/* <StrToObj /> */}
+      {/* ---------StrToObj---------- */}
+      {/* <StrToObj /> */}
 
-{/* --------RangeColor--------- */}
-{/* <RangeColor /> */}
+      {/* --------RangeColor--------- */}
+      {/* <RangeColor /> */}
 
-{/* --------RangeColor1--------- */}
-{/* <RangeColor1/> */}
+      {/* --------RangeColor1--------- */}
+      {/* <RangeColor1/> */}
 
-{/* ------LocalStorage1------- */}
-{/* <LocalStorage1 /> */}
+      {/* ------LocalStorage1------- */}
+      {/* <LocalStorage1 /> */}
 
-{/* ------LocalStorage2------- */}
-{/* <LocalStorage2 /> */}
+      {/* ------LocalStorage2------- */}
+      {/* <LocalStorage2 /> */}
 
-{/* ---------ProtectedProject-------- */}
-<ProtectedProject />
+      {/* ---------ProtectedProject-------- */}
+      {/* <ProtectedProject /> */}
     </div>
   );
 }
