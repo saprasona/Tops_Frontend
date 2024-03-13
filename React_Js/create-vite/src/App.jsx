@@ -32,6 +32,7 @@ import Router from "./13.router/Router";
 import ProtectedRouter from "./14.ProtectedRoute/Router";
 import SearchParam from "./12.LocalStorage/SearchParam";
 import ProtectedProject from "./15.ProtectedProject/Router";
+import InputCom1 from "./11.Input/InputCom1";
 function App() {
   return (
     <div className="appDiv">
@@ -71,7 +72,7 @@ function App() {
 
       {/* ----InputCom------- */}
       {/* <InputCom/> */}
-
+      <InputCom1 />
       {/* ------------MultiInput------------ */}
       {/* <MultiInput /> */}
 
@@ -110,7 +111,7 @@ function App() {
 
 
       {/* --------ProtectedProject------- */}
-      <ProtectedProject />
+      {/* <ProtectedProject /> */}
     </div>
   );
 }
