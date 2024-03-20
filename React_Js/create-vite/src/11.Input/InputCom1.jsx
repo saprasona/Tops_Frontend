@@ -1,68 +1,324 @@
-import { Plus, Check, Trash } from "lucide-react";
-import React, { useState } from "react";
+// import React, { useState } from "react";
+// import { toast } from "react-toastify";
+// import { Button, Input } from "reactstrap";
+// import { Plus, Check, Edit, Trash } from "lucide-react";
+// import Swal from "sweetalert";
+
+// export default function InputCom1() {
+//   const [task, setTask] = useState("");
+//   const [pendingTask, setPendingTask] = useState([]);
+//   const [doneTask, setDoneTask] = useState([]);
+//   const [index, setIndex] = useState(null);
+//   const [selectedTasks, setSelectedTasks] = useState([]);
+//   const [deleteWarned, setDeleteWarned] = useState(false);
+
+//   const getData = (e) => {
+//     setTask(e?.target?.value);
+//   };
+
+//   const addData = () => {
+//     if (task !== "") {
+//       setPendingTask([...pendingTask, task]);
+//       setTask("");
+//     } else {
+//       toast.warn("Please fill some data");
+//     }
+//   };
+
+//   const deletePendingTask = (index) => {
+//     const filteredData = pendingTask.filter((_, i) => i !== index);
+//     setPendingTask(filteredData);
+//   };
+
+//   const deleteDoneTask = (index) => {
+//     if (!deleteWarned) {
+//       setDeleteWarned(true);
+//       toast.warn("Are you sure you want to delete this task?");
+//       return;
+//     }
+
+//     Swal({
+//       title: "Are you sure?",
+//       text: "Once deleted, you will not be able to recover this task!",
+//       icon: "warning",
+//       buttons: true,
+//       dangerMode: true,
+//     }).then((willDelete) => {
+//       if (willDelete) {
+//         const filteredData = doneTask.filter((_, i) => i !== index);
+//         setDoneTask(filteredData);
+//         Swal("Success", "Task has been deleted!", "success");
+//       }else {
+//         Swal("Task is safe!");
+//       }
+//     });
+
+//     setDeleteWarned(false);
+//   };
+
+//   const verifyTask = (index) => {
+//     const taskToVerify = pendingTask[index];
+//     setDoneTask([...doneTask, taskToVerify]);
+//     deletePendingTask(index);
+//   };
+
+//   const BackToPending = (index) => {
+//     const taskToMove = doneTask[index];
+//     setPendingTask([...pendingTask, taskToMove]);
+//   };
+
+//   const editTask = (index) => {
+//     setTask(pendingTask[index]);
+//     setIndex(index);
+//   };
+
+//   const updateData = () => {
+//     if (pendingTask.includes(task)) {
+//       toast.warn("Duplicate task! Please choose a different task.");
+//       return;
+//     }
+
+//     const updatedPendingTask = pendingTask.map((t, i) =>
+//       i === index ? task : t
+//     );
+//     setPendingTask(updatedPendingTask);
+//     setTask("");
+//     setIndex(null);
+//   };
+
+//   const handleKeyPress = (e) => {
+//     if (e.key === "Enter") {
+//       addData();
+//     }
+//   };
+
+//   const handleCheckboxChange = (e, index) => {
+//     const checked = e.target.checked;
+//     if (checked) {
+//       setSelectedTasks([...selectedTasks, index]);
+//     } else {
+//       setSelectedTasks(selectedTasks.filter(selectedIndex => selectedIndex !== index));
+//     }
+//     if (selectedTasks.length === 1) {
+//       console.log("Selected Index:", selectedTasks[0], index);
+//     }
+//   };
+
+//   return (
+//     <div className="d-flex flex-column align-content-center m-5">
+//       <div className="w-100 d-flex   justify-content-center ">
+//         <Input
+//           name="nameInput"
+//           className="w-25 rounded-end-0 "
+//           placeholder="Enter Your Task Here"
+//           onChange={(e) => getData(e)}
+//           onKeyPress={(e) => handleKeyPress(e)}
+//           value={task}
+//         />
+//         {index || index === 0 ? (
+//           <Button
+//             color="danger"
+//             className="rounded-start-0"
+//             onClick={() => updateData()}
+//           >
+//             Update
+//           </Button>
+//         ) : (
+//           <Button
+//             color="danger"
+//             className="rounded-start-0"
+//             onClick={() => addData()}
+//           >
+//             <Plus />
+//           </Button>
+//         )}
+//       </div>
+//       <div className="w-100 d-flex justify-content-center pt-4">
+//         <div className="w-25 border rounded-2">
+//           <h1>Pending Task</h1>
+//           <hr
+//             style={{
+//               marginTop: "0",
+//               width: "100%",
+//               height: "5px",
+//               backgroundColor: "darkgray",
+//             }}
+//           />
+//           <div className="p-3 pt-0">
+//             {pendingTask.map((e, i) => {
+//               return (
+//                 <div className="d-flex justify-content-between m-2" key={i}>
+//                   <input
+//                     type="checkbox"
+//                     onChange={(e) => handleCheckboxChange(e, i)}
+//                     value={e}
+//                   />
+//                   <li>
+//                     {i + 1}. {e}
+//                   </li>
+//                   <div className="d-flex gap-2">
+//                     <Check
+//                       color="green"
+//                       role="button"
+//                       onClick={() => verifyTask(i)}
+//                     />
+//                     <Edit
+//                       color="blue"
+//                       role="button"
+//                       onClick={() => editTask(i)}
+//                     />
+//                   </div>
+//                 </div>
+//               );
+//             })}
+//           </div>
+//         </div>
+//         <div className="w-25 border rounded-2">
+//           <h1>Done Task</h1>
+//           <hr
+//             style={{
+//               marginTop: "0",
+//               width: "100%",
+//               height: "5px",
+//               backgroundColor: "darkgray",
+//             }}
+//           />
+//           <div className="p-3 pt-0">
+//             {doneTask.map((e, i) => {
+//               return (
+//                 <div className="d-flex justify-content-between m-2" key={i}>
+//                   <li>
+//                     {i + 1}. {e}
+//                   </li>
+//                   <div className="d-flex gap-2">
+//                     <Check
+//                       color="green"
+//                       role="button"
+//                       onClick={() => BackToPending(i)}
+//                     />
+//                     <Trash
+//                       color="red"
+//                       role="button"
+//                       onClick={() => deleteDoneTask(i)}
+//                     />
+//                   </div>
+//                 </div>
+//               );
+//             })}
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { Button, Input } from "reactstrap";
+import { Plus, Check, Edit, Trash } from "lucide-react";
+import swal from "sweetalert";
 
 export default function InputCom1() {
   const [task, setTask] = useState("");
   const [pendingTask, setPendingTask] = useState([]);
   const [doneTask, setDoneTask] = useState([]);
   const [index, setIndex] = useState(null);
-  const [selectedTasks, setSelectedTasks] = useState([]);
+  const [selectedPendingTasks, setSelectedPendingTasks] = useState([]);
+  const [selectedDoneTasks, setSelectedDoneTasks] = useState([]);
+  const [selectAllPending, setSelectAllPending] = useState(false);
+  const [selectAllDone, setSelectAllDone] = useState(false);
 
-  // to get data from input
+  useEffect(() => {}, [pendingTask, doneTask]);
+
+  useEffect(() => {
+    const storedPendingTasks =
+      JSON.parse(localStorage.getItem("pendingTasks")) || [];
+    const storedDoneTasks = JSON.parse(localStorage.getItem("doneTasks")) || [];
+    setPendingTask(storedPendingTasks);
+    setDoneTask(storedDoneTasks);
+    localStorage.setItem("doneTasks", JSON.stringify(storedDoneTasks));
+  }, []);
+
   const getData = (e) => {
     setTask(e?.target?.value);
   };
 
-  // to add inputted data into array
   const addData = () => {
     if (task !== "") {
-      // ... to copy old data
       setPendingTask([...pendingTask, task]);
-      // to empty input after adding data
+      localStorage.setItem(
+        "pendingTasks",
+        JSON.stringify([...pendingTask, task])
+      );
       setTask("");
     } else {
       toast.warn("Please fill some data");
     }
   };
 
-  // handle delete
-  const deleteHandler = (array, index) => {
-    let filterData = array.filter((_, i) => i !== index);
-    array === pendingTask
-      ? setPendingTask(filterData)
-      : setDoneTask(filterData);
+  const deletePendingTask = (index) => {
+    const filteredData = pendingTask.filter((_, i) => i !== index);
+    setPendingTask(filteredData);
+    localStorage.setItem("pendingTasks", JSON.stringify(filteredData));
+  };
+
+  const deleteDoneTask = (index) => {
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this task!",
+      icon: "warning",
+      buttons: ["No, cancel", "Yes, delete it"],
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        const filteredData = doneTask.filter((_, i) => i !== index);
+        setDoneTask(filteredData);
+        localStorage.setItem("doneTasks", JSON.stringify(filteredData));
+        swal("Deleted!", "Your task has been deleted.", "success");
+      } else {
+        swal("Cancelled", "Your task is safe!", "info");
+      }
+    });
   };
 
   const verifyTask = (index) => {
     const taskToVerify = pendingTask[index];
     setDoneTask([...doneTask, taskToVerify]);
-    deleteHandler(pendingTask, index);
+    localStorage.setItem(
+      "doneTasks",
+      JSON.stringify([...doneTask, taskToVerify])
+    );
+    deletePendingTask(index);
   };
 
-  //back to pending task
   const BackToPending = (index) => {
     const taskToMove = doneTask[index];
     setPendingTask([...pendingTask, taskToMove]);
-    deleteHandler(doneTask, index);
+    localStorage.setItem(
+      "pendingTasks",
+      JSON.stringify([...pendingTask, taskToMove])
+    );
+    const filteredData = doneTask.filter((_, i) => i !== index);
+    setDoneTask(filteredData);
+    localStorage.setItem("doneTasks", JSON.stringify(filteredData));
   };
 
-  const updateHandler = (data, index) => {
-    setTask(data);
+  const editTask = (index) => {
+    setTask(pendingTask[index]);
     setIndex(index);
   };
 
   const updateData = () => {
-    // Check if the updated task already exists in the array
     if (pendingTask.includes(task)) {
       toast.warn("Duplicate task! Please choose a different task.");
       return;
     }
 
-    // Update data in the array
-    pendingTask.splice(index, 1, task);
-    setPendingTask([...pendingTask]);
+    const updatedPendingTask = pendingTask.map((t, i) =>
+      i === index ? task : t
+    );
+    setPendingTask(updatedPendingTask);
+    localStorage.setItem("pendingTasks", JSON.stringify(updatedPendingTask));
     setTask("");
     setIndex(null);
   };
@@ -73,32 +329,83 @@ export default function InputCom1() {
     }
   };
 
-  const handleCheckboxChange = (e, task) => {
+  const handleCheckboxChange = (e, index, type) => {
     const checked = e.target.checked;
-    if (checked) {
-      setSelectedTasks([...selectedTasks, task]);
-    } else {
-      setSelectedTasks(selectedTasks.filter(selectedTask => selectedTask !== task));
+    if (type === "pending") {
+      if (checked) {
+        setSelectedPendingTasks([...selectedPendingTasks, index]);
+      } else {
+        setSelectedPendingTasks(
+          selectedPendingTasks.filter(
+            (selectedIndex) => selectedIndex !== index
+          )
+        );
+      }
+    } else if (type === "done") {
+      if (checked) {
+        setSelectedDoneTasks([...selectedDoneTasks, index]);
+      } else {
+        setSelectedDoneTasks(
+          selectedDoneTasks.filter((selectedIndex) => selectedIndex !== index)
+        );
+      }
     }
-    if (selectedTasks.length === 1) {
-      console.log("Selected Tasks:", selectedTasks[0], task);
+  };
+
+  const handleSelectAll = (type) => {
+    if (type === "pending") {
+      setSelectAllPending(!selectAllPending);
+      setSelectedPendingTasks(
+        selectAllPending
+          ? []
+          : Array.from({ length: pendingTask.length }, (_, i) => i)
+      );
+    } else if (type === "done") {
+      setSelectAllDone(!selectAllDone);
+      setSelectedDoneTasks(
+        selectAllDone
+          ? []
+          : Array.from({ length: doneTask.length }, (_, i) => i)
+      );
     }
+  };
+
+  const moveToDoneTask = () => {
+    const updatedPendingTasks = pendingTask.filter(
+      (_, i) => !selectedPendingTasks.includes(i)
+    );
+    const tasksToMove = selectedPendingTasks.map((index) => pendingTask[index]);
+    setDoneTask([...doneTask, ...tasksToMove]);
+    setPendingTask(updatedPendingTasks);
+    localStorage.setItem("pendingTasks", JSON.stringify(updatedPendingTasks));
+    setSelectedPendingTasks([]);
+  };
+
+  const moveToPendingTask = () => {
+    const updatedDoneTasks = doneTask.filter(
+      (_, i) => !selectedDoneTasks.includes(i)
+    );
+    const tasksToMove = selectedDoneTasks.map((index) => doneTask[index]);
+    setPendingTask([...pendingTask, ...tasksToMove]);
+    localStorage.setItem(
+      "pendingTasks",
+      JSON.stringify([...pendingTask, ...tasksToMove])
+    );
+    setDoneTask(updatedDoneTasks);
+    setSelectedDoneTasks([]);
   };
 
   return (
     <div className="d-flex flex-column align-content-center m-5">
-      {/* <h1>index : {index}</h1> */}
-      <div className="w-100 d-flex   justify-content-center ">
+      <div className="w-100 d-flex justify-content-center ">
         <Input
           name="nameInput"
           className="w-25 rounded-end-0 "
           placeholder="Enter Your Task Here"
           onChange={(e) => getData(e)}
-          onKeyPress={(e) => handleKeyPress(e)} // Add event listener for Enter key
-          // we take task in value to control input value
+          onKeyPress={(e) => handleKeyPress(e)}
           value={task}
         />
-        {/* index => null/0/undfinde/false */}
         {index || index === 0 ? (
           <Button
             color="danger"
@@ -120,6 +427,7 @@ export default function InputCom1() {
       <div className="w-100 d-flex justify-content-center pt-4">
         <div className="w-25 border rounded-2">
           <h1>Pending Task</h1>
+
           <hr
             style={{
               marginTop: "0",
@@ -128,37 +436,51 @@ export default function InputCom1() {
               backgroundColor: "darkgray",
             }}
           />
+          <h6 className="spanSelect">
+            <input
+              type="checkbox"
+              onChange={() => handleSelectAll("pending")}
+              checked={selectAllPending}
+            />{" "}
+            <span className="ms-1">Select All</span>
+          </h6>
           <div className="p-3 pt-0">
             {pendingTask.map((e, i) => {
               return (
-                
                 <div className="d-flex justify-content-between m-2" key={i}>
                   <input
-                      type="checkbox"
-                      onChange={(e) => handleCheckboxChange(e, e.target.value)}
-                      value={e}
-                    />
+                    type="checkbox"
+                    onChange={(e) => handleCheckboxChange(e, i, "pending")}
+                    checked={selectedPendingTasks.includes(i)}
+                    value={e}
+                  />
                   <li>
                     {i + 1}. {e}
                   </li>
                   <div className="d-flex gap-2">
-                    
                     <Check
                       color="green"
                       role="button"
                       onClick={() => verifyTask(i)}
                     />
-                    <Trash
-                      color="red"
+                    <Edit
+                      color="blue"
                       role="button"
-                      onClick={() => deleteHandler(pendingTask, i)}
+                      onClick={() => editTask(i)}
                     />
-                    
                   </div>
                 </div>
               );
             })}
           </div>
+          <Button
+            color="success"
+            className="mt-2"
+            onClick={moveToDoneTask}
+            disabled={selectedPendingTasks.length === 0}
+          >
+            Move to Done Task
+          </Button>
         </div>
         <div className="w-25 border rounded-2">
           <h1>Done Task</h1>
@@ -170,10 +492,24 @@ export default function InputCom1() {
               backgroundColor: "darkgray",
             }}
           />
+          <h6 className="spanSelect">
+            <input
+              type="checkbox"
+              onChange={() => handleSelectAll("done")}
+              checked={selectAllDone}
+            />{" "}
+            <span className="ms-1">Select All</span>
+          </h6>
           <div className="p-3 pt-0">
             {doneTask.map((e, i) => {
               return (
                 <div className="d-flex justify-content-between m-2" key={i}>
+                  <input
+                    type="checkbox"
+                    onChange={(e) => handleCheckboxChange(e, i, "done")}
+                    checked={selectedDoneTasks.includes(i)}
+                    value={e}
+                  />
                   <li>
                     {i + 1}. {e}
                   </li>
@@ -183,17 +519,24 @@ export default function InputCom1() {
                       role="button"
                       onClick={() => BackToPending(i)}
                     />
-
                     <Trash
                       color="red"
                       role="button"
-                      onClick={() => deleteHandler(doneTask, i)}
+                      onClick={() => deleteDoneTask(i)}
                     />
                   </div>
                 </div>
               );
             })}
           </div>
+          <Button
+            color="success"
+            className="mt-2"
+            onClick={moveToPendingTask}
+            disabled={selectedDoneTasks.length === 0}
+          >
+            Move to Pending Task
+          </Button>
         </div>
       </div>
     </div>

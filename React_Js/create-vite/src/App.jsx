@@ -72,6 +72,7 @@ function App() {
 
       {/* ----InputCom------- */}
       {/* <InputCom/> */}
+      {/* ------Task------ */}
       <InputCom1 />
       {/* ------------MultiInput------------ */}
       {/* <MultiInput /> */}
