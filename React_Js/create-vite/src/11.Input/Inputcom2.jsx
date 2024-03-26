@@ -34,16 +34,22 @@ export default function InputCom2() {
 
   const addData = () => {
     if (task.trim() !== "") {
-      setPendingTask([...pendingTask, task]);
-      localStorage.setItem(
-        "pendingTasks",
-        JSON.stringify([...pendingTask, task])
-      );
-      setTask("");
+      // Check if the task already exists in the pending tasks
+      if (pendingTask.includes(task)) {
+        toast.warn("Task already exists! Please enter a different task.");
+      } else {
+        setPendingTask([...pendingTask, task]);
+        localStorage.setItem(
+          "pendingTasks",
+          JSON.stringify([...pendingTask, task])
+        );
+        setTask("");
+      }
     } else {
       toast.warn("Please fill some data");
     }
   };
+  
 
   const deletePendingTask = (index) => {
     const filteredData = pendingTask.filter((_, i) => i !== index);
@@ -200,18 +206,36 @@ export default function InputCom2() {
   const filteredDoneTasks = doneTask.filter((task) =>
     task.toLowerCase().includes(searchQueryDone.toLowerCase())
   );
+
   const handleSearchDoneTasks = () => {
-    // Filter done tasks based on the search query
-    const filteredDoneTasks = doneTask.filter((task) =>
-      task.toLowerCase().includes(searchQueryDone.toLowerCase())
-    );
-  
-    // Perform any actions with the filtered tasks, such as updating the UI
-    // For example, you can set the filtered tasks to a state variable to display them in the UI
-    // For demonstration, let's log the filtered tasks to the console
-    console.log("Filtered Done Tasks:", filteredDoneTasks);
+    // Update the searchQueryDone state with the input value
+    const searchInputValue = document.getElementById("doneSearchInput").value;
+    setSearchQueryDone(searchInputValue);
+
+    // If the search input is empty, reset the searchQueryDone state to show all data
+    if (searchInputValue.trim() === "") {
+      setSearchQueryDone(""); //
+      //Reset searchQueryDone when search input is cleared
+    }
   };
-  
+
+  const deleteAllDoneTasks = () => {
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover these tasks!",
+      icon: "warning",
+      buttons: ["No, cancel", "Yes, delete all"],
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        setDoneTask([]);
+        localStorage.removeItem("doneTasks");
+        swal("Deleted!", "All done tasks have been deleted.", "success");
+      } else {
+        swal("Cancelled", "Your tasks are safe!", "info");
+      }
+    });
+  };
 
   return (
     <div className="d-flex flex-column align-content-center m-5">
@@ -224,7 +248,7 @@ export default function InputCom2() {
           onKeyPress={(e) => handleKeyPress(e)}
           value={task}
         />
-               {index || index === 0 ? (
+        {index || index === 0 ? (
           <Button
             color="danger"
             className="rounded-start-0"
@@ -332,12 +356,11 @@ export default function InputCom2() {
             }}
           />
           <div className="d-flex mb-2">
-            <Input
-              placeholder="Search Done Tasks"
-            />
-            <Button color="danger">Search</Button>
+            <Input id="doneSearchInput" placeholder="Search Done Tasks" />
+            <Button color="danger" onClick={handleSearchDoneTasks}>
+              Search
+            </Button>
           </div>
-
           <h6 className="spanSelect">
             <input
               style={{
@@ -396,9 +419,17 @@ export default function InputCom2() {
           >
             Move to Pending Task
           </Button>
+          <Button
+            style={{
+              width: "100%",
+            }}
+            color="danger"
+            onClick={deleteAllDoneTasks}
+          >
+            Delete All
+          </Button>
         </div>
       </div>
     </div>
   );
 }
-
