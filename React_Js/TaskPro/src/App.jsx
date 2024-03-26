@@ -48,10 +48,10 @@ function App() {
       {/* <MultipleInput1 /> */}
 
       {/* -------LocalStorage---------- */}
-      {/* <LocalStorage /> */}
+      <LocalStorage />
 
       {/* --------SelectCom-------- */}
-      <SelectCom />
+      {/* <SelectCom /> */}
 
       {/* ---------StrToObj---------- */}
       {/* <StrToObj /> */}

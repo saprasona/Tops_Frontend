@@ -49,7 +49,6 @@ export default function InputCom2() {
       toast.warn("Please fill some data");
     }
   };
-  
 
   const deletePendingTask = (index) => {
     const filteredData = pendingTask.filter((_, i) => i !== index);
@@ -149,25 +148,63 @@ export default function InputCom2() {
 
   const handleSelectAll = (type) => {
     if (type === "pending") {
+      if (!selectAllPending) {
+        swal({
+          title: "Move All to Done",
+          text: "Are you sure you want to move all pending tasks to done?",
+          icon: "warning",
+          buttons: ["Cancel", "Move"],
+          dangerMode: true,
+        }).then((willMove) => {
+          if (willMove) {
+            // Move all pending tasks to done
+            const selectedTasks = [...pendingTask];
+            setDoneTask([...doneTask, ...selectedTasks]);
+            setPendingTask([]);
+            localStorage.setItem("doneTasks", JSON.stringify([...doneTask, ...selectedTasks]));
+            localStorage.setItem("pendingTasks", JSON.stringify([]));
+            setSelectedPendingTasks([]);
+            setSelectedDoneTasks([...Array.from({ length: doneTask.length + selectedTasks.length }, (_, i) => i)]);
+            swal("Moved!", "All pending tasks moved to done.", "success");
+          }
+        });
+      } else {
+        // Deselect all pending tasks
+        setSelectedPendingTasks([]);
+      }
       setSelectAllPending(!selectAllPending);
-      setSelectedPendingTasks(
-        selectAllPending
-          ? []
-          : Array.from({ length: pendingTask.length }, (_, i) => i)
-      );
     } else if (type === "done") {
+      if (!selectAllDone) {
+        swal({
+          title: "Move All to Pending",
+          text: "Are you sure you want to move all done tasks to pending?",
+          icon: "warning",
+          buttons: ["Cancel", "Move"],
+          dangerMode: true,
+        }).then((willMove) => {
+          if (willMove) {
+            // Move all done tasks to pending
+            const selectedTasks = [...doneTask];
+            setPendingTask([...pendingTask, ...selectedTasks]);
+            setDoneTask([]);
+            localStorage.setItem("pendingTasks", JSON.stringify([...pendingTask, ...selectedTasks]));
+            localStorage.setItem("doneTasks", JSON.stringify([]));
+            setSelectedDoneTasks([]);
+            setSelectedPendingTasks([...Array.from({ length: pendingTask.length + selectedTasks.length }, (_, i) => i)]);
+            swal("Moved!", "All done tasks moved to pending.", "success");
+          }
+        });
+      } else {
+        // Deselect all done tasks
+        setSelectedDoneTasks([]);
+      }
       setSelectAllDone(!selectAllDone);
-      setSelectedDoneTasks(
-        selectAllDone
-          ? []
-          : Array.from({ length: doneTask.length }, (_, i) => i)
-      );
     }
   };
 
-  const moveToPendingTask = () => {
+  const moveToPendingTask  = () => {
     const selectedTasks = selectedDoneTasks.map((index) => doneTask[index]);
-    let updatedDoneTasks = doneTask.filter((e, i) => {
+    let updatedDoneTasks = doneTask.filter((_, i) => {
       return !selectedDoneTasks.includes(i);
     });
     setPendingTask([...pendingTask, ...selectedTasks]);
@@ -184,7 +221,7 @@ export default function InputCom2() {
     const selectedTasks = selectedPendingTasks.map(
       (index) => pendingTask[index]
     );
-    let updatedPendingTasks = pendingTask.filter((e, i) => {
+    let updatedPendingTasks = pendingTask.filter((_, i) => {
       return !selectedPendingTasks.includes(i);
     });
     setDoneTask([...doneTask, ...selectedTasks]);
@@ -433,3 +470,4 @@ export default function InputCom2() {
     </div>
   );
 }
+
