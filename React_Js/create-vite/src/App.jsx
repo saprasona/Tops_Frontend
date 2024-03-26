@@ -33,6 +33,8 @@ import ProtectedRouter from "./14.ProtectedRoute/Router";
 import SearchParam from "./12.LocalStorage/SearchParam";
 import ProtectedProject from "./15.ProtectedProject/Router";
 import InputCom1 from "./11.Input/InputCom1";
+import UseContaxtCom from "./10.Hook/useContaxt/UseContaxtCom";
+import InputCom2 from "./11.Input/Inputcom2";
 function App() {
   return (
     <div className="appDiv">
@@ -69,11 +71,15 @@ function App() {
       {/* <---------------------HOOK------------------------> */}
       {/* <UseEffect /> */}
       {/* <UseEffectPro /> */}
+      {/* <UseContaxtCom /> */}
 
       {/* ----InputCom------- */}
       {/* <InputCom/> */}
+
       {/* ------Task------ */}
-      <InputCom1 />
+      {/* <InputCom1 /> */}
+      <InputCom2 />
+
       {/* ------------MultiInput------------ */}
       {/* <MultiInput /> */}
 

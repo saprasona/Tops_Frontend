@@ -1,224 +1,10 @@
-// import React, { useState } from "react";
-// import { toast } from "react-toastify";
-// import { Button, Input } from "reactstrap";
-// import { Plus, Check, Edit, Trash } from "lucide-react";
-// import Swal from "sweetalert";
-
-// export default function InputCom1() {
-//   const [task, setTask] = useState("");
-//   const [pendingTask, setPendingTask] = useState([]);
-//   const [doneTask, setDoneTask] = useState([]);
-//   const [index, setIndex] = useState(null);
-//   const [selectedTasks, setSelectedTasks] = useState([]);
-//   const [deleteWarned, setDeleteWarned] = useState(false);
-
-//   const getData = (e) => {
-//     setTask(e?.target?.value);
-//   };
-
-//   const addData = () => {
-//     if (task !== "") {
-//       setPendingTask([...pendingTask, task]);
-//       setTask("");
-//     } else {
-//       toast.warn("Please fill some data");
-//     }
-//   };
-
-//   const deletePendingTask = (index) => {
-//     const filteredData = pendingTask.filter((_, i) => i !== index);
-//     setPendingTask(filteredData);
-//   };
-
-//   const deleteDoneTask = (index) => {
-//     if (!deleteWarned) {
-//       setDeleteWarned(true);
-//       toast.warn("Are you sure you want to delete this task?");
-//       return;
-//     }
-
-//     Swal({
-//       title: "Are you sure?",
-//       text: "Once deleted, you will not be able to recover this task!",
-//       icon: "warning",
-//       buttons: true,
-//       dangerMode: true,
-//     }).then((willDelete) => {
-//       if (willDelete) {
-//         const filteredData = doneTask.filter((_, i) => i !== index);
-//         setDoneTask(filteredData);
-//         Swal("Success", "Task has been deleted!", "success");
-//       }else {
-//         Swal("Task is safe!");
-//       }
-//     });
-
-//     setDeleteWarned(false);
-//   };
-
-//   const verifyTask = (index) => {
-//     const taskToVerify = pendingTask[index];
-//     setDoneTask([...doneTask, taskToVerify]);
-//     deletePendingTask(index);
-//   };
-
-//   const BackToPending = (index) => {
-//     const taskToMove = doneTask[index];
-//     setPendingTask([...pendingTask, taskToMove]);
-//   };
-
-//   const editTask = (index) => {
-//     setTask(pendingTask[index]);
-//     setIndex(index);
-//   };
-
-//   const updateData = () => {
-//     if (pendingTask.includes(task)) {
-//       toast.warn("Duplicate task! Please choose a different task.");
-//       return;
-//     }
-
-//     const updatedPendingTask = pendingTask.map((t, i) =>
-//       i === index ? task : t
-//     );
-//     setPendingTask(updatedPendingTask);
-//     setTask("");
-//     setIndex(null);
-//   };
-
-//   const handleKeyPress = (e) => {
-//     if (e.key === "Enter") {
-//       addData();
-//     }
-//   };
-
-//   const handleCheckboxChange = (e, index) => {
-//     const checked = e.target.checked;
-//     if (checked) {
-//       setSelectedTasks([...selectedTasks, index]);
-//     } else {
-//       setSelectedTasks(selectedTasks.filter(selectedIndex => selectedIndex !== index));
-//     }
-//     if (selectedTasks.length === 1) {
-//       console.log("Selected Index:", selectedTasks[0], index);
-//     }
-//   };
-
-//   return (
-//     <div className="d-flex flex-column align-content-center m-5">
-//       <div className="w-100 d-flex   justify-content-center ">
-//         <Input
-//           name="nameInput"
-//           className="w-25 rounded-end-0 "
-//           placeholder="Enter Your Task Here"
-//           onChange={(e) => getData(e)}
-//           onKeyPress={(e) => handleKeyPress(e)}
-//           value={task}
-//         />
-//         {index || index === 0 ? (
-//           <Button
-//             color="danger"
-//             className="rounded-start-0"
-//             onClick={() => updateData()}
-//           >
-//             Update
-//           </Button>
-//         ) : (
-//           <Button
-//             color="danger"
-//             className="rounded-start-0"
-//             onClick={() => addData()}
-//           >
-//             <Plus />
-//           </Button>
-//         )}
-//       </div>
-//       <div className="w-100 d-flex justify-content-center pt-4">
-//         <div className="w-25 border rounded-2">
-//           <h1>Pending Task</h1>
-//           <hr
-//             style={{
-//               marginTop: "0",
-//               width: "100%",
-//               height: "5px",
-//               backgroundColor: "darkgray",
-//             }}
-//           />
-//           <div className="p-3 pt-0">
-//             {pendingTask.map((e, i) => {
-//               return (
-//                 <div className="d-flex justify-content-between m-2" key={i}>
-//                   <input
-//                     type="checkbox"
-//                     onChange={(e) => handleCheckboxChange(e, i)}
-//                     value={e}
-//                   />
-//                   <li>
-//                     {i + 1}. {e}
-//                   </li>
-//                   <div className="d-flex gap-2">
-//                     <Check
-//                       color="green"
-//                       role="button"
-//                       onClick={() => verifyTask(i)}
-//                     />
-//                     <Edit
-//                       color="blue"
-//                       role="button"
-//                       onClick={() => editTask(i)}
-//                     />
-//                   </div>
-//                 </div>
-//               );
-//             })}
-//           </div>
-//         </div>
-//         <div className="w-25 border rounded-2">
-//           <h1>Done Task</h1>
-//           <hr
-//             style={{
-//               marginTop: "0",
-//               width: "100%",
-//               height: "5px",
-//               backgroundColor: "darkgray",
-//             }}
-//           />
-//           <div className="p-3 pt-0">
-//             {doneTask.map((e, i) => {
-//               return (
-//                 <div className="d-flex justify-content-between m-2" key={i}>
-//                   <li>
-//                     {i + 1}. {e}
-//                   </li>
-//                   <div className="d-flex gap-2">
-//                     <Check
-//                       color="green"
-//                       role="button"
-//                       onClick={() => BackToPending(i)}
-//                     />
-//                     <Trash
-//                       color="red"
-//                       role="button"
-//                       onClick={() => deleteDoneTask(i)}
-//                     />
-//                   </div>
-//                 </div>
-//               );
-//             })}
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { Button, Input } from "reactstrap";
 import { Plus, Check, Edit, Trash } from "lucide-react";
 import swal from "sweetalert";
 
-export default function InputCom1() {
+export default function InputCom2() {
   const [task, setTask] = useState("");
   const [pendingTask, setPendingTask] = useState([]);
   const [doneTask, setDoneTask] = useState([]);
@@ -414,6 +200,18 @@ export default function InputCom1() {
   const filteredDoneTasks = doneTask.filter((task) =>
     task.toLowerCase().includes(searchQueryDone.toLowerCase())
   );
+  const handleSearchDoneTasks = () => {
+    // Filter done tasks based on the search query
+    const filteredDoneTasks = doneTask.filter((task) =>
+      task.toLowerCase().includes(searchQueryDone.toLowerCase())
+    );
+  
+    // Perform any actions with the filtered tasks, such as updating the UI
+    // For example, you can set the filtered tasks to a state variable to display them in the UI
+    // For demonstration, let's log the filtered tasks to the console
+    console.log("Filtered Done Tasks:", filteredDoneTasks);
+  };
+  
 
   return (
     <div className="d-flex flex-column align-content-center m-5">
@@ -603,7 +401,4 @@ export default function InputCom1() {
     </div>
   );
 }
-
-
-
 
