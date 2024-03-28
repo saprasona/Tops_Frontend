@@ -8,9 +8,18 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import IconCompare from "../../assets/images/icon-compare.svg";
 import IconHeart from "../../assets/images/icon-heart.svg";
 import IconCart from "../../assets/images/icon-cart.svg";
-import IconUser from '../../assets/images/icon-user.svg';
+import IconUser from "../../assets/images/icon-user.svg";
+import Button from "@mui/material/Button";
+import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+import { ClickAwayListener } from "@mui/base/ClickAwayListener";
+
 
 const Header = () => {
+  const [isOpenDropDown, setisOpenDropDown] = useState(false);
+
   const [categories, setcategories] = useState([
     " Milks And Dairies",
     "Clothing & Beauty",
@@ -85,36 +94,65 @@ const Header = () => {
                     icon={<LocationOnOutlinedIcon style={{ opacity: "0.7" }} />}
                   />
                 </div>
-
-                <ul className="list list-inline mb-0 headerTabs">
-                  <li className="list list-inline-item">
+                <ClickAwayListener onClickAway={() => setisOpenDropDown(false)}>
+                <ul className="list-inline mb-0 headerTabs">
+                  <li className="list-inline-item">
                     <span>
                       <img src={IconCompare} />
                       <span className="badge bg-success rounded-circle">3</span>
                       Compare
                     </span>
                   </li>
-                  <li className="list list-inline-item">
+                  <li className="list-inline-item">
                     <span>
                       <img src={IconHeart} />
                       <span className="badge bg-success rounded-circle">3</span>
                       Wishlist
                     </span>
                   </li>
-                  <li className="list list-inline-item">
+                  <li className="list-inline-item">
                     <span>
                       <img src={IconCart} />
                       <span className="badge bg-success rounded-circle">3</span>
                       Cart
                     </span>
                   </li>
-                  <li className="list list-inline-item">
-                    <span>
+                  <li className="list-inline-item">
+                
+                    <span onClick={() => setisOpenDropDown(!isOpenDropDown)}>
                       <img src={IconUser} />
-                     Account
+                      Account
                     </span>
+                    {isOpenDropDown !== false && 
+                      <ul className="dropdownMenu">
+                        <li>
+                          <Button className="align-items-center">
+                            <Person2OutlinedIcon />
+                            My Account
+                          </Button>
+                          <Button>
+                            <LocationOnOutlinedIcon />
+                            Order Tracking
+                          </Button>
+                          <Button>
+                            <FavoriteBorderOutlinedIcon />
+                            My Wishlist
+                          </Button>
+                          <Button>
+                            <SettingsOutlinedIcon />
+                            Setting
+                          </Button>
+                          <Button>
+                            <LogoutOutlinedIcon />
+                            Sign Out
+                          </Button>
+                        </li>
+                      </ul>
+                    }
+                  
                   </li>
                 </ul>
+                </ClickAwayListener>
               </div>
             </div>
           </div>

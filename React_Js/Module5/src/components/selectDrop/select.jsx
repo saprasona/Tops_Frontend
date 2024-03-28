@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import "../selectDrop/select.css";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { ClickAwayListener } from "@mui/base/ClickAwayListener";
-import FamilyRestroomTwoToneIcon from '@mui/icons-material/FamilyRestroomTwoTone';
+import FamilyRestroomTwoToneIcon from "@mui/icons-material/FamilyRestroomTwoTone";
 
-const Select = ({ data, placeholder,icon }) => {
+const Select = ({ data, placeholder, icon }) => {
   const [isOpenSelect, setisOpenSelect] = useState(false);
   const [selectedIndex, setselectedIndex] = useState(0);
   const [selectedItem, setselectedItem] = useState(placeholder);
+  const [listData, setListData] = useState(data);
+  const [listData2, setListData2] = useState(data);
 
   const openSelect = () => {
     setisOpenSelect(!isOpenSelect);
@@ -19,18 +21,37 @@ const Select = ({ data, placeholder,icon }) => {
     setselectedItem(name);
   };
 
+  const filterList = (e) => {
+    const keyword = e.target.value.toLowerCase();
+    // console.log(keyword);
+
+    const list = listData2.filter((item) => {
+      return item.toLowerCase().includes(keyword);
+    });
+
+    const list2 = list.filter((item, index) => list.indexOf(item) === index);
+
+    setListData(list2);
+  };
+
   return (
     <ClickAwayListener onClickAway={() => setisOpenSelect(false)}>
       <div className="selectDropWrapper cursor position-relative">
-      {icon}
+        {icon}
         <span className="openSelect" onClick={openSelect}>
-          {selectedItem}
+          {selectedItem.length > 14
+            ? selectedItem.substr(0, 14) + "..."
+            : selectedItem}
           <KeyboardArrowDownIcon className="arrow" />
         </span>
         {isOpenSelect === true && (
           <div className="selectDrop">
             <div className="searchField">
-              <input type="text" placeholder="Search here..." />
+              <input
+                type="text"
+                placeholder="Search here..."
+                onChange={filterList}
+              />
             </div>
             <ul className="searchResults">
               <li
@@ -41,7 +62,7 @@ const Select = ({ data, placeholder,icon }) => {
                 {placeholder}
               </li>
 
-              {data.map((item, index) => {
+              {listData.map((item, index) => {
                 return (
                   <li
                     key={index + 1}
