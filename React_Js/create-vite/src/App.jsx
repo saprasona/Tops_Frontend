@@ -35,6 +35,8 @@ import ProtectedProject from "./15.ProtectedProject/Router";
 import InputCom1 from "./11.Input/InputCom1";
 import UseContaxtCom from "./10.Hook/useContaxt/UseContaxtCom";
 import InputCom2 from "./11.Input/Inputcom2";
+import TaskProject from "./TaskProject/Router";
+
 function App() {
   return (
     <div className="appDiv">
@@ -78,7 +80,7 @@ function App() {
 
       {/* ------Task------ */}
       {/* <InputCom1 /> */}
-      <InputCom2 />
+      {/* <InputCom2 /> */}
 
       {/* ------------MultiInput------------ */}
       {/* <MultiInput /> */}
@@ -119,6 +121,10 @@ function App() {
 
       {/* --------ProtectedProject------- */}
       {/* <ProtectedProject /> */}
+
+
+      {/* ----------TaskProject------------ */}
+      {/* <TaskProject /> */}
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { Button, Input } from "reactstrap";
 import { Plus, Check, Edit, Trash } from "lucide-react";
 import swal from "sweetalert";
 
-export default function InputCom1() {
+export default function InputCom2() {
   const [task, setTask] = useState("");
   const [pendingTask, setPendingTask] = useState([]);
   const [doneTask, setDoneTask] = useState([]);
@@ -17,13 +17,10 @@ export default function InputCom1() {
   const [searchQueryDone, setSearchQueryDone] = useState("");
 
   useEffect(() => {
-    const storedPendingTasks =
-      JSON.parse(localStorage.getItem("pendingTasks")) || [];
+    const storedPendingTasks = JSON.parse(localStorage.getItem("pendingTasks")) || [];
     const storedDoneTasks = JSON.parse(localStorage.getItem("doneTasks")) || [];
     setPendingTask(storedPendingTasks);
     setDoneTask(storedDoneTasks);
-
-    // Initialize selected tasks when component mounts
     setSelectedPendingTasks([]);
     setSelectedDoneTasks([]);
   }, []);
@@ -34,15 +31,11 @@ export default function InputCom1() {
 
   const addData = () => {
     if (task.trim() !== "") {
-      // Check if the task already exists in the pending tasks
       if (pendingTask.includes(task)) {
         toast.warn("Task already exists! Please enter a different task.");
       } else {
         setPendingTask([...pendingTask, task]);
-        localStorage.setItem(
-          "pendingTasks",
-          JSON.stringify([...pendingTask, task])
-        );
+        localStorage.setItem("pendingTasks", JSON.stringify([...pendingTask, task]));
         setTask("");
       }
     } else {
@@ -79,10 +72,7 @@ export default function InputCom1() {
     const taskToVerify = pendingTask[index];
     setDoneTask([...doneTask, taskToVerify]);
     deletePendingTask(index);
-    localStorage.setItem(
-      "doneTasks",
-      JSON.stringify([...doneTask, taskToVerify])
-    );
+    localStorage.setItem("doneTasks", JSON.stringify([...doneTask, taskToVerify]));
   };
 
   const BackToPending = (index) => {
@@ -90,10 +80,7 @@ export default function InputCom1() {
     setPendingTask([...pendingTask, taskToMove]);
     const filteredData = doneTask.filter((_, i) => i !== index);
     setDoneTask(filteredData);
-    localStorage.setItem(
-      "pendingTasks",
-      JSON.stringify([...pendingTask, taskToMove])
-    );
+    localStorage.setItem("pendingTasks", JSON.stringify([...pendingTask, taskToMove]));
     localStorage.setItem("doneTasks", JSON.stringify(filteredData));
   };
 
@@ -130,9 +117,7 @@ export default function InputCom1() {
         setSelectedPendingTasks([...selectedPendingTasks, index]);
       } else {
         setSelectedPendingTasks(
-          selectedPendingTasks.filter(
-            (selectedIndex) => selectedIndex !== index
-          )
+          selectedPendingTasks.filter((selectedIndex) => selectedIndex !== index)
         );
       }
     } else if (type === "done") {
@@ -149,111 +134,92 @@ export default function InputCom1() {
   const handleSelectAll = (type) => {
     if (type === "pending") {
       if (!selectAllPending) {
-        swal({
-          title: "Move All to Done",
-          text: "Are you sure you want to move all pending tasks to done?",
-          icon: "warning",
-          buttons: ["Cancel", "Move"],
-          dangerMode: true,
-        }).then((willMove) => {
-          if (willMove) {
-            // Move all pending tasks to done
-            const selectedTasks = [...pendingTask];
-            setDoneTask([...doneTask, ...selectedTasks]);
-            setPendingTask([]);
-            localStorage.setItem("doneTasks", JSON.stringify([...doneTask, ...selectedTasks]));
-            localStorage.setItem("pendingTasks", JSON.stringify([]));
-            setSelectedPendingTasks([]);
-            setSelectedDoneTasks([...Array.from({ length: doneTask.length + selectedTasks.length }, (_, i) => i)]);
-            swal("Moved!", "All pending tasks moved to done.", "success");
-          }
-        });
+        const allPendingIndices = [...Array(pendingTask.length).keys()];
+        setSelectedPendingTasks(allPendingIndices);
       } else {
-        // Deselect all pending tasks
         setSelectedPendingTasks([]);
       }
       setSelectAllPending(!selectAllPending);
     } else if (type === "done") {
       if (!selectAllDone) {
-        swal({
-          title: "Move All to Pending",
-          text: "Are you sure you want to move all done tasks to pending?",
-          icon: "warning",
-          buttons: ["Cancel", "Move"],
-          dangerMode: true,
-        }).then((willMove) => {
-          if (willMove) {
-            // Move all done tasks to pending
-            const selectedTasks = [...doneTask];
-            setPendingTask([...pendingTask, ...selectedTasks]);
-            setDoneTask([]);
-            localStorage.setItem("pendingTasks", JSON.stringify([...pendingTask, ...selectedTasks]));
-            localStorage.setItem("doneTasks", JSON.stringify([]));
-            setSelectedDoneTasks([]);
-            setSelectedPendingTasks([...Array.from({ length: pendingTask.length + selectedTasks.length }, (_, i) => i)]);
-            swal("Moved!", "All done tasks moved to pending.", "success");
-          }
-        });
+        const allDoneIndices = [...Array(doneTask.length).keys()];
+        setSelectedDoneTasks(allDoneIndices);
       } else {
-        // Deselect all done tasks
         setSelectedDoneTasks([]);
       }
       setSelectAllDone(!selectAllDone);
     }
   };
 
-  const moveToPendingTask  = () => {
+  const moveToPendingTask = () => {
     const selectedTasks = selectedDoneTasks.map((index) => doneTask[index]);
     let updatedDoneTasks = doneTask.filter((_, i) => {
       return !selectedDoneTasks.includes(i);
     });
     setPendingTask([...pendingTask, ...selectedTasks]);
     setDoneTask(updatedDoneTasks);
-    localStorage.setItem(
-      "pendingTasks",
-      JSON.stringify([...pendingTask, ...selectedTasks])
-    );
+    localStorage.setItem("pendingTasks", JSON.stringify([...pendingTask, ...selectedTasks]));
     localStorage.setItem("doneTasks", JSON.stringify(updatedDoneTasks));
     setSelectedDoneTasks([]);
   };
 
   const moveToDoneTask = () => {
-    const selectedTasks = selectedPendingTasks.map(
-      (index) => pendingTask[index]
-    );
+    const selectedTasks = selectedPendingTasks.map((index) => pendingTask[index]);
     let updatedPendingTasks = pendingTask.filter((_, i) => {
       return !selectedPendingTasks.includes(i);
     });
     setDoneTask([...doneTask, ...selectedTasks]);
     setPendingTask(updatedPendingTasks);
-    localStorage.setItem(
-      "doneTasks",
-      JSON.stringify([...doneTask, ...selectedTasks])
-    );
+    localStorage.setItem("doneTasks", JSON.stringify([...doneTask, ...selectedTasks]));
     localStorage.setItem("pendingTasks", JSON.stringify(updatedPendingTasks));
     setSelectedPendingTasks([]);
   };
 
-  // Filter pending tasks based on search query
-  const filteredPendingTasks = pendingTask.filter((task) =>
-    task.toLowerCase().includes(searchQueryPending.toLowerCase())
-  );
+  const handleAllMoveToPending = () => {
+    swal({
+      title: "Are you sure?",
+      text: "Once moved, all done tasks will be moved to pending tasks!",
+      icon: "warning",
+      buttons: ["No, cancel", "Yes, move all"],
+      dangerMode: false,
+    }).then((willMove) => {
+      if (willMove) {
+        moveToPendingTask();
+        swal("Moved!", "All done tasks have been moved to pending.", "success");
+      } else {
+        swal("Cancelled", "No tasks were moved.", "info");
+      }
+    });
+  };
 
-  // Filter done tasks based on search query
-  const filteredDoneTasks = doneTask.filter((task) =>
-    task.toLowerCase().includes(searchQueryDone.toLowerCase())
-  );
-
-  const handleSearchDoneTasks = () => {
-    // Update the searchQueryDone state with the input value
-    const searchInputValue = document.getElementById("doneSearchInput").value;
-    setSearchQueryDone(searchInputValue);
-
-    // If the search input is empty, reset the searchQueryDone state to show all data
-    if (searchInputValue.trim() === "") {
-      setSearchQueryDone(""); //
-      //Reset searchQueryDone when search input is cleared
+  const handleAllMoveToDone = () => {
+    if (pendingTask.length === 0) {
+      swal(
+        "No pending tasks",
+        "There are no pending tasks to move to done.",
+        "info"
+      );
+      return;
     }
+
+    swal({
+      title: "Are you sure?",
+      text: "Once moved, all pending tasks will be moved to done tasks!",
+      icon: "warning",
+      buttons: ["No, cancel", "Yes, move all"],
+      dangerMode: false,
+    }).then((willMove) => {
+      if (willMove) {
+        const allPendingTasks = [...pendingTask];
+        setDoneTask([...doneTask, ...allPendingTasks]);
+        setPendingTask([]);
+        localStorage.setItem("doneTasks", JSON.stringify([...doneTask, ...allPendingTasks]));
+        localStorage.setItem("pendingTasks", JSON.stringify([]));
+        swal("Moved!", "All pending tasks have been moved to done.", "success");
+      } else {
+        swal("Cancelled", "No tasks were moved.", "info");
+      }
+    });
   };
 
   const deleteAllDoneTasks = () => {
@@ -272,6 +238,23 @@ export default function InputCom1() {
         swal("Cancelled", "Your tasks are safe!", "info");
       }
     });
+  };
+
+  const filteredPendingTasks = pendingTask.filter((task) =>
+    task.toLowerCase().includes(searchQueryPending.toLowerCase())
+  );
+
+  const searchData = () => {
+    const allData = JSON.parse(localStorage.getItem("doneTasks") || "[]");
+    setDoneTask(allData.filter((e) => e.includes(searchQueryDone)));
+  };
+
+  const searchHandler = (e) => {
+    setSearchQueryDone(e?.target?.value);
+    if (e?.target?.value?.length === 0) {
+      const allData = JSON.parse(localStorage.getItem("doneTasks") || "[]");
+      setDoneTask(allData);
+    }
   };
 
   return (
@@ -381,6 +364,15 @@ export default function InputCom1() {
           >
             Move to Done Task
           </Button>
+          <Button
+            style={{
+              width: "100%",
+            }}
+            color="primary"
+            onClick={handleAllMoveToDone}
+          >
+            All Move To Done Task
+          </Button>
         </div>
         <div className="w-25 border rounded-2">
           <h1>Done Task</h1>
@@ -393,8 +385,12 @@ export default function InputCom1() {
             }}
           />
           <div className="d-flex mb-2">
-            <Input id="doneSearchInput" placeholder="Search Done Tasks" />
-            <Button color="danger" onClick={handleSearchDoneTasks}>
+            <Input
+              id="doneSearchInput"
+              placeholder="Search Done Tasks"
+              onChange={(e) => searchHandler(e)}
+            />
+            <Button color="danger" onClick={searchData}>
               Search
             </Button>
           </div>
@@ -417,7 +413,7 @@ export default function InputCom1() {
             }}
           />
           <div className="p-3 pt-0">
-            {filteredDoneTasks.map((e, i) => {
+            {doneTask.map((e, i) => {
               return (
                 <div className="d-flex justify-content-between m-2" key={i}>
                   <input
@@ -455,6 +451,15 @@ export default function InputCom1() {
             disabled={selectedDoneTasks.length === 0}
           >
             Move to Pending Task
+          </Button>
+          <Button
+            style={{
+              width: "100%",
+            }}
+            color="primary"
+            onClick={handleAllMoveToPending}
+          >
+            All Move To Pending Task
           </Button>
           <Button
             style={{
