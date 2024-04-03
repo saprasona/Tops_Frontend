@@ -48,7 +48,7 @@ function App() {
       {/* <MultipleInput1 /> */}
 
       {/* -------LocalStorage---------- */}
-      <LocalStorage />
+      {/* <LocalStorage /> */}
 
       {/* --------SelectCom-------- */}
       {/* <SelectCom /> */}
@@ -69,7 +69,7 @@ function App() {
       {/* <LocalStorage2 /> */}
 
       {/* ---------ProtectedProject-------- */}
-      {/* <ProtectedProject /> */}
+      <ProtectedProject />
     </div>
   );
 }

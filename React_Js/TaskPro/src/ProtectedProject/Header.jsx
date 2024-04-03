@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "reactstrap";
-import { PersonStanding, User } from "lucide-react";
 import LoginModal from "./LoginModal";
+import RegisterModal from "./RegisterModal";
 
-export default () => {
-  const [modal, setModal] = useState(false);
+export default function Header() {
+  const [loginModal, setLoginModal] = useState(false);
+  const [registerModal, setRegisterModal] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState("");
-  const toggle = () => setModal(!modal);
+  const toggleLoginModal = () => setLoginModal(!loginModal);
+  const toggleRegisterModal = () => setRegisterModal(!registerModal);
   const navigate = useNavigate();
 
   const loginHandler = () => {
     setUserName("User");
     setIsLoggedIn(true);
-    toggle();
+    toggleLoginModal();
   };
 
   const logoutHandler = () => {
@@ -24,7 +26,8 @@ export default () => {
 
   return (
     <>
-      <LoginModal modal={modal} toggle={toggle} />
+      <LoginModal modal={loginModal} toggle={toggleLoginModal} />
+      <RegisterModal modal={registerModal} toggle={toggleRegisterModal} />
       <div
         style={{
           width: "100%",
@@ -34,34 +37,36 @@ export default () => {
           justifyContent: "space-around",
         }}
       >
-        <div className="w-75 d-flex justify-content-center gap-4 m-3">
+        <div className="w-75 d-flex justify-content-center gap-4 m-3 Navbar">
           <li>
-            <NavLink to={"/"}>Home</NavLink>
+            <NavLink to={"/"}style={{ textDecoration: "none", color: "primary" }}>Home</NavLink>
           </li>
           <li>
-            <NavLink to={"/about"}>About</NavLink>
+            <NavLink to={"/about"}style={{ textDecoration: "none", color: "primary" }}>About</NavLink>
           </li>
           <li>
-            <NavLink to={"/contact"}>Contact</NavLink>
+            <NavLink to={"/contact"}style={{ textDecoration: "none", color: "primary" }}>Contact</NavLink>
           </li>
         </div>
         <div className="w-25 gap-4 align-items-center d-flex justify-content-end pe-4">
           {isLoggedIn ? (
             <>
-              <span>Hello, {userName}</span>
               <Button color="danger" onClick={logoutHandler}>
                 Logout
               </Button>
             </>
           ) : (
-            <User
-              role="button"
-              onClick={loginHandler}
-              style={{ cursor: "pointer" }}
-            />
+            <>
+              <Button color="primary" onClick={toggleLoginModal}>
+                Login
+              </Button>
+              <Button color="primary" onClick={toggleRegisterModal}>
+                Register
+              </Button>
+            </>
           )}
         </div>
       </div>
     </>
   );
-};
+}
