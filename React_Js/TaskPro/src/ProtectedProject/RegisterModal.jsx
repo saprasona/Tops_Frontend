@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 import Select from "react-select";
-import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from "reactstrap";
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+} from "reactstrap";
 
 const options = [
   { value: "user", label: "User" },
@@ -15,6 +24,13 @@ export default function RegisterModal({ toggle, modal }) {
     password: "",
     confirmPassword: "",
     userType: null,
+  });
+
+  const [userAddress, setUserAddress] = useState({
+    add: "",
+    city: "",
+    state: "",
+    pinCode: "",
   });
 
   const handleChange = (e) => {
@@ -34,9 +50,10 @@ export default function RegisterModal({ toggle, modal }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Handle registration logic here
     console.log("User Data:", userData);
+    console.log("User Address:", userAddress);
 
     // Reset form fields
     setUserData({
@@ -45,6 +62,13 @@ export default function RegisterModal({ toggle, modal }) {
       password: "",
       confirmPassword: "",
       userType: null,
+    });
+
+    setUserAddress({
+      add: "",
+      city: "",
+      state: "",
+      pinCode: "",
     });
 
     // Close the modal
@@ -107,6 +131,54 @@ export default function RegisterModal({ toggle, modal }) {
               value={userData.userType}
               options={options}
               onChange={handleUserTypeChange}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="add">Address</Label>
+            <Input
+              id="add"
+              name="add"
+              value={userAddress.add}
+              placeholder="Address"
+              onChange={(e) =>
+                setUserAddress({ ...userAddress, add: e.target.value })
+              }
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="city">City</Label>
+            <Input
+              id="city"
+              name="city"
+              value={userAddress.city}
+              placeholder="City"
+              onChange={(e) =>
+                setUserAddress({ ...userAddress, city: e.target.value })
+              }
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="state">State</Label>
+            <Input
+              id="state"
+              name="state"
+              value={userAddress.state}
+              placeholder="State"
+              onChange={(e) =>
+                setUserAddress({ ...userAddress, state: e.target.value })
+              }
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="pinCode">Pin Code</Label>
+            <Input
+              id="pinCode"
+              name="pinCode"
+              value={userAddress.pinCode}
+              placeholder="Pin Code"
+              onChange={(e) =>
+                setUserAddress({ ...userAddress, pinCode: e.target.value })
+              }
             />
           </FormGroup>
           <Button color="primary" className="w-25" type="submit">
