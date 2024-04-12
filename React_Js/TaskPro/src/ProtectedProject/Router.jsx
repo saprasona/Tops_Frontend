@@ -1,11 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Profile from "./Profile";
 import Header from "./Header";
 import About from "./About";
-import Contact from "./contact";
+import Contact from "./Contact";
 
 export default function Router() {
   return (

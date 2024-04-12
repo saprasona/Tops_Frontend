@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "reactstrap";
+import { User } from "lucide-react"; // Importing User icon
 import LoginModal from "./LoginModal";
 import RegisterModal from "./RegisterModal";
+import CardComponent from "./Cards";
 
 export default function Header() {
   const [loginModal, setLoginModal] = useState(false);
@@ -26,7 +28,11 @@ export default function Header() {
 
   return (
     <>
-      <LoginModal modal={loginModal} toggle={toggleLoginModal} />
+      <LoginModal
+        modal={loginModal}
+        toggle={toggleLoginModal}
+        toggleRegisterModal={toggleRegisterModal}
+      />
       <RegisterModal modal={registerModal} toggle={toggleRegisterModal} />
       <div
         style={{
@@ -39,13 +45,24 @@ export default function Header() {
       >
         <div className="w-75 d-flex justify-content-center gap-4 m-3 Navbar">
           <li>
-            <NavLink to={"/"}style={{ textDecoration: "none", color: "primary" }}>Home</NavLink>
+            <NavLink to={"/"} style={{ textDecoration: "none", color: "primary" }}>
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to={"/about"}style={{ textDecoration: "none", color: "primary" }}>About</NavLink>
+            <NavLink to={"/about"} style={{ textDecoration: "none", color: "primary" }}>
+              About
+            </NavLink>
           </li>
           <li>
-            <NavLink to={"/contact"}style={{ textDecoration: "none", color: "primary" }}>Contact</NavLink>
+            <NavLink to={"/contact"} style={{ textDecoration: "none", color: "primary" }}>
+              Contact
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/profile"} style={{ textDecoration: "none", color: "primary" }}>
+              Profile
+            </NavLink>
           </li>
         </div>
         <div className="w-25 gap-4 align-items-center d-flex justify-content-end pe-4">
@@ -54,19 +71,17 @@ export default function Header() {
               <Button color="danger" onClick={logoutHandler}>
                 Logout
               </Button>
+              <User size={24} role="button" onClick={() => navigate("/profile")} />{" "}
+              {/* User icon with navigation to profile */}
             </>
           ) : (
-            <>
-              <Button color="primary" onClick={toggleLoginModal}>
-                Login
-              </Button>
-              <Button color="primary" onClick={toggleRegisterModal}>
-                Register
-              </Button>
-            </>
+            <Button color="primary" onClick={toggleLoginModal}>
+              Login
+            </Button>
           )}
         </div>
       </div>
+      <CardComponent /> {/* Rendering the CardComponent */}
     </>
   );
 }

@@ -1,21 +1,7 @@
 import React, { useState } from "react";
-import Select from "react-select";
-import {
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-} from "reactstrap";
-
-const options = [
-  { value: "user", label: "User" },
-  { value: "employee", label: "Employee" },
-  { value: "admin", label: "Admin" },
-];
+import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from "reactstrap";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 export default function RegisterModal({ toggle, modal }) {
   const [userData, setUserData] = useState({
@@ -23,11 +9,10 @@ export default function RegisterModal({ toggle, modal }) {
     email: "",
     password: "",
     confirmPassword: "",
-    userType: null,
   });
 
   const [userAddress, setUserAddress] = useState({
-    add: "",
+    address: "",
     city: "",
     state: "",
     pinCode: "",
@@ -35,44 +20,62 @@ export default function RegisterModal({ toggle, modal }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUserData((prevUserData) => ({
-      ...prevUserData,
-      [name]: value,
-    }));
-  };
-
-  const handleUserTypeChange = (selectedOption) => {
-    setUserData((prevUserData) => ({
-      ...prevUserData,
-      userType: selectedOption,
-    }));
+    if (name === "address" || name === "city" || name === "state" || name === "pinCode") {
+      setUserAddress((prevUserAddress) => ({
+        ...prevUserAddress,
+        [name]: value,
+      }));
+    } else {
+      setUserData((prevUserData) => ({
+        ...prevUserData,
+        [name]: value,
+      }));
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Handle registration logic here
-    console.log("User Data:", userData);
+    if (userData.password !== userData.confirmPassword) {
+      toast.error("Passwords do not match.");
+      return;
+    }
+
+    const data = {
+      ...userData,
+      address: userAddress
+    };
+
+    // Log user data and address before sending the request
+    console.log("User Data:", data);
     console.log("User Address:", userAddress);
 
-    // Reset form fields
-    setUserData({
-      name: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-      userType: null,
-    });
-
-    setUserAddress({
-      add: "",
-      city: "",
-      state: "",
-      pinCode: "",
-    });
-
-    // Close the modal
-    toggle();
+    axios({
+      method: "post",
+      url: "http://localhost:9999/user/signup",
+      data: data,
+    })
+      .then((res) => {
+        toast.success("Sign up successful!");
+        toggle();
+        localStorage.setItem("user", JSON.stringify(res.data.data));
+        setUserData({
+          name: "",
+          email: "",
+          password: "",
+          confirmPassword: "",
+        });
+        setUserAddress({
+          address: "",
+          city: "",
+          state: "",
+          pinCode: "",
+        });
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+        toast.error("Something went wrong.");
+      });
   };
 
   return (
@@ -124,25 +127,13 @@ export default function RegisterModal({ toggle, modal }) {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="userType">User Type</Label>
-            <Select
-              id="userType"
-              name="userType"
-              value={userData.userType}
-              options={options}
-              onChange={handleUserTypeChange}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for="add">Address</Label>
+            <Label for="address">Address</Label>
             <Input
-              id="add"
-              name="add"
-              value={userAddress.add}
+              id="address"
+              name="address"
+              value={userAddress.address}
               placeholder="Address"
-              onChange={(e) =>
-                setUserAddress({ ...userAddress, add: e.target.value })
-              }
+              onChange={handleChange}
             />
           </FormGroup>
           <FormGroup>
@@ -152,9 +143,7 @@ export default function RegisterModal({ toggle, modal }) {
               name="city"
               value={userAddress.city}
               placeholder="City"
-              onChange={(e) =>
-                setUserAddress({ ...userAddress, city: e.target.value })
-              }
+              onChange={handleChange}
             />
           </FormGroup>
           <FormGroup>
@@ -164,9 +153,7 @@ export default function RegisterModal({ toggle, modal }) {
               name="state"
               value={userAddress.state}
               placeholder="State"
-              onChange={(e) =>
-                setUserAddress({ ...userAddress, state: e.target.value })
-              }
+              onChange={handleChange}
             />
           </FormGroup>
           <FormGroup>
@@ -176,9 +163,7 @@ export default function RegisterModal({ toggle, modal }) {
               name="pinCode"
               value={userAddress.pinCode}
               placeholder="Pin Code"
-              onChange={(e) =>
-                setUserAddress({ ...userAddress, pinCode: e.target.value })
-              }
+              onChange={handleChange}
             />
           </FormGroup>
           <Button color="primary" className="w-25" type="submit">

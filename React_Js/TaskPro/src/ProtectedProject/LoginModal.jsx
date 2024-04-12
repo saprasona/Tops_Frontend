@@ -1,43 +1,49 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-} from "reactstrap";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from "reactstrap";
 
-export default function LoginModal({ toggle, modal }) {
-  const [loginData, setLoginData] = useState({
-    email: "",
-    password: "",
-  });
+const initialData = { email: "", password: "" };
+
+export default function LoginModal({ toggle, modal, toggleRegisterModal }) {
+  const [credentials, setCredentials] = useState(initialData);
+  const [loading, setLoading] = useState(false);
+
+  const toggleHandler = () => {
+    toggle();
+    toggleRegisterModal(); // Toggle the register modal
+  };
+
+  const loginHandler = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    axios({
+      method: "post",
+      url: "http://localhost:9999/user/signin",
+      data: credentials,
+    })
+      .then((response) => {
+        console.log("Response:", response.data);
+        localStorage.setItem("user", JSON.stringify(response.data.data));
+        toast.success("Logged in successfully!");
+        setCredentials(initialData);
+        toggle();
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        toast.error("Failed to log in. Please try again later.");
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setLoginData((prevLoginData) => ({
-      ...prevLoginData,
+    setCredentials((prevCredentials) => ({
+      ...prevCredentials,
       [name]: value,
     }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Handle login logic here
-    console.log("Login Data:", loginData);
-
-    // Reset form fields
-    setLoginData({
-      email: "",
-      password: "",
-    });
-
-    // Close the modal
-    toggle();
   };
 
   return (
@@ -45,33 +51,43 @@ export default function LoginModal({ toggle, modal }) {
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Login</ModalHeader>
         <ModalBody>
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={loginHandler}>
             <FormGroup>
               <Label for="email">Email</Label>
               <Input
-                id="email"
-                name="email"
-                value={loginData.email}
-                placeholder="Email"
                 type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                value={credentials.email}
                 onChange={handleChange}
               />
             </FormGroup>
             <FormGroup>
               <Label for="password">Password</Label>
               <Input
-                id="password"
-                name="password"
-                value={loginData.password}
-                placeholder="Password"
                 type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+                value={credentials.password}
                 onChange={handleChange}
               />
             </FormGroup>
-            <Button color="danger" className="w-25" type="submit">
-              Submit
+            <Button color="primary" type="submit" disabled={loading}>
+              {loading ? "Logging in..." : "Login"}
             </Button>
           </Form>
+          <p>
+            Don't have an account?{" "}
+            <span
+              onClick={toggleHandler}
+              role="button"
+              style={{ color: "blue", cursor: "pointer" }}
+            >
+              Sign Up
+            </span>
+          </p>
         </ModalBody>
       </Modal>
     </div>
