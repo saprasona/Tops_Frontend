@@ -11,7 +11,7 @@ export default function LoginModal({ toggle, modal, toggleRegisterModal }) {
 
   const toggleHandler = () => {
     toggle();
-    toggleRegisterModal(); // Toggle the register modal
+    toggleRegisterModal();
   };
 
   const loginHandler = (e) => {
@@ -23,7 +23,7 @@ export default function LoginModal({ toggle, modal, toggleRegisterModal }) {
       data: credentials,
     })
       .then((response) => {
-        console.log("Response:", response.data);
+        console.log("Response:", response.data.data);
         localStorage.setItem("user", JSON.stringify(response.data.data));
         toast.success("Logged in successfully!");
         setCredentials(initialData);

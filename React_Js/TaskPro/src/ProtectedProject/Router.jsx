@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import Profile from "./Profile";
-import Header from "./Header";
-import About from "./About";
-import Contact from "./Contact";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import Header from "./component/Header/Header";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 export default function Router() {
   return (

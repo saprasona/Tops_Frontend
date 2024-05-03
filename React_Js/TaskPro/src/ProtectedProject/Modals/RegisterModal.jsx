@@ -3,12 +3,14 @@ import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } 
 import { toast } from "react-toastify";
 import axios from "axios";
 
-export default function RegisterModal({ toggle, modal }) {
+export default function RegisterModal({ toggle, modal, toggleLoginModal }) {
   const [userData, setUserData] = useState({
     name: "",
     email: "",
     password: "",
     confirmPassword: "",
+    age: "",
+    gender: "",
   });
 
   const [userAddress, setUserAddress] = useState({
@@ -20,7 +22,7 @@ export default function RegisterModal({ toggle, modal }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if (name === "address" || name === "city" || name === "state" || name === "pinCode") {
+    if (["address", "city", "state", "pinCode"].includes(name)) {
       setUserAddress((prevUserAddress) => ({
         ...prevUserAddress,
         [name]: value,
@@ -43,12 +45,8 @@ export default function RegisterModal({ toggle, modal }) {
 
     const data = {
       ...userData,
-      address: userAddress
+      address: userAddress,
     };
-
-    // Log user data and address before sending the request
-    console.log("User Data:", data);
-    console.log("User Address:", userAddress);
 
     axios({
       method: "post",
@@ -64,6 +62,8 @@ export default function RegisterModal({ toggle, modal }) {
           email: "",
           password: "",
           confirmPassword: "",
+          age: "",
+          gender: "",
         });
         setUserAddress({
           address: "",
@@ -76,6 +76,11 @@ export default function RegisterModal({ toggle, modal }) {
         console.error("Error:", err);
         toast.error("Something went wrong.");
       });
+  };
+
+  const toggleHandler = () => {
+    toggle();
+    toggleLoginModal();
   };
 
   return (
@@ -127,6 +132,40 @@ export default function RegisterModal({ toggle, modal }) {
             />
           </FormGroup>
           <FormGroup>
+            <Label for="age">Age</Label>
+            <Input
+              id="age"
+              name="age"
+              value={userData.age}
+              placeholder="Age"
+              type="number"
+              onChange={handleChange}
+            />
+          </FormGroup>
+          <FormGroup tag="fieldset">
+            <Label>Gender</Label>
+            <FormGroup check>
+              <Input
+                type="radio"
+                name="gender"
+                value="male"
+                checked={userData.gender === "male"}
+                onChange={handleChange}
+              />{" "}
+              Male
+            </FormGroup>
+            <FormGroup check>
+              <Input
+                type="radio"
+                name="gender"
+                value="female"
+                checked={userData.gender === "female"}
+                onChange={handleChange}
+              />{" "}
+              Female
+            </FormGroup>
+          </FormGroup>
+          <FormGroup>
             <Label for="address">Address</Label>
             <Input
               id="address"
@@ -170,6 +209,16 @@ export default function RegisterModal({ toggle, modal }) {
             Register
           </Button>
         </Form>
+        <p>
+          Already have an account?{" "}
+          <span
+            onClick={toggleHandler}
+            role="button"
+            style={{ color: "blue", cursor: "pointer" }}
+          >
+            Login
+          </span>
+        </p>
       </ModalBody>
     </Modal>
   );

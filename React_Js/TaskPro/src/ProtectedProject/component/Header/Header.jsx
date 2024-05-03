@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "reactstrap";
-import { User } from "lucide-react"; // Importing User icon
-import LoginModal from "./LoginModal";
-import RegisterModal from "./RegisterModal";
-import CardComponent from "./Cards";
+import { User } from "lucide-react";
+import LoginModal from "../../Modals/LoginModal";
+import RegisterModal from "../../Modals/RegisterModal";
+import Cards from "../../ProductApi/Cards";
 
 export default function Header() {
   const [loginModal, setLoginModal] = useState(false);
@@ -33,7 +33,7 @@ export default function Header() {
         toggle={toggleLoginModal}
         toggleRegisterModal={toggleRegisterModal}
       />
-      <RegisterModal modal={registerModal} toggle={toggleRegisterModal} />
+      <RegisterModal modal={registerModal} toggle={toggleRegisterModal} toggleLoginModal={toggleLoginModal} />
       <div
         style={{
           width: "100%",
@@ -71,8 +71,7 @@ export default function Header() {
               <Button color="danger" onClick={logoutHandler}>
                 Logout
               </Button>
-              <User size={24} role="button" onClick={() => navigate("/profile")} />{" "}
-              {/* User icon with navigation to profile */}
+              <User size={24} role="button" onClick={() => navigate("/profile")} />
             </>
           ) : (
             <Button color="primary" onClick={toggleLoginModal}>
@@ -81,7 +80,7 @@ export default function Header() {
           )}
         </div>
       </div>
-      <CardComponent /> {/* Rendering the CardComponent */}
+      <Cards />
     </>
   );
 }
