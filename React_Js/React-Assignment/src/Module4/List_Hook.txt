@@ -1,3 +1,80 @@
-- There are three categories of lifecycle methods: mounting, updating, and unmounting. 
-- A component “mounts” when it renders for the first time. This is when mounting lifecycle methods get called. 
-- The first time that a component instance renders, it does not update.
+Life Cycle in Class Components
+Class components in React have a series of lifecycle methods that allow developers to hook into different stages of the component's lifecycle. These methods can be broadly categorized into three phases:
+
+Mounting: When the instance of a component is being created and inserted into the DOM.
+
+constructor(): Initializes the component's state and binds event handlers.
+static getDerivedStateFromProps(): Syncs state to props when a component is being created.
+render(): Returns the JSX that describes the UI.
+componentDidMount(): Invoked immediately after a component is mounted. Ideal for initializing network requests or subscriptions.
+Updating: When a component is being re-rendered due to changes in state or props.
+
+static getDerivedStateFromProps(): Syncs state to props when a component is being re-rendered.
+shouldComponentUpdate(): Determines if the component should re-render.
+render(): Returns the updated JSX.
+getSnapshotBeforeUpdate(): Captures information (e.g., scroll position) before the DOM is updated.
+componentDidUpdate(): Invoked immediately after the DOM is updated.
+Unmounting: When a component is being removed from the DOM.
+
+componentWillUnmount(): Cleans up side effects, like invalidating timers, canceling network requests, or cleaning up subscriptions.
+Error Handling: When there is an error during rendering, in a lifecycle method, or in the constructor of any child component.
+
+componentDidCatch(): Used to catch errors in the children components.
+Life Cycle in Functional Components with Hooks
+Functional components with Hooks provide a more concise way to manage state and lifecycle events. The primary hook for handling lifecycle events is useEffect, which can be used to mimic the lifecycle methods of class components.
+
+Mounting:
+
+The code inside useEffect() with an empty dependency array [] acts similarly to componentDidMount(). It runs once after the initial render.
+jsx
+Copy code
+useEffect(() => {
+    // Code to run after the component mounts
+}, []);
+Updating:
+
+useEffect() without a dependency array runs after every render, acting similarly to componentDidUpdate().
+
+useEffect(() => {
+    // Code to run after every render
+});
+useEffect() with a specific dependency array runs only when those dependencies change.
+
+useEffect(() => {
+    // Code to run when 'dependency' changes
+}, [dependency]);
+Unmounting:
+
+The cleanup function returned by useEffect() acts similarly to componentWillUnmount().
+jsx
+Copy code
+useEffect(() => {
+    // Code to run on mount and update
+
+    return () => {
+        // Cleanup code to run on unmount
+    };
+}, []);
+Error Handling:
+
+React doesn't provide a direct hook for error boundaries within functional components. However, you can wrap components in an error boundary component to catch errors in the children.
+
+class ErrorBoundary extends React.Component {
+    state = { hasError: false };
+
+    static getDerivedStateFromError(error) {
+        return { hasError: true };
+    }
+
+    componentDidCatch(error, info) {
+        // Log the error or perform side effects
+    }
+
+    render() {
+        if (this.state.hasError) {
+            return <h1>Something went wrong.</h1>;
+        }
+        return this.props.children;
+    }
+}
+By using Hooks, functional components can achieve the same level of functionality as class components but in a more compact and readable form. This shift allows for more flexible and reusable logic, reducing the complexity of managing component lifecycles.

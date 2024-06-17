@@ -25,7 +25,7 @@ function App() {
       {/* <Counter /> */}
 
       {/* -------Module4--------- */}
-      {/* <LifeCycleCom /> */}
+      <LifeCycleCom />
       {/* <LoginPopUp /> */}
 
       {/* ------Module5-------- */}
@@ -34,7 +34,7 @@ function App() {
       {/* ------Module6-------- */}
       {/* <App1 /> */}
 
-      <WebHome/>
+      {/* <WebHome/> */}
 
     </div>
   );

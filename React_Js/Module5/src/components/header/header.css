@@ -69,7 +69,7 @@ header .countryWrapper .selectDropWrapper .openSelect{
 }
 
 header .countryWrapper .selectDropWrapper .selectDrop{
-left: 1px !important;
+left: 0px !important;
 }
 
 header .countryWrapper .openSelect{
@@ -86,7 +86,7 @@ header .headerTabs li{
 }
 
 header .headerTabs li span{
-  font-size: 19px;
+  font-size: 20px;
   cursor: pointer;
   color: #7E7E7E;
 }
@@ -96,13 +96,13 @@ header .headerTabs li span img{
 }
 
 header .headerTabs li .badge{
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   color: #fff;
-  font-weight: 400;
+  /* font-weight: 400; */
   position: absolute;
-  top: -21px;
-  left: 10px;
+  top: 15px;
+  left: 12px;
 }
 
 .dropdownMenu{
@@ -114,6 +114,7 @@ header .headerTabs li .badge{
   background: #fff;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   padding: 10px 0px;
+  z-index: 100;
 }
 
 .dropdownMenu li{
@@ -128,7 +129,7 @@ header .headerTabs li .badge{
   justify-content: flex-start !important;
   color: rgba(0,0,0,0.7) !important;
   text-transform: capitalize !important;
-  font-size: 16px !important;
+  font-size: 18px !important;
   padding: 12px 15px !important;
 }
 

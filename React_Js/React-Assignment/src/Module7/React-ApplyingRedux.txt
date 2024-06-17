@@ -1,0 +1,12 @@
+1. What is Redux?
+=> Redux is a state managing library used in JavaScript apps. It simply manages the state of your application or in other words, it is used to manage the data of the application. It is used with a library like React.
+
+2. What is Redux Thunk used for?   
+=> Redux Thunk is middleware that allows you to return functions, rather than just actions, within Redux. This allows for delayed actions, including working with promises. One of the main use cases for this middleware is for handling actions that might not be synchronous, for example, using axios to send a GET request.
+
+3. What is Pure Component? When to use Pure Component over Component?
+=> It implements a shouldComponentUpdate method with a shallow prop and state comparison. Unlike a regular Component, which re-renders whenever a state or props changes, a PureComponent performs a shallow comparison to determine if the actual values have changed, not just the reference.
+
+4. What is the second argument that can optionally be passed tosetState and what is its purpose?
+=> The second argument that can optionally be passed to setState is a callback function which gets called immediately after the setState is completed and the components get re-rendered. 
+- If you want your program to update the value of a state using setState and then perform certain actions on the updated value of the state then you must specify those actions in a function which should be the second argument of the setState. If we do not do so then those actions will be performed on the previous value of state because of the asynchronous nature of setState.

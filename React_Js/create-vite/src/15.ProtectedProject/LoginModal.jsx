@@ -1,77 +1,99 @@
 import React, { useState } from "react";
-import Select from "react-select";
+import axios from "axios";
+import { toast } from "react-toastify";
+
 import {
   Button,
   Modal,
   ModalHeader,
   ModalBody,
-  ModalFooter,
   Form,
   FormGroup,
   Label,
   Input,
 } from "reactstrap";
 
-const options = [
-  { value: "user", label: "User" },
-  { value: "employee", label: "Employee" },
-  { value: "admin", label: "Admin" },
-];
+const initialData = { email: "", password: "" };
 
-export default function LoginModal({ toggle, modal }) {
+export default function LoginModal({ toggle, modal, regToggle }) {
+  const [credentials, setCredentials] = useState(initialData);
+  const [loading, setLoading] = useState(false);
+
+  const toggleHandler = () => {
+    toggle();
+    regToggle();
+  };
+
+  const loginHandler = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const response = await axios.post(
+        "http://localhost:9999/user/signin",
+        credentials
+      );
+      console.log("Login successful:", response.data);
+      toast.success("Logged in successfully!");
+      setLoading(false);
+      setCredentials(initialData);
+      toggle();
+    } catch (error) {
+      console.error("Login failed:", error);
+      toast.error("Failed to log in. Please try again later.");
+      setLoading(false);
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setCredentials((prevCredentials) => ({
+      ...prevCredentials,
+      [name]: value,
+    }));
+  };
+
   return (
     <div>
       <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+        <ModalHeader toggle={toggle}>Login</ModalHeader>
         <ModalBody>
-          <Form>
+          <Form onSubmit={loginHandler}>
             <FormGroup>
-              <Label for="exampleEmail">Email</Label>
+              <Label for="email">Email</Label>
               <Input
-                id="exampleEmail"
-                name="email"
-                placeholder="with a placeholder"
                 type="email"
+                name="email"
+                id="email"
+                value={credentials.email}
+                onChange={handleChange}
               />
             </FormGroup>
             <FormGroup>
-              <Label for="examplePassword">Password</Label>
+              <Label for="password">Password</Label>
               <Input
-                id="examplePassword"
-                name="password"
-                placeholder="password placeholder"
                 type="password"
+                name="password"
+                id="password"
+                value={credentials.password}
+                onChange={handleChange}
               />
             </FormGroup>
-            <FormGroup>
-              <Label for="examplePassword">UserType</Label>
-              <Select options={options} />
-            </FormGroup>
-            <Button color="danger" className="w-100" onClick={toggle}>
-              Login
+            <Button color="primary" type="submit" disabled={loading}>
+              {loading ? "Logging in..." : "Login"}
             </Button>
           </Form>
+          <p>
+            Don't have an account?{" "}
+            <span
+              onClick={toggleHandler}
+              role="button"
+              style={{ color: "blue", cursor: "pointer" }}
+            >
+              Sign Up
+            </span>
+          </p>
         </ModalBody>
       </Modal>
     </div>
   );
 }
-
-/*
- 
-  {
-    "name": "urvish",
-    "email": "uv@gmail.com",
-    "number": "7895461237",
-    "password": "123456",
-    "age": 23,
-    "address": [
-      {
-        "add": "vesu",
-        "city": "surat",
-        "state": "guj",
-        "pinCode": "395007"
-      }
-    ]
-	}
-*/

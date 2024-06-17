@@ -1,4 +1,4 @@
-#root {
+ #root {
   text-align: center;
 }
 
@@ -28,7 +28,7 @@ li {
 
 /* InputCom.css */
 
-.input-container {
+ .input-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,7 +43,7 @@ li {
 
 .add-button {
   margin-left: 10px; /* Adjust margin for button alignment */
-}
+} 
 
 .todo{
   background-color: plum;

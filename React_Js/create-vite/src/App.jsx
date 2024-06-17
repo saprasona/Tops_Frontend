@@ -124,7 +124,8 @@ function App() {
 
 
       {/* ----------TaskProject------------ */}
-      {/* <TaskProject /> */}
+      <TaskProject />
+
     </div>
   );
 }

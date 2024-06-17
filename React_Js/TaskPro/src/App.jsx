@@ -18,6 +18,13 @@ import LocalStorage1 from "./LocalStorage/LocalStorage1";
 import LocalStorage2 from "./LocalStorage/LocalStorage2";
 import RangeColor1 from "./Input/RangeColor1";
 import ProtectedProject from "./ProtectedProject/Router";
+import AppRedux from "./Redux/SimpleRedux/AppRedux";
+import AppRedux1 from "./Redux1Task/SimpleRedux/AppRedux1";
+import AppRedux2 from "./CrudRedux/SimpleRedux/AppRedux2";
+import AppRedux3 from "./CrudReduxTask/SimpleRedux/AppRedux3";
+import AppProduct from "./ReduxProjectApi/Project/AppProduct";
+
+
 
 function App() {
   return (
@@ -69,7 +76,22 @@ function App() {
       {/* <LocalStorage2 /> */}
 
       {/* ---------ProtectedProject-------- */}
-      <ProtectedProject />
+      {/* <ProtectedProject /> */}
+
+      {/*------- Simple Redux ----------*/}
+      {/* <AppRedux /> */}
+
+      {/* ----------task------- */}
+      {/* <AppRedux1/> */}
+
+      {/* -----CrudRedux----- */}
+      <AppRedux2 />
+
+        {/* -----CrudReduxTask----- */}
+      {/* <AppRedux3 /> */}
+
+{/* ----ReduxProjectApi--- */}
+      {/* <AppProduct />  */}
     </div>
   );
 }

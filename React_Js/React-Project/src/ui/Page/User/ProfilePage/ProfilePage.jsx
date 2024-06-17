@@ -36,23 +36,23 @@ export default function ProfilePage() {
                 <tbody>
                   <tr>
                     <td>Name</td>
-                    <td>Mr Krunal Padsala</td>
+                    <td>Sapra Sona</td>
                   </tr>
                   <tr>
                     <td>Date of birth</td>
-                    <td>30 December 2001</td>
+                    <td>15 October 1988</td>
                   </tr>
                   <tr>
                     <td>Phone number</td>
-                    <td>9512540136</td>
+                    <td>9624285760</td>
                   </tr>
                   <tr>
                     <td>Email address</td>
-                    <td>krunalpadsala30@gmail.com</td>
+                    <td>sonasapra007@gmail.com</td>
                   </tr>
                   <tr>
                     <td>Address</td>
-                    <td>Varachha Road, Surat - 395006</td>
+                    <td>82,Laxminagae Soc,Sarthana Jakatnaka, Surat - 395006</td>
                   </tr>
                 </tbody>
               </table>

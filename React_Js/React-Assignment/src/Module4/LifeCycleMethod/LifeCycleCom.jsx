@@ -18,7 +18,7 @@ export default class LifeCycleCom extends Component {
     setTimeout(() => {
       alert("please login");
     }, 5000);
-    // api call - socket connection
+  
   }
 
   componentDidUpdate(oldProps, oldState) {
