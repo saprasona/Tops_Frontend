@@ -8,6 +8,7 @@ import LifeCycleCom from "./Module4/LifeCycleMethod/LifeCycleCom";
 import LoginPopUp from "./Module4/LifeCycleMethod/LoginPopUp";
 import App1 from "./Module6 React Router/components/App1";
 import WebHome from "./WebDesign/WebHome";
+import AppRedux from "./Module7 Redux/React/AppRedux";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -25,7 +26,7 @@ function App() {
       {/* <Counter /> */}
 
       {/* -------Module4--------- */}
-      <LifeCycleCom />
+      {/* <LifeCycleCom /> */}
       {/* <LoginPopUp /> */}
 
       {/* ------Module5-------- */}
@@ -36,6 +37,8 @@ function App() {
 
       {/* <WebHome/> */}
 
+      {/* ----Module 7----- */}
+      <AppRedux />
     </div>
   );
 }

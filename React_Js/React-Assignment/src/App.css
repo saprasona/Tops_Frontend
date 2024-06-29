@@ -1,4 +1,4 @@
-body {
+/* body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
@@ -7,10 +7,10 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-}
+} */
 
 /* ----------Module1--------- */
-.container {
+/* .container {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -65,12 +65,11 @@ body {
 
 .input-group button:hover {
   background-color: #2980b9;
-}
-
+} */
 
 /*------------ module2---------- */
 
-table {
+/* table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
@@ -110,22 +109,21 @@ button {
 
 button:hover {
   background-color: #c82333;
-}
-
+} */
 
 /* ----Module3-------- */
-.counter-container {
+/* .counter-container {
   text-align: center;
 }
 
 .counter-heading {
   font-size: 24px;
-  margin-bottom: 10px; /* Add a margin to separate the heading from buttons */
+  margin-bottom: 10px; 
 }
 
 .counter-value {
   font-size: 18px;
-  margin-bottom: 20px; /* Add a margin to separate the value from buttons */
+  margin-bottom: 20px; 
 }
 
 .counter-button {
@@ -133,4 +131,4 @@ button:hover {
   padding: 8px 16px;
   font-size: 16px;
   cursor: pointer;
-}
+} */
