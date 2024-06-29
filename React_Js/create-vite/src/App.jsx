@@ -106,6 +106,7 @@ function App() {
 
       {/* --------SelectCom----------- */}
       {/* <SelectCom /> */}
+
       {/* --------SelectCom1--------- */}
       {/* <SelectCom1 /> */}
 
@@ -113,7 +114,7 @@ function App() {
       {/* <Router /> */}
 
 {/* --------SearchParam-------- */}
-      {/* <SearchParam /> */}
+      <SearchParam />
 
       {/*---------ProtectedRouter-------- */}
       {/* <ProtectedRouter /> */}
@@ -124,7 +125,7 @@ function App() {
 
 
       {/* ----------TaskProject------------ */}
-      <TaskProject />
+      {/* <TaskProject /> */}
 
     </div>
   );

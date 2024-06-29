@@ -85,10 +85,10 @@ function App() {
       {/* <AppRedux1/> */}
 
       {/* -----CrudRedux----- */}
-      <AppRedux2 />
+      {/* <AppRedux2 /> */}
 
         {/* -----CrudReduxTask----- */}
-      {/* <AppRedux3 /> */}
+      <AppRedux3 />
 
 {/* ----ReduxProjectApi--- */}
       {/* <AppProduct />  */}

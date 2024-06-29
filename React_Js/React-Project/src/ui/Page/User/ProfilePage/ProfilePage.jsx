@@ -34,9 +34,9 @@ export default function ProfilePage() {
               <table className="w-[50%] text-xl">
                 <thead></thead>
                 <tbody>
-                  <tr>
+                <tr>
                     <td>Name</td>
-                    <td>Sapra Sona</td>
+                    <td>Ms Sona Sapra</td>
                   </tr>
                   <tr>
                     <td>Date of birth</td>
@@ -52,7 +52,7 @@ export default function ProfilePage() {
                   </tr>
                   <tr>
                     <td>Address</td>
-                    <td>82,Laxminagae Soc,Sarthana Jakatnaka, Surat - 395006</td>
+                    <td>Sarthana Jakatnaka, Surat - 395006</td>
                   </tr>
                 </tbody>
               </table>
