@@ -9,6 +9,8 @@ import LoginPopUp from "./Module4/LifeCycleMethod/LoginPopUp";
 import App1 from "./Module6 React Router/components/App1";
 import WebHome from "./WebDesign/WebHome";
 import AppRedux from "./Module7 Redux/React/AppRedux";
+import AppProduct from "./Module7 Redux/ReduxApi/Project/AppProduct"
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -38,7 +40,8 @@ function App() {
       {/* <WebHome/> */}
 
       {/* ----Module 7----- */}
-      <AppRedux />
+      {/* <AppRedux /> */}
+      <AppProduct />
     </div>
   );
 }
